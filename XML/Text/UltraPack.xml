@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Game Text - New -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_LOCAL</Tag>
+		<English>Local</English>
+		<French>Local</French>
+		<German>Local</German>
+		<Italian>Local</Italian>
+		<Spanish>Local</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FOREIGN</Tag>
+		<English>Foreign</English>
+		<French>Foreign</French>
+		<German>Foreign</German>
+		<Italian>Foreign</Italian>
+		<Spanish>Foreign</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FINANCE_NET_CASHFLOW</Tag>
+		<English>Net Cash Flow</English>
+		<French>Net Cash Flow</French>
+		<German>Net Cash Flow</German>
+		<Italian>Net Cash Flow</Italian>
+		<Spanish>Net Cash Flow</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HURRY_TIMER</Tag>
+		<English>[NEWLINE]Hurry [ICON_UNHAPPY]: %d1 Turns</English>
+		<French>[NEWLINE]Hurry [ICON_UNHAPPY]: %d1 Turns</French>
+		<German>[NEWLINE]Hurry [ICON_UNHAPPY]: %d1 Turns</German>
+		<Italian>[NEWLINE]Hurry [ICON_UNHAPPY]: %d1 Turns</Italian>
+		<Spanish>[NEWLINE]Hurry [ICON_UNHAPPY]: %d1 Turns</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONSCRIPT_TIMER</Tag>
+		<English>[NEWLINE]Conscript [ICON_UNHAPPY]: %d1 Turns</English>
+		<French>[NEWLINE]Conscript [ICON_UNHAPPY]: %d1 Turns</French>
+		<German>[NEWLINE]Conscript [ICON_UNHAPPY]: %d1 Turns</German>
+		<Italian>[NEWLINE]Conscript [ICON_UNHAPPY]: %d1 Turns</Italian>
+		<Spanish>[NEWLINE]Conscript [ICON_UNHAPPY]: %d1 Turns</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RESOLUTION_TIMER</Tag>
+		<English>[NEWLINE]Defy Resolutions [ICON_UNHAPPY]: %d1 Turns</English>
+		<French>[NEWLINE]Defy Resolutions [ICON_UNHAPPY]: %d1 Turns</French>
+		<German>[NEWLINE]Defy Resolutions [ICON_UNHAPPY]: %d1 Turns</German>
+		<Italian>[NEWLINE]Defy Resolutions [ICON_UNHAPPY]: %d1 Turns</Italian>
+		<Spanish>[NEWLINE]Defy Resolutions [ICON_UNHAPPY]: %d1 Turns</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HURRY_OVERFLOW</Tag>
+		<English>[NEWLINE]Overflow: %d1[ICON_PRODUCTION]</English>
+		<French>[NEWLINE]Overflow: %d1[ICON_PRODUCTION]</French>
+		<German>[NEWLINE]Overflow: %d1[ICON_PRODUCTION]</German>
+		<Italian>[NEWLINE]Overflow: %d1[ICON_PRODUCTION]</Italian>
+		<Spanish>[NEWLINE]Overflow: %d1[ICON_PRODUCTION]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_EXPORT</Tag>
+		<English>Export</English>
+		<French>Export</French>
+		<German>Export</German>
+		<Italian>Export</Italian>
+		<Spanish>Export</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_IMPORT</Tag>
+		<English>Import</English>
+		<French>Import</French>
+		<German>Import</German>
+		<Italian>Import</Italian>
+		<Spanish>Import</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BONUS_OWN</Tag>
+		<English>Own</English>
+		<French>Own</French>
+		<German>Own</German>
+		<Italian>Own</Italian>
+		<Spanish>Own</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TOTAL</Tag>
+		<English>Total</English>
+		<French>Total</French>
+		<German>Total</German>
+		<Italian>Total</Italian>
+		<Spanish>Total</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CORPORATION_HEADQUARTERS</Tag>
+		<English>Headquarters</English>
+		<French>Headquarters</French>
+		<German>Headquarters</German>
+		<Italian>Headquarters</Italian>
+		<Spanish>Headquarters</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_FOUNDED_INFO</Tag>
+		<English>Founded Info</English>
+		<French>Founded Info</French>
+		<German>Founded Info</German>
+		<Italian>Founded Info</Italian>
+		<Spanish>Founded Info</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_HOLY_CITY</Tag>
+		<English>Holy City</English>
+		<French>Holy City</French>
+		<German>Holy City</German>
+		<Italian>Holy City</Italian>
+		<Spanish>Holy City</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_CHANGES</Tag>
+		<English>CIVIC CHANGES</English>
+		<French>CIVIC CHANGES</French>
+		<German>CIVIC CHANGES</German>
+		<Italian>CIVIC CHANGES</Italian>
+		<Spanish>CIVIC CHANGES</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FAVOURITE_RELIGION</Tag>
+		<English>Fav [ICON_RELIGION]</English>
+		<French>Fav [ICON_RELIGION]</French>
+		<German>Fav [ICON_RELIGION]</German>
+		<Italian>Fav [ICON_RELIGION]</Italian>
+		<Spanish>Fav [ICON_RELIGION]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STATE_RELIGION</Tag>
+		<English>State [ICON_RELIGION]</English>
+		<French>State [ICON_RELIGION]</French>
+		<German>State [ICON_RELIGION]</German>
+		<Italian>State [ICON_RELIGION]</Italian>
+		<Spanish>State [ICON_RELIGION]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RATE</Tag>
+		<English>Rate</English>
+		<French>Rate</French>
+		<German>Rate</German>
+		<Italian>Rate</Italian>
+		<Spanish>Rate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_STRENGTH</Tag>
+		<English>Strength</English>
+		<French>Strength</French>
+		<German>Strength</German>
+		<Italian>Strength</Italian>
+		<Spanish>Strength</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GARRISON</Tag>
+		<English>Garrison</English>
+		<French>Garrison</French>
+		<German>Garrison</German>
+		<Italian>Garrison</Italian>
+		<Spanish>Garrison</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COMBAT_XP</Tag>
+		<English>Combat XP: (%d1/%d2)</English>
+		<French>Combat XP: (%d1/%d2)</French>
+		<German>Combat XP: (%d1/%d2)</German>
+		<Italian>Combat XP: (%d1/%d2)</Italian>
+		<Spanish>Combat XP: (%d1/%d2)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FIELD_OF_VIEW_ADJUSTMENT</Tag>
+		<English>Adjust Field of View by %d1[NEWLINE](SHIFT) for %d2</English>
+		<French>Adjust Field of View by %d1[NEWLINE](SHIFT) for %d2</French>
+		<German>Adjust Field of View by %d1[NEWLINE](SHIFT) for %d2</German>
+		<Italian>Adjust Field of View by %d1[NEWLINE](SHIFT) for %d2</Italian>
+		<Spanish>Adjust Field of View by %d1[NEWLINE](SHIFT) for %d2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_COMMERCE_ADJUSTMENT</Tag>
+		<English>[NEWLINE](SHIFT) for %d1%%</English>
+		<French>[NEWLINE](SHIFT) for %d1%%</French>
+		<German>[NEWLINE](SHIFT) for %d1%%</German>
+		<Italian>[NEWLINE](SHIFT) for %d1%%</Italian>
+		<Spanish>[NEWLINE](SHIFT) for %d1%%</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_NO_WAR_PROBABILITY</Tag>
+		<English>[NEWLINE]No War Probability:</English>
+		<French>[NEWLINE]No War Probability:</French>
+		<German>[NEWLINE]No War Probability:</German>
+		<Italian>[NEWLINE]No War Probability:</Italian>
+		<Spanish>[NEWLINE]No War Probability:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DECLARE_WAR_THEM_THRESHOLD</Tag>
+		<English>[NEWLINE]Declare War Them Threshold: %s1</English>
+		<French>[NEWLINE]Declare War Them Threshold: %s1</French>
+		<German>[NEWLINE]Declare War Them Threshold: %s1</German>
+		<Italian>[NEWLINE]Declare War Them Threshold: %s1</Italian>
+		<Spanish>[NEWLINE]Declare War Them Threshold: %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DECLARE_WAR_THRESHOLD</Tag>
+		<English>[NEWLINE]Declare War Threshold: %s1</English>
+		<French>[NEWLINE]Declare War Threshold: %s1</French>
+		<German>[NEWLINE]Declare War Threshold: %s1</German>
+		<Italian>[NEWLINE]Declare War Threshold: %s1</Italian>
+		<Spanish>[NEWLINE]Declare War Threshold: %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIQUE_STUFF</Tag>
+		<English>Unique Items:</English>
+		<French>Unique Items:</French>
+		<German>Unique Items:</German>
+		<Italian>Unique Items:</Italian>
+		<Spanish>Unique Items:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOMESTIC_ADVISOR</Tag>
+		<English>Domestic Advisor</English>
+		<French>Domestic Advisor</French>
+		<German>Domestic Advisor</German>
+		<Italian>Domestic Advisor</Italian>
+		<Spanish>Domestic Advisor</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FIELD_OF_VIEW</Tag>
+		<English>Zoom (%d1)</English>
+		<French>Zoom (%d1)</French>
+		<German>Zoom (%d1)</German>
+		<Italian>Zoom (%d1)</Italian>
+		<Spanish>Zoom (%d1)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRACKER_7</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Culture Tracker[COLOR_REVERT][NEWLINE]Tracks Culture of Cities</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Culture Tracker[COLOR_REVERT][NEWLINE]Tracks Culture of Cities</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Culture Tracker[COLOR_REVERT][NEWLINE]Tracks Culture of Cities</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Culture Tracker[COLOR_REVERT][NEWLINE]Tracks Culture of Cities</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Culture Tracker[COLOR_REVERT][NEWLINE]Tracks Culture of Cities</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CULTURE_TRACKER_HEADER</Tag>
+		<English>CULTURE TRACKER</English>
+		<French>CULTURE TRACKER</French>
+		<German>CULTURE TRACKER</German>
+		<Italian>CULTURE TRACKER</Italian>
+		<Spanish>CULTURE TRACKER</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRACKER_6</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Air Tracker[COLOR_REVERT][NEWLINE]Tracks Air Units and Status in Cities</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Air Tracker[COLOR_REVERT][NEWLINE]Tracks Air Units and Status in Cities</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Air Tracker[COLOR_REVERT][NEWLINE]Tracks Air Units and Status in Cities</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Air Tracker[COLOR_REVERT][NEWLINE]Tracks Air Units and Status in Cities</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Air Tracker[COLOR_REVERT][NEWLINE]Tracks Air Units and Status in Cities</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_AIR_TRACKER_HEADER</Tag>
+		<English>AIR TRACKER</English>
+		<French>AIR TRACKER</French>
+		<German>AIR TRACKER</German>
+		<Italian>AIR TRACKER</Italian>
+		<Spanish>AIR TRACKER</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_NATIONALITY</Tag>
+		<English>Nationality</English>
+		<French>Nationality</French>
+		<German>Nationality</German>
+		<Italian>Nationality</Italian>
+		<Spanish>Nationality</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRACKER_4</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Great General Tracker[COLOR_REVERT][NEWLINE]Tracks Units led by Great Generals</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Great General Tracker[COLOR_REVERT][NEWLINE]Tracks Units led by Great Generals</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Great General Tracker[COLOR_REVERT][NEWLINE]Tracks Units led by Great Generals</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Great General Tracker[COLOR_REVERT][NEWLINE]Tracks Units led by Great Generals</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Great General Tracker[COLOR_REVERT][NEWLINE]Tracks Units led by Great Generals</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GENERAL_TRACKER_HEADER</Tag>
+		<English>GREAT GENERAL TRACKER</English>
+		<French>GREAT GENERAL TRACKER</French>
+		<German>GREAT GENERAL TRACKER</German>
+		<Italian>GREAT GENERAL TRACKER</Italian>
+		<Spanish>GREAT GENERAL TRACKER</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRACKER_1</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Wonder Tracker[COLOR_REVERT][NEWLINE]Tracks Wonders Built</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Wonder Tracker[COLOR_REVERT][NEWLINE]Tracks Wonders Built</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Wonder Tracker[COLOR_REVERT][NEWLINE]Tracks Wonders Built</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Wonder Tracker[COLOR_REVERT][NEWLINE]Tracks Wonders Built</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Wonder Tracker[COLOR_REVERT][NEWLINE]Tracks Wonders Built</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WONDER_TRACKER_HEADER</Tag>
+		<English>WONDER TRACKER</English>
+		<French>WONDER TRACKER</French>
+		<German>WONDER TRACKER</German>
+		<Italian>WONDER TRACKER</Italian>
+		<Spanish>WONDER TRACKER</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRACKER_5</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Specialist Tracker[COLOR_REVERT][NEWLINE]Tracks Specialists in Cities</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Specialist Tracker[COLOR_REVERT][NEWLINE]Tracks Specialists in Cities</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Specialist Tracker[COLOR_REVERT][NEWLINE]Tracks Specialists in Cities</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Specialist Tracker[COLOR_REVERT][NEWLINE]Tracks Specialists in Cities</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Specialist Tracker[COLOR_REVERT][NEWLINE]Tracks Specialists in Cities</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPECIALIST_TRACKER_HEADER</Tag>
+		<English>SPECIALIST TRACKER</English>
+		<French>SPECIALIST TRACKER</French>
+		<German>SPECIALIST TRACKER</German>
+		<Italian>SPECIALIST TRACKER</Italian>
+		<Spanish>SPECIALIST TRACKER</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRACKER_2</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]World Tracker[COLOR_REVERT][NEWLINE]Tracks Wonders and Projects being Built</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]World Tracker[COLOR_REVERT][NEWLINE]Tracks Wonders and Projects being Built</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]World Tracker[COLOR_REVERT][NEWLINE]Tracks Wonders and Projects being Built</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]World Tracker[COLOR_REVERT][NEWLINE]Tracks Wonders and Projects being Built</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]World Tracker[COLOR_REVERT][NEWLINE]Tracks Wonders and Projects being Built</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WORLD_TRACKER_HEADER</Tag>
+		<English>WORLD TRACKER</English>
+		<French>WORLD TRACKER</French>
+		<German>WORLD TRACKER</German>
+		<Italian>WORLD TRACKER</Italian>
+		<Spanish>WORLD TRACKER</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRACKER_3</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Resource Tracker[COLOR_REVERT][NEWLINE]Tracks Resources within Cultural Borders</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Resource Tracker[COLOR_REVERT][NEWLINE]Tracks Resources within Cultural Borders</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Resource Tracker[COLOR_REVERT][NEWLINE]Tracks Resources within Cultural Borders</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Resource Tracker[COLOR_REVERT][NEWLINE]Tracks Resources within Cultural Borders</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Resource Tracker[COLOR_REVERT][NEWLINE]Tracks Resources within Cultural Borders</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RESOURCE_TRACKER_HEADER</Tag>
+		<English>RESOURCE TRACKER</English>
+		<French>RESOURCE TRACKER</French>
+		<German>RESOURCE TRACKER</German>
+		<Italian>RESOURCE TRACKER</Italian>
+		<Spanish>RESOURCE TRACKER</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CLASS</Tag>
+		<English>Class</English>
+		<French>Class</French>
+		<German>Class</German>
+		<Italian>Class</Italian>
+		<Spanish>Class</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_NEAREST_CITY</Tag>
+		<English>Nearest City</English>
+		<French>Nearest City</French>
+		<German>Nearest City</German>
+		<Italian>Nearest City</Italian>
+		<Spanish>Nearest City</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ALL</Tag>
+		<English>All</English>
+		<French>All</French>
+		<German>All</German>
+		<Italian>All</Italian>
+		<Spanish>All</Spanish>
+		</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GRAPHICOPTION_TRANSPARENT_PANEL</Tag>
+		<English>Transparent Panels</English>
+		<French>Transparent Panels</French>
+		<German>Transparent Panels</German>
+		<Italian>Transparent Panels</Italian>
+		<Spanish>Transparent Panels</Spanish>
+		</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GRAPHICOPTION_TRANSPARENT_PANEL_HELP</Tag>
+		<English>Select to use Transparent Panels in various screens</English>
+		<French>Select to use Transparent Panels in various screens</French>
+		<German>Select to use Transparent Panels in various screens</German>
+		<Italian>Select to use Transparent Panels in various screens</Italian>
+		<Spanish>Select to use Transparent Panels in various screens</Spanish>
+		</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GRAPHICOPTION_HUMAN_ICON</Tag>
+		<English>Human Icon</English>
+		<French>Human Icon</French>
+		<German>Human Icon</German>
+		<Italian>Human Icon</Italian>
+		<Spanish>Human Icon</Spanish>
+		</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GRAPHICOPTION_HUMAN_ICON_HELP</Tag>
+		<English>Select to use Female Icon; Else use Male Icon</English>
+		<French>Select to use Female Icon; Else use Male Icon</French>
+		<German>Select to use Female Icon; Else use Male Icon</German>
+		<Italian>Select to use Female Icon; Else use Male Icon</Italian>
+		<Spanish>Select to use Female Icon; Else use Male Icon</Spanish>
+		</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GRAPHICOPTION_GREAT_PEOPLE_BAR</Tag>
+		<English>No Great People Bar</English>
+		<French>No Great People Bar</French>
+		<German>No Great People Bar</German>
+		<Italian>No Great People Bar</Italian>
+		<Spanish>No Great People Bar</Spanish>
+		</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GRAPHICOPTION_GREAT_PEOPLE_BAR_HELP</Tag>
+		<English>Disables great people bar in main interface</English>
+		<French>Disables great people bar in main interface</French>
+		<German>Disables great people bar in main interface</German>
+		<Italian>Disables great people bar in main interface</Italian>
+		<Spanish>Disables great people bar in main interface</Spanish>
+		</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GRAPHICOPTION_COLOR_TEXT</Tag>
+		<English>No Colored Text</English>
+		<French>No Colored Text</French>
+		<German>No Colored Text</German>
+		<Italian>No Colored Text</Italian>
+		<Spanish>No Colored Text</Spanish>
+		</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GRAPHICOPTION_COLOR_TEXT_HELP</Tag>
+		<English>Disables civ specific colored text</English>
+		<French>Disables civ specific colored text</French>
+		<German>Disables civ specific colored text</German>
+		<Italian>Disables civ specific colored text</Italian>
+		<Spanish>Disables civ specific colored text</Spanish>
+		</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GRAPHICOPTION_HIDDEN_PROMOTIONS</Tag>
+		<English>Hidden Promotions</English>
+		<French>Hidden Promotions</French>
+		<German>Hidden Promotions</German>
+		<Italian>Hidden Promotions</Italian>
+		<Spanish>Hidden Promotions</Spanish>
+		</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GRAPHICOPTION_HIDDEN_PROMOTIONS_HELP</Tag>
+		<English>Shows only highest grade promotions in unit interface</English>
+		<French>Shows only highest grade promotions in unit interface</French>
+		<German>Shows only highest grade promotions in unit interface</German>
+		<Italian>Shows only highest grade promotions in unit interface</Italian>
+		<Spanish>Shows only highest grade promotions in unit interface</Spanish>
+		</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GRAPHICOPTION_FULL_HIDDEN_PROMOTIONS</Tag>
+		<English>Full Hidden Promotions</English>
+		<French>Full Hidden Promotions</French>
+		<German>Full Hidden Promotions</German>
+		<Italian>Full Hidden Promotions</Italian>
+		<Spanish>Full Hidden Promotions</Spanish>
+		</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GRAPHICOPTION_FULL_HIDDEN_PROMOTIONS_HELP</Tag>
+		<English>Hides all promotions in unit interface</English>
+		<French>Hides all promotions in unit interface</French>
+		<German>Hides all promotions in unit interface</German>
+		<Italian>Hides all promotions in unit interface</Italian>
+		<Spanish>Hides all promotions in unit interface</Spanish>
+		</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRADE_ROUTE_LABEL</Tag>
+		<English>; Latitude (%d1)</English>
+		<French>; Latitude (%d1)</French>
+		<German>; Latitude (%d1)</German>
+		<Italian>; Latitude (%d1)</Italian>
+		<Spanish>; Latitude (%d1)</Spanish>
+		</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SPECIALIST_COUNT</Tag>
+		<English>%s1 Max Specialist Row Per Column</English>
+		<French>%s1 Max Specialist Row Per Column</French>
+		<German>%s1 Max Specialist Row Per Column</German>
+		<Italian>%s1 Max Specialist Row Per Column</Italian>
+		<Spanish>%s1 Max Specialist Row Per Column</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HIDE_TEAM</Tag>
+		<English>Hide Team Members</English>
+		<French>Hide Team Members</French>
+		<German>Hide Team Members</German>
+		<Italian>Hide Team Members</Italian>
+		<Spanish>Hide Team Members</Spanish>
+		</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HIDE_VASSALS</Tag>
+		<English>Hide Vassals</English>
+		<French>Hide Vassals</French>
+		<German>Hide Vassals</German>
+		<Italian>Hide Vassals</Italian>
+		<Spanish>Hide Vassals</Spanish>
+		</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SHOW_ERA</Tag>
+		<English>Show %s1 Era</English>
+		<French>Show %s1 Era</French>
+		<German>Show %s1 Era</German>
+		<Italian>Show %s1 Era</Italian>
+		<Spanish>Show %s1 Era</Spanish>
+		</TEXT>
+</Civ4GameText>

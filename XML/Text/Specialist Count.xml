@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Game Text - New -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_INCREASE_MAX_SPEC</Tag>
+		<English>+1 Max Specialist Row Per Column</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DECREASE_MAX_SPEC</Tag>
+		<English>-1 Max Specialist Row Per Column</English>
+	</TEXT>
+</Civ4GameText>

@@ -15,14 +15,14 @@
 
 #### Paths ####
 
-TOOLKIT=D:\Program Files (x86)\Microsoft Visual C++ Toolkit 2003
-PSDK=E:\WindowsSDK
-BIN = G:\BBATAI\bin
+TOOLKIT=$(PROGRAMFILES)\Civ4SDK\Microsoft Visual C++ Toolkit 2003
+PSDK=$(PROGRAMFILES)\Civ4SDK\WindowsSDK
+BIN = C:\Program Files (x86)\2K Games\Firaxis Games\Sid Meier's Civilization 4 Complete\Beyond the Sword\Mods\Better BAT AI\Assets
 
-CIV = C:\Firaxis Games\Sid Meier's Civilization 4\Beyond the Sword
-SDK = G:\BBATAI
-BOOST = C:\Firaxis Games\Sid Meier's Civilization 4\Beyond the Sword\CvGameCoreDLL\Boost-1.32.0
-PYTHON = C:\Firaxis Games\Sid Meier's Civilization 4\Beyond the Sword\CvGameCoreDLL\Python24
+CIV = C:\Program Files (x86)\2K Games\Firaxis Games\Sid Meier's Civilization 4 Complete\Beyond the Sword
+SDK = C:\Program Files (x86)\2K Games\Firaxis Games\Sid Meier's Civilization 4 Complete\Beyond the Sword\Mods\ChumchuBin
+BOOST = C:\Program Files (x86)\2K Games\Firaxis Games\Sid Meier's Civilization 4 Complete\Beyond the Sword\CvGameCoreDLL\Boost-1.32.0
+PYTHON = C:\Program Files (x86)\2K Games\Firaxis Games\Sid Meier's Civilization 4 Complete\Beyond the Sword\CvGameCoreDLL\Python24
 
 ## Copy newly compiled dlls to BTS's Assets directory
 COPYTO = $(BIN)

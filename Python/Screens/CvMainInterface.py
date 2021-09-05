@@ -4341,7 +4341,7 @@ class CvMainInterface:
 ## Platy Unit Display ##		
 			screen.setTableColumnHeader( "SelectedUnitText", 0, u"", 115 )
 			screen.setTableColumnHeader( "SelectedUnitText", 1, u"", 75 )
-			screen.setTableColumnHeader( "SelectedUnitText", 2, u"", 10 )
+			screen.setTableColumnHeader( "SelectedUnitText", 2, u"", 60 )  # Changed to 60 from 10 so it formats right.
 			screen.setTableColumnRightJustify( "SelectedUnitText", 1 )
 			
 			if (CyInterface().mirrorsSelectionGroup()):

@@ -1854,45 +1854,6 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PROMOTION_FLANKING3</Tag>
-		<English>Flanking III</English>
-		<French>
-			<Text>Contournement III</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Flanke III</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Attacco laterale III</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Flanqueo III</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-		<Russian>
-			<Text>Contournement III</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Russian>
-		<Japanese>
-			<Text>Contournement III</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Japanese>
-		<Chinese>
-			<Text>Contournement III</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Chinese>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_SENTRY</Tag>
 		<English>Sentry</English>
 		<French>
@@ -17563,6 +17524,318 @@
 			<Text>Svein Barba Bifurcada</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDUSTRIAL_GREAT_PALACE</Tag>
+		<English>Industrial Forbidden Palace</English>
+		<French>
+			<Text>Industrial Cit&#233; interdite</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Industrial Verbotene Stadt</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Industrial Palazzo Proibito:Palazzi Proibiti</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Industrial Ciudad Prohibida:Ciudades Prohibidas</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDUSTRIAL_HEROIC_EPIC</Tag>
+		<English>Industrial Heroic Epic</English>
+		<French>
+			<Text>Industrial Epop&#233;e h&#233;ro&#239;que</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Industrial Heldenepos</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Industrial Poema epico</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Industrial la Epopeya heroica:las Epopeyas heroicas</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDUSTRIAL_NATIONAL_EPIC</Tag>
+		<English>Industrial National Epic</English>
+		<French>
+			<Text>Industrial Epop&#233;e nationale</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Industrial Nationalepos</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Industrial Poema patriottico</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Industrial la Epopeya nacional:las Epopeyas nacionales</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDUSTRIAL_GLOBE_THEATRE</Tag>
+		<English>Industrial Globe Theatre</English>
+		<French>
+			<Text>Industrial Th&#233;&#226;tre du Globe</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Industrial Globe Theatre</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Industrial Teatro di Shakespeare</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Industrial el Globe Theatre:los Globe Theatres</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDUSTRIAL_HERMITAGE</Tag>
+		<English>Industrial Hermitage</English>
+		<French>
+			<Text>Industrial Ermitage</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Industrial Eremitage</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Industrial Hermitage</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Industrial el Hermitage:los Hermitage</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDUSTRIAL_OXFORD_UNIVERSITY</Tag>
+		<English>Industrial Oxford University</English>
+		<French>
+			<Text>Industrial Universit&#233; d'Oxford</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Industrial Universit&#228;t von Oxford</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Industrial Universit&#224; di Oxford</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Industrial la Universidad de Oxford:las Universidades de Oxford</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDUSTRIAL_WALL_STREET</Tag>
+		<English>Industrial Wall Street</English>
+		<French>
+			<Text>Industrial Wall Street</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Industrial Wall Street</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Industrial Wall Street</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Industrial Wall Street:Wall Street</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDUSTRIAL_IRONWORKS</Tag>
+		<English>Industrial Ironworks</English>
+		<French>
+			<Text>Industrial Usine sid&#233;rurgique</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Industrial Eisenbearbeitung</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Industrial Ferriera</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Industrial la Metalurgia:las Metalurgias</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDUSTRIAL_WEST_POINT</Tag>
+		<English>Industrial West Point</English>
+		<French>
+			<Text>Industrial West Point</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Industrial West Point</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Industrial West Point</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Industrial la Academia de West Point:las Academias de West Point</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDUSTRIAL_RED_CROSS</Tag>
+		<English>Industrial Red Cross</English>
+		<French>
+			<Text>Industrial Croix-Rouge</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Industrial Rotes Kreuz</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Industrial Croce Rossa</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Industrial la Cruz Roja:las Cruces Rojas</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDUSTRIAL_NATIONAL_PARK</Tag>
+		<English>Industrial National Park</English>
+		<French>
+			<Text>Industrial Parc national:Parcs nationaux</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Industrial Nationalpark</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Industrial Parco nazionale:Parchi nazionali</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Industrial Parque Nacional:Parques Nacionales</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SHIP_OF_THE_LINE</Tag>
+		<English>Ship of the Line</English>
+		<French>
+			<Text>Galion de guerre:Galions de guerre</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Linienschiff</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Nave da prima linea:Navi da prima linea</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Buque de guerra:Buques de guerra</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AMERICAN_ARMOURY</Tag>
+		<English>Armory</English>
+		<French>
+			<Text>Armory</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Armory</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Armory</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Armory</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
 		</Spanish>
 	</TEXT>
 </Civ4GameText>

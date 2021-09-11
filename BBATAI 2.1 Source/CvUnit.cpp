@@ -5800,6 +5800,11 @@ bool CvUnit::canSpreadCorporation(const CvPlot* pPlot, CorporationTypes eCorpora
 		return false;
 	}
 
+	if (!GC.getGameINLINE().isCorporationFounded(eCorporation))
+	{
+		return false;
+	}
+
 	if (!GET_PLAYER(getOwnerINLINE()).isActiveCorporation(eCorporation))
 	{
 		return false;

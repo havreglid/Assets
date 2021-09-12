@@ -10799,6 +10799,11 @@ void CvPlayer::setCombatExperience(int iExperience)
 	{
 		m_iCombatExperience = iExperience;
 
+		// Trigger redrawing of GG Bar
+        if (getID() == GC.getGameINLINE().getActivePlayer()){
+            gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
+        }
+
 		if (!isBarbarian())
 		{
 			int iExperienceThreshold = greatPeopleThreshold(true);

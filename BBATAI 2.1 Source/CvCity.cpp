@@ -13584,6 +13584,9 @@ void CvCity::doProduction(bool bAllowNoProduction)
 		return;
 	}
 
+	// RBMP don't allow double use of production by automation
+	bool bWasProcess = isProductionProcess();
+
 	if (!isHuman() || isProductionAutomated())
 	{
 		if (!isProduction() || isProductionProcess() || AI_isChooseProductionDirty())
@@ -13597,7 +13600,8 @@ void CvCity::doProduction(bool bAllowNoProduction)
 		return;
 	}
 
-	if (isProductionProcess())
+	// RBMP use the recorded value from before instead of looking it up now
+	if (bWasProcess)
 	{
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                       12/07/09                         denev & jdog5000     */

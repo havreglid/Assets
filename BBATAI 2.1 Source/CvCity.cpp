@@ -13660,7 +13660,9 @@ void CvCity::doDecay()
 					}
 				}
 			}
-			else
+			
+			//Charriu fix decaytimer not reseting on 0 hammers invested
+			if (getBuildingProduction(eBuilding) <= 0)
 			{
 				setBuildingProductionTime(eBuilding, 0);
 			}
@@ -13686,7 +13688,9 @@ void CvCity::doDecay()
 					}
 				}
 			}
-			else
+
+			//Charriu fix decaytimer not reseting on 0 hammers invested
+			if (getUnitProduction(eUnit) <= 0)
 			{
 				setUnitProductionTime(eUnit, 0);
 			}

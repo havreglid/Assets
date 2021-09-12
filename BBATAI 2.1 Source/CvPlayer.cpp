@@ -17197,29 +17197,11 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange, bool bLimited)
 	if (bLimited)
 	{
 		CvCivicInfo& kCivic = GC.getCivicInfo(eCivic);
-
-		//+: doesn't change values of other civics but maybe should
-		//changeGreatPeopleRateModifier(kCivic.getGreatPeopleRateModifier() * iChange);
-		//changeGreatGeneralRateModifier(kCivic.getGreatGeneralRateModifier() * iChange);
-		//changeDomesticGreatGeneralRateModifier(kCivic.getDomesticGreatGeneralRateModifier() * iChange);
-		//changeStateReligionGreatPeopleRateModifier(kCivic.getStateReligionGreatPeopleRateModifier() * iChange);
-		//changeDistanceMaintenanceModifier(kCivic.getDistanceMaintenanceModifier() * iChange);
-		//changeNumCitiesMaintenanceModifier(kCivic.getNumCitiesMaintenanceModifier() * iChange);
+		
 		changeCorporationMaintenanceModifier(kCivic.getCorporationMaintenanceModifier() * iChange, bLimited);
 		changeExtraHealth(kCivic.getExtraHealth() * iChange, bLimited);
-		//changeFreeExperience(kCivic.getFreeExperience() * iChange);
-		//changeWorkerSpeedModifier(kCivic.getWorkerSpeedModifier() * iChange);
-		//changeImprovementUpgradeRateModifier(kCivic.getImprovementUpgradeRateModifier() * iChange);
-		//changeMilitaryProductionModifier(kCivic.getMilitaryProductionModifier() * iChange);
-		//changeBaseFreeUnits(kCivic.getBaseFreeUnits() * iChange);
-		//changeBaseFreeMilitaryUnits(kCivic.getBaseFreeMilitaryUnits() * iChange);
-		//changeFreeUnitsPopulationPercent(kCivic.getFreeUnitsPopulationPercent() * iChange);
-		//changeFreeMilitaryUnitsPopulationPercent(kCivic.getFreeMilitaryUnitsPopulationPercent() * iChange);
-		//changeGoldPerUnit(kCivic.getGoldPerUnit() * iChange);
-		//changeGoldPerMilitaryUnit(kCivic.getGoldPerMilitaryUnit() * iChange);
 		changeHappyPerMilitaryUnit(kCivic.getHappyPerMilitaryUnit() * iChange,  bLimited);
 		changeMilitaryFoodProductionCount(((kCivic.isMilitaryFoodProduction()) ? iChange : 0), bLimited);
-		//changeMaxConscript(getWorldSizeMaxConscript(eCivic) * iChange);
 		changeNoUnhealthyPopulationCount(((kCivic.isNoUnhealthyPopulation()) ? iChange : 0), bLimited);
 		changeBuildingOnlyHealthyCount(((kCivic.isBuildingOnlyHealthy()) ? iChange : 0), bLimited);
 		changeLargestCityHappiness((kCivic.getLargestCityHappiness() * iChange), bLimited);
@@ -17227,8 +17209,6 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange, bool bLimited)
 		{
 			changeWarWearinessModifier((kCivic.getWarWearinessModifier() * iChange), bLimited);
 		}
-		//changeFreeSpecialist(kCivic.getFreeSpecialist() * iChange);
-		//changeTradeRoutes(kCivic.getTradeRoutes() * iChange);
 		changeNoForeignTradeCount(kCivic.isNoForeignTrade() * iChange, bLimited);
 		changeNoCorporationsCount(kCivic.isNoCorporations() * iChange, bLimited);
 		changeNoForeignCorporationsCount(kCivic.isNoForeignCorporations() * iChange, bLimited);
@@ -17236,25 +17216,6 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange, bool bLimited)
 		changeNoNonStateReligionSpreadCount((kCivic.isNoNonStateReligionSpread()) ? iChange : 0);
 		changeStateReligionHappiness(kCivic.getStateReligionHappiness() * iChange, bLimited);
 		changeNonStateReligionHappiness(kCivic.getNonStateReligionHappiness() * iChange, bLimited);
-		//changeStateReligionUnitProductionModifier(kCivic.getStateReligionUnitProductionModifier() * iChange);
-		//changeStateReligionBuildingProductionModifier(kCivic.getStateReligionBuildingProductionModifier() * iChange);
-		//changeStateReligionFreeExperience(kCivic.getStateReligionFreeExperience() * iChange);
-		//changeExpInBorderModifier(kCivic.getExpInBorderModifier() * iChange);
-
-		//for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
-		//{
-		//	changeYieldRateModifier(((YieldTypes)iI), (kCivic.getYieldModifier(iI) * iChange));
-		//	changeCapitalYieldRateModifier(((YieldTypes)iI), (kCivic.getCapitalYieldModifier(iI) * iChange));
-		//	changeTradeYieldModifier(((YieldTypes)iI), (kCivic.getTradeYieldModifier(iI) * iChange));
-		//}
-
-		//for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
-		//{
-		//	changeCommerceRateModifier(((CommerceTypes)iI), (kCivic.getCommerceModifier(iI) * iChange));
-		//	changeCapitalCommerceRateModifier(((CommerceTypes)iI), (kCivic.getCapitalCommerceModifier(iI) * iChange));
-		//	changeSpecialistExtraCommerce(((CommerceTypes)iI), (kCivic.getSpecialistExtraCommerce(iI) * iChange));
-		//}
-
 		if (kCivic.isAnyBuildingHappinessChange() || kCivic.isAnyBuildingHealthChange())
 		{
 			for (iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)

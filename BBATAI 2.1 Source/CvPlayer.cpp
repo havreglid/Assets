@@ -4891,8 +4891,14 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 	case TRADE_CITIES:
 		{
 			CvCity* pCityTraded = getCity(item.m_iData);
+			
+			// RBMP bugfix - cancel trade if city to be traded doesn't exist anymore
+			if (NULL == pCityTraded)
+			{
+				return false;
+			}
 
-			if (NULL != pCityTraded && pCityTraded->getLiberationPlayer(false) == eWhoTo)
+			if (pCityTraded->getLiberationPlayer(false) == eWhoTo)
 			{
 				return true;
 			}

@@ -69,6 +69,7 @@ public:
 
 	bool isHuman();
 	bool isBarbarian();
+	bool isCapitulated();
 	bool isMinorCiv();
 	int /*PlayerTypes*/ getLeaderID();
 	int /*PlayerTypes*/ getSecretaryID();

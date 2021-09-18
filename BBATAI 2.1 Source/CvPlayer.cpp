@@ -7185,7 +7185,10 @@ int CvPlayer::calculateTotalYield(YieldTypes eYield) const
 
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
-		iTotalCommerce += pLoopCity->getYieldRate(eYield);
+		if (pLoopCity->isOccupation() || pLoopCity->isInRevolt())
+			iTotalCommerce += 0;
+		else
+			iTotalCommerce += pLoopCity->getYieldRate(eYield);
 	}
 
 	return iTotalCommerce;

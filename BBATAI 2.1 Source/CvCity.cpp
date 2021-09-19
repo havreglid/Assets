@@ -13691,6 +13691,23 @@ bool CvCity::doCheckProduction()
 
 				if (iProductionGold > 0)
 				{
+					// novice: Added global define for fail gold nerf
+					float fOwnCityFailgoldMultiplier = GC.getDefineFLOAT("OWN_CITY_FAIL_GOLD_MULTIPLIER");
+					//T-hawk for Realms Beyond balance mod
+					//No refund fail gold for wonders if you built the wonder yourself (covers national wonders too)
+					//FIXED version after PBEM20 bug
+					bool isOwnCity = false;
+					int iLoop;
+					CvCity* pLoopCity;
+					for (pLoopCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
+					{
+						if (pLoopCity->getNumBuilding((BuildingTypes) iI) > 0)
+							isOwnCity = true;
+					}
+					if(isOwnCity) {
+						iProductionGold = (int)(iProductionGold*fOwnCityFailgoldMultiplier);
+					}
+
 					GET_PLAYER(getOwnerINLINE()).changeGold(iProductionGold);
 
 					szBuffer = gDLL->getText("TXT_KEY_MISC_LOST_WONDER_PROD_CONVERTED", getNameKey(), GC.getBuildingInfo((BuildingTypes)iI).getTextKeyWide(), iProductionGold);

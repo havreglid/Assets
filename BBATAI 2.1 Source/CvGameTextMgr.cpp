@@ -4547,6 +4547,8 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 
 				CvPlayerAI& kPlayer = GET_PLAYER(pCity->getOwnerINLINE());
 				int iUnitCost = kPlayer.calculateUnitCost();
+				//Charriu Unit Maintenance Modifier
+				iUnitCost -= kPlayer.calculateUnitCostTraitReduction(iUnitCost);
 				int iTotalCosts = kPlayer.calculatePreInflatedCosts();
 				int iUnitCostPercentage = (iUnitCost * 100) / std::max(1, iTotalCosts);
 				szString.append(CvWString::format(L"\nUnit cost percentage: %d (%d / %d)", iUnitCostPercentage, iUnitCost, iTotalCosts));
@@ -6314,6 +6316,12 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 		if (GC.getTraitInfo(eTrait).getDomesticTradeRouteModifier() != 0)
 		{
 			szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_DOMESTIC_TRADE_ROUTE_MODIFIER", GC.getTraitInfo(eTrait).getDomesticTradeRouteModifier()));
+		}
+
+		//Charriu Unit Maintenance Modifier
+		if (GC.getTraitInfo(eTrait).getUnitMaintenanceModifier() != 0)
+		{
+			szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_UNIT_MAINTENANCE_MODIFIER", -GC.getTraitInfo(eTrait).getUnitMaintenanceModifier()));
 		}
 
 		// Free Promotions
@@ -15127,6 +15135,9 @@ void CvGameTextMgr::buildFinanceUnitCostString(CvWStringBuffer& szBuffer, Player
 	int iExtraCost = 0;
 	int iCost = player.calculateUnitCost(iFreeUnits, iFreeMilitaryUnits, iPaidUnits, iPaidMilitaryUnits, iBaseUnitCost, iMilitaryCost, iExtraCost);
 	int iHandicap = iCost-iBaseUnitCost-iMilitaryCost-iExtraCost;
+	//Charriu Unit Maintenance Modifier
+	int iUnitMaintenance = -player.calculateUnitCostTraitReduction(iCost);
+	iCost = iCost + iUnitMaintenance;
 
 	szBuffer.append(NEWLINE);
 	szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_UNIT_COST", iPaidUnits, iFreeUnits, iBaseUnitCost));
@@ -15142,6 +15153,11 @@ void CvGameTextMgr::buildFinanceUnitCostString(CvWStringBuffer& szBuffer, Player
 	if (iHandicap != 0)
 	{
 		szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_HANDICAP_COST", iHandicap));
+	}
+	//Charriu Unit Maintenance Modifier
+	if (iUnitMaintenance != 0)
+	{
+		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_MAINTENANCE_MODIFIER", iUnitMaintenance));
 	}
 	szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_UNIT_COST_4", iCost));
 }

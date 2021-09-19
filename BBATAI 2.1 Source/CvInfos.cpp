@@ -16500,6 +16500,8 @@ m_paiTradeYieldModifier(NULL),
 m_iTradeRouteModifier(0),
 //Charriu Domestic Trade Route Modifier
 m_iDomesticTradeRouteModifier(0),
+//Charriu Unit Maintenance Modifier
+m_iUnitMaintenanceModifier(0),
 m_paiCommerceChange(NULL),
 m_paiCommerceModifier(NULL),
 m_pabFreePromotionUnitCombat(NULL),
@@ -16564,6 +16566,12 @@ int CvTraitInfo::getTradeRouteModifier() const
 int CvTraitInfo::getDomesticTradeRouteModifier() const
 {
 	return m_iDomesticTradeRouteModifier;
+}
+
+//Charriu Unit Maintenance Modifier
+int CvTraitInfo::getUnitMaintenanceModifier() const
+{
+	return m_iUnitMaintenanceModifier;
 }
 
 int CvTraitInfo::getLevelExperienceModifier() const					
@@ -16735,6 +16743,9 @@ bool CvTraitInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iTradeRouteModifier, "iTradeRouteModifiers");
 	//Charriu Domestic Trade Route Modifier
 	pXML->GetChildXmlValByName(&m_iDomesticTradeRouteModifier, "iDomesticTradeRouteModifiers");
+	//Charriu Unit Maintenance Modifier
+	pXML->GetChildXmlValByName(&m_iUnitMaintenanceModifier, "iUnitMaintenanceModifiers");
+
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "CommerceChanges"))
 	{
 		pXML->SetCommerce(&m_paiCommerceChange);

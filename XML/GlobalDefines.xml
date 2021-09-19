@@ -1691,6 +1691,10 @@
     	<iDefineIntVal>1</iDefineIntVal>
   	</Define>
   	<Define>
+    	<DefineName>ENABLE_RIVER_SIDE_YIELD_ALSO_ON_CORNER</DefineName>
+    	<iDefineIntVal>1</iDefineIntVal>
+  	</Define>
+  	<Define>
 		<DefineName>CIRCUMNAVIGATE_FREE_TRADE_ROUTE</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>

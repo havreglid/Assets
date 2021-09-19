@@ -2947,6 +2947,46 @@ class CvInfoScreen:
 			self.resetWonders()
 			screen.hideScreen()
 
+        # BEGIN Ramk - Cycle graphs and demo
+        if (inputClass.getNotifyCode() == NotifyCode.NOTIFY_CHARACTER and inputClass.getID() == 0):
+            if (self.iActiveTab == self.iGraphID):
+                graphTabID = self.iGraphTabID
+                if inputClass.getData() == int(InputTypes.KB_LEFT):
+                    graphTabID -= 1
+                elif inputClass.getData() == int(InputTypes.KB_RIGHT):
+                    graphTabID += 1
+
+                if graphTabID < 0:
+                    # Just go to demo tab. Expand to other tabs
+                    # here, if required.
+                    self.iActiveTab = self.iDemographicsID
+                    self.reset()
+                    self.redrawContents()
+                elif graphTabID > 6:
+                    # Change active tab to demograpic
+                    self.iActiveTab = self.iDemographicsID
+                    self.reset()
+                    self.redrawContents()
+                else:
+                    # Shop prev/next graph
+                    self.iGraphTabID = graphTabID
+                    self.drawGraphs()
+
+            elif (self.iActiveTab == self.iDemographicsID):
+                if inputClass.getData() == int(InputTypes.KB_LEFT):
+                    self.iGraphTabID = self.ESPIONAGE_SCORE
+                    self.iActiveTab = self.iGraphID
+                    self.reset()
+                    self.redrawContents()
+                elif inputClass.getData() == int(InputTypes.KB_RIGHT):
+                    self.iGraphTabID = -1  # -1 is better than self.TOTAL_SCORE due GAMEOPTION_NO_SCORE
+                    self.iActiveTab = self.iGraphID
+                    self.reset()
+                    self.redrawContents()
+
+            return 0
+        # END Ramk
+
 		# Slide graph
 		if (szWidgetName == self.graphLeftButtonID and code == NotifyCode.NOTIFY_CLICKED):
 			self.slideGraph(- 2 * self.graphZoom / 5)

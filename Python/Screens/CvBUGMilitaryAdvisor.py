@@ -18,7 +18,7 @@
 ## Copyright (c) 2008 The BUG Mod.
 ##
 ## Author: Ruff_Hi (Situation Report tab)
-##         EmperorFool (Deployment and Strategic Advantages tabs)
+##		   EmperorFool (Deployment and Strategic Advantages tabs)
 
 from CvPythonExtensions import *
 import CvUtil
@@ -150,7 +150,7 @@ class CvMilitaryAdvisor:
 		self.iScreen = UNIT_LOCATION_SCREEN
 
 		# icongrid constants
-		self.SHOW_LEADER_NAMES = False
+		self.SHOW_LEADER_NAMES = True
 		self.SHOW_ROW_BORDERS = True
 		self.MIN_TOP_BOTTOM_SPACE = 30
 		self.MIN_LEFT_RIGHT_SPACE = 10
@@ -193,6 +193,12 @@ class CvMilitaryAdvisor:
 		if self.W_SCREEN < 1024:
 			self.W_SCREEN = 1024
 			self.L_SCREEN = 0
+		else:
+			offset = (self.W_SCREEN - self.W_LEADERS) / 2
+			self.X_GROUP_LIST = 20 + offset
+			self.X_MAP = 20 + offset
+			self.X_LEADERS = 20 + offset
+			self.X_TEXT = 625 + offset 
 		
 		self.X_EXIT = self.W_SCREEN - 30
 		#self.Y_EXIT = 726
@@ -886,7 +892,12 @@ class CvMilitaryAdvisor:
 			
 			# Set scrollable area for leaders
 			szPanel_ID = self.getNextWidgetName()
-			screen.addPanel(szPanel_ID, "", "", False, True, self.X_LEADERS, self.Y_LEADERS, self.W_LEADERS, self.H_LEADERS, PanelStyles.PANEL_STYLE_MAIN)
+			if self.SHOW_LEADER_NAMES:
+				screen.addPanel(szPanel_ID, "", "", False, True, self.X_LEADERS,
+						self.Y_LEADERS - 22, self.W_LEADERS, self.H_LEADERS + 44, PanelStyles.PANEL_STYLE_MAIN)
+			else:
+				screen.addPanel(szPanel_ID, "", "", False, True, self.X_LEADERS,
+						self.Y_LEADERS, self.W_LEADERS, self.H_LEADERS, PanelStyles.PANEL_STYLE_MAIN)
 	
 			listLeaders = []
 			for iLoopPlayer in range(gc.getMAX_PLAYERS()):
@@ -917,7 +928,23 @@ class CvMilitaryAdvisor:
 	
 				szLeaderButton = self.getLeaderButtonWidget(iLoopPlayer)              #self.getNextWidgetName()
 				screen.addCheckBoxGFC(szLeaderButton, szButton, ArtFileMgr.getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), x, y, iButtonSize, iButtonSize, WidgetTypes.WIDGET_MINIMAP_HIGHLIGHT, 2, iLoopPlayer, ButtonStyles.BUTTON_STYLE_LABEL)
-				screen.setState(szLeaderButton, (iLoopPlayer in self.selectedLeaders))				
+				screen.setState(szLeaderButton, (iLoopPlayer in self.selectedLeaders))
+
+				# Ramk - leader names
+				if self.SHOW_LEADER_NAMES:
+					pname = gc.getPlayer(iLoopPlayer).getName()
+					if iIndex % 2 == 0:
+						screen.setText(szLeaderButton + "_name",
+								"Background", pname, CvUtil.FONT_LEFT_JUSTIFY,
+								x + 4, y+iButtonSize-2,
+								self.Z_CONTROLS, FontTypes.TITLE_FONT,
+								WidgetTypes.WIDGET_MINIMAP_HIGHLIGHT, 2, iLoopPlayer )
+					else:
+						screen.setText(szLeaderButton + "_name",
+								"Background", pname, CvUtil.FONT_RIGHT_JUSTIFY,
+								x + iButtonSize - 4, y-24,
+								self.Z_CONTROLS, FontTypes.TITLE_FONT,
+								WidgetTypes.WIDGET_MINIMAP_HIGHLIGHT, 2, iLoopPlayer )
 		
 		self.UL_refreshUnitSelection(bReload, bRedraw)
 
@@ -1008,9 +1035,9 @@ class CvMilitaryAdvisor:
 				bGroup2Selected = iGroupID in self.selectedGroups
 				szDescription = group2.group.title + u" (%d)" % len(units2)
 				if (bGroup2Selected):
-					szDescription = u"      <u>" + szDescription + u"</u>"
+					szDescription = u"	  <u>" + szDescription + u"</u>"
 				else:
-					szDescription = u"      " + szDescription
+					szDescription = u"	  " + szDescription
 				if (bGroup2Selected or bGroup1Selected):
 					szDescription = localText.changeTextColor(szDescription, eYellow)
 				if (bRedraw):
@@ -1034,9 +1061,9 @@ class CvMilitaryAdvisor:
 							szDescription = '*' + szDescription
 						
 						if (bUnitSelected):
-							szDescription = u"         <u>" + szDescription + u"</u>"
+							szDescription = u"		 <u>" + szDescription + u"</u>"
 						else:
-							szDescription = u"         " + szDescription
+							szDescription = u"		 " + szDescription
 
 						if (bUnitSelected or bGroup2Selected):
 							szDescription = localText.changeTextColor(szDescription, eYellow)

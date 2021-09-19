@@ -138,6 +138,8 @@ def smallSymbol(symbol):
 
 def onDealCanceled(argsList):
 	"""Sets the scoreboard dirty bit so it will redraw."""
+	if CyGame().isPitbossHost():
+		return
 	CyInterface().setDirty(InterfaceDirtyBits.Score_DIRTY_BIT, True)
 
 
@@ -149,7 +151,9 @@ class Column:
 		self.type = type
 		self.text = text
 		self.alt = alt
-		if (type == FIXED):
+		if CyGame().isPitbossHost():
+			self.width = 0 
+		elif (type == FIXED):
 			self.width = CyInterface().determineWidth( text )
 		else:
 			self.width = 0
@@ -345,6 +349,8 @@ class Scoreboard:
 		
 	def draw(self, screen):
 		"""Sorts and draws the scoreboard right-to-left, bottom-to-top."""
+		if CyGame().isPitbossHost():
+			return
 		timer = BugUtil.Timer("scores")
 		self.hide(screen)
 		self.assignRanks()

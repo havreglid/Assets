@@ -21471,7 +21471,9 @@ void CvPlayer::launch(VictoryTypes eVictory)
 	kTeam.finalizeProjectArtTypes();
 	kTeam.setVictoryCountdown(eVictory, kTeam.getVictoryDelay(eVictory));
 
-	gDLL->getEngineIFace()->AddLaunch(getID());
+  if ( GC.IsGraphicsInitialized()){
+    gDLL->getEngineIFace()->AddLaunch(getID());
+  }
 
 	kTeam.setCanLaunch(eVictory, false);
 

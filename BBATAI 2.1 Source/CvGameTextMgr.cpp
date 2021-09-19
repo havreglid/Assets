@@ -17,6 +17,7 @@
 #include "CvDLLInterfaceIFaceBase.h"
 #include "CvDLLSymbolIFaceBase.h"
 #include "CvInfos.h"
+#include "CvGlobals.h"
 #include "CvXMLLoadUtility.h"
 #include "CvCity.h"
 #include "CvPlayerAI.h"

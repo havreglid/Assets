@@ -6451,7 +6451,19 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		{
 			if (iYield >= GET_PLAYER(ePlayer).getExtraYieldThreshold(eYield))
 			{
-				iYield += GC.getDefineINT("EXTRA_YIELD");
+				// novice: Added global define enabling financial nerf
+				if(GC.getDefineINT("ENABLE_FINANCIAL_RIVERSIDE_PENALTY") > 0) {
+					//T-hawk for Realms Beyond rebalance mod
+					//Change Financial trait: apply commerce bonus only for non river tiles
+					//This change is a bit hacky - it doesn't actually look at the traits held by the player - but only Financial's bonus yield even gets here
+					if (!isRiver() || eYield != YIELD_COMMERCE)
+					{
+						iYield += GC.getDefineINT("EXTRA_YIELD");
+					}
+				}
+				else {
+					iYield += GC.getDefineINT("EXTRA_YIELD");
+				}
 			}
 		}
 

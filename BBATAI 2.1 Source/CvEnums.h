@@ -575,6 +575,8 @@ enum WidgetTypes					// Exposed to Python
 
 //Charriu FreeUnitForEverybody
 	WIDGET_HELP_FREE_UNIT_EVERYBODY,
+//Charriu Lock Specialists
+	WIDGET_LOCK_SPECIALIST,
 #ifdef _USRDLL
 	NUM_WIDGET_TYPES
 #endif
@@ -1137,6 +1139,8 @@ enum TaskTypes				// Exposed to Python
 	TASK_RALLY_PLOT,
 	TASK_CLEAR_RALLY_PLOT,
 	TASK_LIBERATE,
+	//Charriu Lock Specialist
+	TASK_LOCK_SPECIALIST,
 
 #ifdef _USRDLL
 	NUM_TASK_TYPES

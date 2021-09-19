@@ -470,6 +470,10 @@ void CyCityPythonInterface1(python::class_<CyCity>& x)
 		.def("getSpecialistCount", &CyCity::getSpecialistCount, "int (int /*SpecialistTypes*/ eIndex)")
 		.def("alterSpecialistCount", &CyCity::alterSpecialistCount, "int (int /*SpecialistTypes*/ eIndex, int iChange)")
 		.def("getMaxSpecialistCount", &CyCity::getMaxSpecialistCount, "int (int /*SpecialistTypes*/ eIndex)")
+		//Charriu Lock Specialist
+		.def("lockSpecialistForAI", &CyCity::lockSpecialistForAI, "void (int (SpecialistTypes) eIndex)")
+		.def("isSpecialistLockedForAI", &CyCity::isSpecialistLockedForAI, "bool (int (SpecialistTypes) eIndex)")
+
 		.def("isSpecialistValid", &CyCity::isSpecialistValid, "bool (int /*SpecialistTypes*/ eIndex, int iExtra)")
 		.def("getForceSpecialistCount", &CyCity::getForceSpecialistCount, "int (int /*SpecialistTypes*/ eIndex)")
 		.def("isSpecialistForced", &CyCity::isSpecialistForced, "bool ()")

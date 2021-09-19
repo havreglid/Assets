@@ -105,6 +105,7 @@ MAX_SELECTED_TEXT = 5
 MAX_DISPLAYABLE_BUILDINGS = 15
 MAX_DISPLAYABLE_TRADE_ROUTES = 4
 MAX_BONUS_ROWS = 10
+# Charriu Lock Specialist need more room for the lock button
 MAX_CITIZEN_BUTTONS = 8
 
 SELECTION_BUTTON_COLUMNS = 8
@@ -2507,6 +2508,9 @@ class CvMainInterface:
 			screen.hide( szName )
 
 		for i in range( gc.getNumSpecialistInfos() ):
+			#Charriu Lock Specialist
+			szName = "LockSpecialist" + str(i)
+			screen.hide( szName )
 			szName = "IncreaseSpecialist" + str(i)
 			screen.hide( szName )
 			szName = "DecreaseSpecialist" + str(i)
@@ -2639,6 +2643,12 @@ class CvMainInterface:
 						if (pHeadSelectedCity.getOwner() == gc.getGame().getActivePlayer() or gc.getGame().isDebugMode()):
 							iSpecialistCount = pHeadSelectedCity.getSpecialistCount(i)
 					
+							#Charriu Lock Specialist
+							if (i != 0):
+								szName = "LockSpecialist" + str(i)
+								screen.show( szName )
+								screen.setState(szName, pHeadSelectedCity.isSpecialistLockedForAI(i))
+
 							if (pHeadSelectedCity.isSpecialistValid(i, 1) and (pHeadSelectedCity.isCitizensAutomated() or iSpecialistCount < (pHeadSelectedCity.getPopulation() + pHeadSelectedCity.totalFreeSpecialists()))):
 								szName = "IncreaseSpecialist" + str(i)
 								screen.show( szName )
@@ -2648,7 +2658,7 @@ class CvMainInterface:
 								screen.show( szName )
 
 							szBuffer = u"<font=2><color=0,255,155,0>"  + u"%d" %(iSpecialistCount) + u"</color></font>"
-							screen.setText( "CitySpecialistCount" + str(i), "Background", szBuffer, CvUtil.FONT_CENTER_JUSTIFY, xResolution - 74 - 85 * (iCount / self.iMaxPerColumn) , (yResolution - 238 - (26 * (iCount % self.iMaxPerColumn))), 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
+							screen.setText( "CitySpecialistCount" + str(i), "Background", szBuffer, CvUtil.FONT_CENTER_JUSTIFY, xResolution - 74 - 115 * (iCount / self.iMaxPerColumn) , (yResolution - 238 - (26 * (iCount % self.iMaxPerColumn))), 0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1 )
 							screen.setStyle( "CitySpecialistCount" + str(i), "Button_Stone_Style" )
 							screen.show( "CitySpecialistCount" + str(i) )
 						
@@ -5356,19 +5366,25 @@ class CvMainInterface:
 		iCount = 1
 		for i in xrange( gc.getNumSpecialistInfos() ):
 			if (gc.getSpecialistInfo(i).isVisible()):
+				#Charriu Lock Specialist
+				szName = "LockSpecialist" + str(i)
+				szHighlightButton = ArtFileMgr.getInterfaceArtInfo("LOCK_SPECIALIST_HIGHLIGHT").getPath()
+				screen.addCheckBoxGFC( szName, ArtFileMgr.getInterfaceArtInfo("LOCK_SPECIALIST").getPath(), szHighlightButton, xResolution - 106 - 115 * (iCount / self.iMaxPerColumn), (yResolution - 236 - (26 * (iCount % self.iMaxPerColumn))), 20, 20, WidgetTypes.WIDGET_LOCK_SPECIALIST, i, 1, ButtonStyles.BUTTON_STYLE_LABEL )
+				screen.hide( szName )
+
 				# Increase Specialists...
 				szName = "IncreaseSpecialist" + str(i)
-				screen.setButtonGFC( szName, u"", "", xResolution - 46 - 85 * (iCount / self.iMaxPerColumn) , (yResolution - 236 - (26 * (iCount % self.iMaxPerColumn))), 20, 20, WidgetTypes.WIDGET_CHANGE_SPECIALIST, i, 1, ButtonStyles.BUTTON_STYLE_CITY_PLUS )
+				screen.setButtonGFC( szName, u"", "", xResolution - 46 - 115 * (iCount / self.iMaxPerColumn) , (yResolution - 236 - (26 * (iCount % self.iMaxPerColumn))), 20, 20, WidgetTypes.WIDGET_CHANGE_SPECIALIST, i, 1, ButtonStyles.BUTTON_STYLE_CITY_PLUS )
 				screen.hide( szName )
 
 				# Decrease specialists
 				szName = "DecreaseSpecialist" + str(i)
-				screen.setButtonGFC( szName, u"", "", xResolution - 24 - 85 * (iCount / self.iMaxPerColumn), (yResolution - 236 - (26 * (iCount % self.iMaxPerColumn))), 20, 20, WidgetTypes.WIDGET_CHANGE_SPECIALIST, i, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS )
+				screen.setButtonGFC( szName, u"", "", xResolution - 24 - 115 * (iCount / self.iMaxPerColumn), (yResolution - 236 - (26 * (iCount % self.iMaxPerColumn))), 20, 20, WidgetTypes.WIDGET_CHANGE_SPECIALIST, i, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS )
 				screen.hide( szName )
 
 				# Citizen Buttons
 				szName = "CitizenButton" + str(i)
-				screen.addCheckBoxGFC( szName, gc.getSpecialistInfo(i).getTexture(), "", xResolution - 74 - 85 * (iCount / self.iMaxPerColumn), (yResolution - 238 - (26 * (iCount % self.iMaxPerColumn))), 24, 24, WidgetTypes.WIDGET_CITIZEN, i, -1, ButtonStyles.BUTTON_STYLE_LABEL )
+				screen.addCheckBoxGFC( szName, gc.getSpecialistInfo(i).getTexture(), "", xResolution - 74 - 115 * (iCount / self.iMaxPerColumn), (yResolution - 238 - (26 * (iCount % self.iMaxPerColumn))), 24, 24, WidgetTypes.WIDGET_CITIZEN, i, -1, ButtonStyles.BUTTON_STYLE_LABEL )
 				screen.hide( szName )
 				iCount += 1
 

@@ -780,7 +780,8 @@ enum GameOptionTypes				// Exposed to Python
 	GAMEOPTION_RISING_SEAS,
 #endif
 // BUG - Global Warming Mod - end
-
+	//Charriu for RtR mod
+	GAMEOPTION_NO_SCORE,
 	GAMEOPTION_NO_WATER_BARB,
 	GAMEOPTION_NO_BARB_CITIES,
 #ifdef _USRDLL

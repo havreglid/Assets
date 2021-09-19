@@ -433,6 +433,10 @@ public:
 	//Charriu TradeRouteModifierTrait
 	int getExtraBuildingTradeRouteModifier() const;															// Exposed to Python
 	void updateExtraBuildingTradeRouteModifier();
+
+	//Charriu SeaPlotYieldChangesTrait
+	int getExtraBuildingSeaPlotYieldChanges() const;															// Exposed to Python
+	void updateExtraBuildingSeaPlotYieldChanges();
 /********************************************************************************/
 /* 	New Civic AI						19.08.2010				Fuyu			*/
 /********************************************************************************/
@@ -1163,6 +1167,8 @@ protected:
 	int m_iExtraBuildingBadHappiness;
 	//Charriu TradeRouteModifierTrait
 	int m_iExtraBuildingTradeRouteModifier;
+	//Charriu SeaPlotYieldChangesTrait
+	int m_iExtraBuildingSeaPlotYieldChanges;
 	int m_iExtraBuildingGoodHealth;
 	int m_iExtraBuildingBadHealth;
 	int m_iFeatureGoodHappiness;

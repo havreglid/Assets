@@ -6495,6 +6495,18 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 					setListHelp(szHelpString, szText.GetCString(), " " + szBuilding, L", ", (iTradeRouteModifier != iLast));
 					iLast = iTradeRouteModifier;
 				}
+
+				//Charriu SeaPlotYieldChangesTrait
+				int iSeaPlotYieldChanges = GC.getBuildingInfo(eLoopBuilding).getSeaPlotYieldChangesTraits(eTrait);
+				if (iSeaPlotYieldChanges != 0)
+				{
+					szText = gDLL->getText("TXT_KEY_TRAIT_BUILDING_SEAPLOTYIELDCHANGES", iSeaPlotYieldChanges);
+
+					CvWString szBuilding;
+					szBuilding.Format(L"<link=literal>%s</link>", GC.getBuildingInfo(eLoopBuilding).getDescription());
+					setListHelp(szHelpString, szText.GetCString(), szBuilding, L", ", (iSeaPlotYieldChanges != iLast));
+					iLast = iSeaPlotYieldChanges;
+				}
 			}
 		}
 
@@ -10785,6 +10797,15 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 				szBuffer.append(NEWLINE);
 				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_TRADEROUTEMODIFIER_TRAIT", kBuilding.getTradeRouteModifierTraits((TraitTypes)i), kBuilding.getTextKeyWide(), GC.getTraitInfo((TraitTypes)i).getTextKeyWide()));
 			}
+
+			//Charriu SeaPlotYieldChangesTrait
+			if (kBuilding.getSeaPlotYieldChangesTraits((TraitTypes)i) != 0)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_SEAPLOTYIELDCHANGE_TRAIT", kBuilding.getSeaPlotYieldChangesTraits((TraitTypes)i), kBuilding.getTextKeyWide(), GC.getTraitInfo((TraitTypes)i).getTextKeyWide()));
+			}
+		}
+	}
 	//Charriu TradeRouteModifierTrait
 	else if (ePlayer != NO_PLAYER)
 	{
@@ -10797,6 +10818,13 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 				{
 					szBuffer.append(NEWLINE);
 					szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_TRADEROUTEMODIFIER_TRAIT", kBuilding.getTradeRouteModifierTraits((TraitTypes)i), kBuilding.getTextKeyWide(), GC.getTraitInfo((TraitTypes)i).getTextKeyWide()));
+				}
+
+				//Charriu SeaPlotYieldChangesTrait
+				if (kBuilding.getSeaPlotYieldChangesTraits((TraitTypes)i) != 0)
+				{
+					szBuffer.append(NEWLINE);
+					szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_SEAPLOTYIELDCHANGE_TRAIT", kBuilding.getSeaPlotYieldChangesTraits((TraitTypes)i), kBuilding.getTextKeyWide(), GC.getTraitInfo((TraitTypes)i).getTextKeyWide()));
 				}
 			}
 		}

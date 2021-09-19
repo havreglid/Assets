@@ -437,6 +437,8 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iExtraBuildingBadHappiness = 0;
 	//Charriu TradeRouteModifierTrait
 	m_iExtraBuildingTradeRouteModifier = 0;
+	//Charriu SeaPlotYieldChangesTrait
+	m_iExtraBuildingSeaPlotYieldChanges = 0;
 	m_iExtraBuildingGoodHealth = 0;
 	m_iExtraBuildingBadHealth = 0;
 	m_iFeatureGoodHappiness = 0;
@@ -3926,6 +3928,13 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		changeNoUnhealthyPopulationCount((GC.getBuildingInfo(eBuilding).isNoUnhealthyPopulation()) ? iChange : 0);
 		changeBuildingOnlyHealthyCount((GC.getBuildingInfo(eBuilding).isBuildingOnlyHealthy()) ? iChange : 0);
 
+		//Charriu SeaPlotYieldChangesTrait
+		int extraSeaPlotYield = GET_PLAYER(getOwnerINLINE()).getExtraBuildingSeaPlotYieldChanges(eBuilding);
+		if (extraSeaPlotYield != 0)
+		{
+			changeSeaPlotYield((YIELD_COMMERCE), (extraSeaPlotYield * iChange));
+		}
+
 		for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 		{
 			changeSeaPlotYield(((YieldTypes)iI), (GC.getBuildingInfo(eBuilding).getSeaPlotYieldChange(iI) * iChange));
@@ -4005,6 +4014,8 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		updateExtraBuildingHappiness();
 		//Charriu TradeRouteModifierTrait
 		updateExtraBuildingTradeRouteModifier();
+		//Charriu SeaPlotYieldChangesTrait
+		updateExtraBuildingSeaPlotYieldChanges();
 		updateExtraBuildingHealth();
 
 		GET_PLAYER(getOwnerINLINE()).changeAssets(GC.getBuildingInfo(eBuilding).getAssetValue() * iChange);
@@ -7180,6 +7191,35 @@ void CvCity::updateExtraBuildingTradeRouteModifier()
 		FAssert(getExtraBuildingTradeRouteModifier() >= 0);
 	}
 }
+
+//Charriu SeaPlotYieldChangesTrait
+int CvCity::getExtraBuildingSeaPlotYieldChanges() const
+{
+	return m_iExtraBuildingSeaPlotYieldChanges;
+}
+
+void CvCity::updateExtraBuildingSeaPlotYieldChanges()
+{
+	int iNewExtraBuildingSeaPlotYieldChanges;
+	int iChange;
+	int iI;
+
+	iNewExtraBuildingSeaPlotYieldChanges = 0;
+
+	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	{
+		iChange = getNumActiveBuilding((BuildingTypes)iI) * GET_PLAYER(getOwnerINLINE()).getExtraBuildingSeaPlotYieldChanges((BuildingTypes)iI);
+
+		iNewExtraBuildingSeaPlotYieldChanges += iChange;
+	}
+
+	if (getExtraBuildingSeaPlotYieldChanges() != iNewExtraBuildingSeaPlotYieldChanges)
+	{
+		m_iExtraBuildingSeaPlotYieldChanges = iNewExtraBuildingSeaPlotYieldChanges;
+		FAssert(getExtraBuildingSeaPlotYieldChanges() >= 0);
+	}
+}
+
 // BUG - Building Additional Happiness - start
 /*
  * Returns the total additional happiness that adding one of the given buildings will provide.
@@ -9044,6 +9084,19 @@ int CvCity::getAdditionalBaseYieldRateByBuilding(YieldTypes eIndex, BuildingType
 				}
 			}
 		}
+		//Charriu SeaPlotYieldChangesTrait
+		int extraSeaPlotYield = GET_PLAYER(getOwnerINLINE()).getExtraBuildingSeaPlotYieldChanges(eBuilding);
+		if (extraSeaPlotYield != 0 && eIndex == YIELD_COMMERCE)
+		{
+			for (int iI = 0; iI < NUM_CITY_PLOTS; ++iI)
+			{
+				if (isWorkingPlot(iI) && getCityIndexPlot(iI)->isWater() && iExtraRate >= 2)
+				{
+					iExtraRate += extraSeaPlotYield;
+				}
+			}
+		}
+
 		if (kBuilding.getRiverPlotYieldChange(eIndex) != 0)
 		{
 			int iChange = kBuilding.getRiverPlotYieldChange(eIndex);
@@ -14092,6 +14145,8 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iExtraBuildingBadHappiness);
 	//Charriu TradeRouteModifierTrait
 	pStream->Read(&m_iExtraBuildingTradeRouteModifier);
+	//Charriu SeaPlotYieldChangesTrait
+	pStream->Read(&m_iExtraBuildingSeaPlotYieldChanges);
 	pStream->Read(&m_iExtraBuildingGoodHealth);
 	pStream->Read(&m_iExtraBuildingBadHealth);
 	pStream->Read(&m_iFeatureGoodHappiness);
@@ -14334,6 +14389,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iExtraBuildingBadHappiness);
 	//Charriu TradeRouteModifierTrait
 	pStream->Write(m_iExtraBuildingTradeRouteModifier);
+	//Charriu SeaPlotYieldChangesTrait
+	pStream->Write(m_iExtraBuildingSeaPlotYieldChanges);
 	pStream->Write(m_iExtraBuildingGoodHealth);
 	pStream->Write(m_iExtraBuildingBadHealth);
 	pStream->Write(m_iFeatureGoodHappiness);

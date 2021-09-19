@@ -31,6 +31,8 @@
 			<CommerceModifiers/>
 			<FreePromotions/>
 			<FreePromotionUnitCombats/>
+            <FreeSecondPromotions/>
+            <FreeSecondPromotionUnitCombats/>
 		</TraitInfo>
 		<TraitInfo>
 			<Type>TRAIT_AGGRESSIVE</Type>
@@ -71,6 +73,8 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
+            <FreeSecondPromotions/>
+			<FreeSecondPromotionUnitCombats/>
 		</TraitInfo>
 		<TraitInfo>
 			<Type>TRAIT_SPIRITUAL</Type>
@@ -97,6 +101,8 @@
 			<CommerceModifiers/>
 			<FreePromotions/>
 			<FreePromotionUnitCombats/>
+            <FreeSecondPromotions/>
+            <FreeSecondPromotionUnitCombats/>
 		</TraitInfo>
 		<TraitInfo>
 			<Type>TRAIT_EXPANSIVE</Type>
@@ -123,6 +129,8 @@
 			<CommerceModifiers/>
 			<FreePromotions/>
 			<FreePromotionUnitCombats/>
+            <FreeSecondPromotions/>
+            <FreeSecondPromotionUnitCombats/>
 		</TraitInfo>
 		<TraitInfo>
 			<Type>TRAIT_INDUSTRIOUS</Type>
@@ -149,6 +157,8 @@
 			<CommerceModifiers/>
 			<FreePromotions/>
 			<FreePromotionUnitCombats/>
+            <FreeSecondPromotions/>
+            <FreeSecondPromotionUnitCombats/>
 		</TraitInfo>
 		<TraitInfo>
 			<Type>TRAIT_CREATIVE</Type>
@@ -179,6 +189,8 @@
 			<CommerceModifiers/>
 			<FreePromotions/>
 			<FreePromotionUnitCombats/>
+            <FreeSecondPromotions/>
+            <FreeSecondPromotionUnitCombats/>
 		</TraitInfo>
 		<TraitInfo>
 			<Type>TRAIT_FINANCIAL</Type>
@@ -209,6 +221,8 @@
 			<CommerceModifiers/>
 			<FreePromotions/>
 			<FreePromotionUnitCombats/>
+            <FreeSecondPromotions/>
+            <FreeSecondPromotionUnitCombats/>
 		</TraitInfo>
 		<TraitInfo>
 			<Type>TRAIT_ORGANIZED</Type>
@@ -235,6 +249,8 @@
 			<CommerceModifiers/>
 			<FreePromotions/>
 			<FreePromotionUnitCombats/>
+            <FreeSecondPromotions/>
+            <FreeSecondPromotionUnitCombats/>
 		</TraitInfo>
 		<TraitInfo>
 			<Type>TRAIT_CHARISMATIC</Type>
@@ -261,6 +277,8 @@
 			<CommerceModifiers/>
 			<FreePromotions/>
 			<FreePromotionUnitCombats/>
+            <FreeSecondPromotions/>
+            <FreeSecondPromotionUnitCombats/>
 		</TraitInfo>
 		<TraitInfo>
 			<Type>TRAIT_PROTECTIVE</Type>
@@ -310,6 +328,8 @@
 					<bFreePromotionUnitCombat>1</bFreePromotionUnitCombat>
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
+            <FreeSecondPromotions/>
+            <FreeSecondPromotionUnitCombats/>
 		</TraitInfo>
 		<TraitInfo>
 			<Type>TRAIT_IMPERIALIST</Type>
@@ -336,6 +356,8 @@
 			<CommerceModifiers/>
 			<FreePromotions/>
 			<FreePromotionUnitCombats/>
+            <FreeSecondPromotions/>
+            <FreeSecondPromotionUnitCombats/>
 		</TraitInfo>
 	</TraitInfos>
 </Civ4TraitInfos>

@@ -1674,6 +1674,10 @@
 		<DefineName>ENABLE_NO_ESPIONAGE_FIX</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
+	<Define>
+		<DefineName>ENABLE_TREAT_TOROIDAL_MAINTENANCE_AS_CYLINDRICAL</DefineName>
+		<iDefineIntVal>1</iDefineIntVal>
+	</Define>
   	<Define>
     	<DefineName>ENABLE_ALWAYS_SUCCESSFUL_DOMESTIC_RELIGION_SPREAD</DefineName>
     	<iDefineIntVal>1</iDefineIntVal>

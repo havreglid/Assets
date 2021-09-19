@@ -58,6 +58,7 @@
 			<bGovernmentCenter>1</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -228,6 +229,7 @@
 			<bGovernmentCenter>1</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -412,6 +414,7 @@
 			<bGovernmentCenter>1</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -596,6 +599,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -768,6 +772,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -940,6 +945,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -1138,6 +1144,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -1341,6 +1348,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -1513,6 +1521,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -1689,6 +1698,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -1861,6 +1871,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -2032,6 +2043,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -2194,6 +2206,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -2361,6 +2374,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -2541,6 +2555,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>1</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -2733,6 +2748,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -2905,6 +2921,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -3076,6 +3093,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -3242,6 +3260,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -3404,6 +3423,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -3571,6 +3591,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -3740,6 +3761,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -3909,6 +3931,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -4093,6 +4116,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -4272,6 +4296,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -4439,6 +4464,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -4615,6 +4641,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -4787,6 +4814,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -4959,6 +4987,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -5149,6 +5178,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -5345,6 +5375,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -5536,6 +5567,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -5727,6 +5759,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -5894,6 +5927,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -6066,6 +6100,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -6233,6 +6268,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -6400,6 +6436,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -6588,6 +6625,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -6758,6 +6796,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -6933,6 +6972,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -7107,6 +7147,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -7282,6 +7323,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -7449,6 +7491,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -7627,6 +7670,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -7810,6 +7854,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -7997,6 +8042,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -8180,6 +8226,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -8358,6 +8405,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -8528,6 +8576,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -8698,6 +8747,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -8873,6 +8923,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -9058,6 +9109,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -9247,6 +9299,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -9440,6 +9493,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -9624,6 +9678,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -9790,6 +9845,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -9974,6 +10030,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -10140,6 +10197,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -10304,6 +10362,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -10492,6 +10551,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -10678,6 +10738,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -10873,6 +10934,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -11068,6 +11130,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -11261,6 +11324,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -11425,6 +11489,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -11589,6 +11654,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -11775,6 +11841,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -11981,6 +12048,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -12162,6 +12230,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -12343,6 +12412,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -12524,6 +12594,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -12700,6 +12771,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -12881,6 +12953,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -13062,6 +13135,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -13227,6 +13301,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -13395,6 +13470,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -13572,6 +13648,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -13744,6 +13821,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -13919,6 +13997,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -14105,6 +14184,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -14278,6 +14358,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -14462,6 +14543,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -14637,6 +14719,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -14823,6 +14906,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -14996,6 +15080,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -15180,6 +15265,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -15355,6 +15441,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -15541,6 +15628,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -15714,6 +15802,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -15898,6 +15987,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -16073,6 +16163,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -16259,6 +16350,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -16432,6 +16524,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -16616,6 +16709,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -16791,6 +16885,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -16977,6 +17072,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -17150,6 +17246,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -17334,6 +17431,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -17509,6 +17607,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -17695,6 +17794,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -17868,6 +17968,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -18052,6 +18153,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -18227,6 +18329,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -18413,6 +18516,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -18586,6 +18690,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -18770,6 +18875,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -18950,6 +19056,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -19130,6 +19237,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>1</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -19315,6 +19423,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>1</bNoUnhealthyPopulation>
@@ -19490,6 +19599,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -19661,6 +19771,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -19854,6 +19965,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -20033,6 +20145,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -20227,6 +20340,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -20398,6 +20512,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -20573,6 +20688,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -20748,6 +20864,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -20915,6 +21032,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -21089,6 +21207,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>1</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -21268,6 +21387,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -21459,6 +21579,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -21638,6 +21759,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -21822,6 +21944,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -22010,6 +22133,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -22191,6 +22315,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -22365,6 +22490,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -22558,6 +22684,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -22737,6 +22864,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -22916,6 +23044,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -23103,6 +23232,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -23284,6 +23414,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -23463,6 +23594,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>1</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -23642,6 +23774,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -23822,6 +23955,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -24006,6 +24140,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -24190,6 +24325,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -24360,6 +24496,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -24530,6 +24667,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -24700,6 +24838,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -24866,6 +25005,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -25036,6 +25176,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -25205,6 +25346,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -25376,6 +25518,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -25546,6 +25689,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -25730,6 +25874,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -25912,6 +26057,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -26091,6 +26237,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -26275,6 +26422,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -26454,6 +26602,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -26627,6 +26776,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -26806,6 +26956,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -26992,6 +27143,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -27170,6 +27322,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -27348,6 +27501,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -27526,6 +27680,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -27704,6 +27859,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -27882,6 +28038,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -28060,6 +28217,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -28234,6 +28392,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>

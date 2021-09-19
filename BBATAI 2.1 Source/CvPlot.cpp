@@ -1355,6 +1355,16 @@ bool CvPlot::isFreshWater() const
 						return true;
 					}
 				}
+
+				if (pLoopPlot->isCity())
+				{
+					CvCity* pCity = pLoopPlot->getPlotCity();
+
+					if (pCity->isAddsFreshWater())
+					{
+						return true;
+					}
+				}
 			}
 		}
 	}

@@ -1667,6 +1667,10 @@
 		<iDefineIntVal>2</iDefineIntVal>
 	</Define>
 	<Define>
+		<DefineName>CIRCUMNAVIGATE_MIN_WATER_PERCENT</DefineName>
+		<fDefineFloatVal>33</fDefineFloatVal>
+	</Define>
+	<Define>
 		<DefineName>ENABLE_NO_ESPIONAGE_FIX</DefineName>
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>

@@ -25,6 +25,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>
@@ -63,6 +64,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>
@@ -101,6 +103,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>
@@ -139,6 +142,7 @@
 			<bWater>0</bWater>
 			<bGoody>1</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>40</iTilesPerGoody>
@@ -213,6 +217,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<bUseLSystem>1</bUseLSystem>
 			<iAdvancedStartCost>30</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -304,6 +309,7 @@
 			<bWater>1</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<iAdvancedStartCost>30</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>
@@ -385,6 +391,7 @@
 			<bWater>1</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<iAdvancedStartCost>30</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>
@@ -440,6 +447,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<iAdvancedStartCost>24</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>
@@ -595,6 +603,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<iAdvancedStartCost>36</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>
@@ -672,6 +681,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<iAdvancedStartCost>48</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>
@@ -737,6 +747,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<iAdvancedStartCost>30</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>
@@ -796,6 +807,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<iAdvancedStartCost>48</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>
@@ -850,6 +862,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<bUseLSystem>1</bUseLSystem>
 			<iAdvancedStartCost>30</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -956,6 +969,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<iAdvancedStartCost>36</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>
@@ -1026,6 +1040,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<iAdvancedStartCost>24</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>
@@ -1118,6 +1133,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<iAdvancedStartCost>24</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>
@@ -1190,6 +1206,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<iAdvancedStartCost>60</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>
@@ -1249,6 +1266,7 @@
 			<bWater>1</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<iAdvancedStartCost>30</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>
@@ -1299,6 +1317,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<bUseLSystem>1</bUseLSystem>
 			<iAdvancedStartCost>30</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -1360,6 +1379,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<bUseLSystem>1</bUseLSystem>
 			<iAdvancedStartCost>24</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -1412,6 +1432,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<bUseLSystem>1</bUseLSystem>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -1455,6 +1476,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+			<bNotPillage>0</bNotPillage>
 			<bUseLSystem>1</bUseLSystem>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -1507,6 +1529,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+			<bNotPillage>0</bNotPillage>
 			<bUseLSystem>1</bUseLSystem>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -1555,6 +1578,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<bUseLSystem>1</bUseLSystem>
 			<iAdvancedStartCost>60</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -1624,6 +1648,7 @@
 			<bWater>0</bWater>
 			<bGoody>0</bGoody>
 			<bPermanent>0</bPermanent>
+      		<bNotPillage>0</bNotPillage>
 			<bUseLSystem>1</bUseLSystem>
 			<iAdvancedStartCost>48</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>

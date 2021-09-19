@@ -1666,4 +1666,8 @@
 		<DefineName>FORCE_UNOWNED_CITY_TIMER</DefineName>
 		<iDefineIntVal>2</iDefineIntVal>
 	</Define>
+	<Define>
+		<DefineName>ENABLE_NO_ESPIONAGE_FIX</DefineName>
+		<iDefineIntVal>1</iDefineIntVal>
+	</Define>
 </Civ4Defines>

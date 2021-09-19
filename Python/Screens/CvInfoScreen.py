@@ -2366,7 +2366,8 @@ class CvInfoScreen:
 								if (iPlayerTeam == self.iActiveTeam):
 									self.aaWondersBeingBuilt_BUG.append([iProjectLoop,pPlayer.getCivilizationShortDescription(0), pCity, iPlayerLoop])
 
-								if (self.pActiveTeam.isHasMet(iPlayerTeam)
+								if (gc.getGame().isOption(GameOptionTypes.GAMEOPTION_NO_ESPIONAGE) == False
+								and self.pActiveTeam.isHasMet(iPlayerTeam)
 								and self.pActivePlayer.canDoEspionageMission(self.iInvestigateCityMission, pCity.getOwner(), pCity.plot(), -1)
 								and pCity.isRevealed(gc.getGame().getActiveTeam())):
 									self.aaWondersBeingBuilt_BUG.append([iProjectLoop,pPlayer.getCivilizationShortDescription(0), pCity, iPlayerLoop])
@@ -2384,7 +2385,8 @@ class CvInfoScreen:
 									if (iPlayerTeam == self.iActiveTeam):
 										self.aaWondersBeingBuilt_BUG.append([iBuildingLoop,pPlayer.getCivilizationShortDescription(0), pCity, iPlayerLoop])
 
-									if (self.pActiveTeam.isHasMet(iPlayerTeam)
+									if (gc.getGame().isOption(GameOptionTypes.GAMEOPTION_NO_ESPIONAGE) == False
+									and self.pActiveTeam.isHasMet(iPlayerTeam)
 									and self.pActivePlayer.canDoEspionageMission(self.iInvestigateCityMission, pCity.getOwner(), pCity.plot(), -1)
 									and pCity.isRevealed(gc.getGame().getActiveTeam())):
 										self.aaWondersBeingBuilt_BUG.append([iBuildingLoop,pPlayer.getCivilizationShortDescription(0), pCity, iPlayerLoop])
@@ -2406,7 +2408,8 @@ class CvInfoScreen:
 									if (iPlayerTeam == self.iActiveTeam):
 										self.aaWondersBeingBuilt_BUG.append([iBuildingLoop,pPlayer.getCivilizationShortDescription(0), pCity, iPlayerLoop])
 
-									if (self.pActiveTeam.isHasMet(iPlayerTeam)
+									if (gc.getGame().isOption(GameOptionTypes.GAMEOPTION_NO_ESPIONAGE) == False
+									and self.pActiveTeam.isHasMet(iPlayerTeam)
 									and self.pActivePlayer.canDoEspionageMission(self.iInvestigateCityMission, pCity.getOwner(), pCity.plot(), -1)
 									and pCity.isRevealed(gc.getGame().getActiveTeam())):
 										self.aaWondersBeingBuilt_BUG.append([iBuildingLoop,pPlayer.getCivilizationShortDescription(0), pCity, iPlayerLoop])

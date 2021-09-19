@@ -9791,13 +9791,29 @@ int CvCity::getCommerceRateTimes100(CommerceTypes eIndex) const
 	int iRate = m_aiCommerceRate[eIndex];
 	if (GC.getGameINLINE().isOption(GAMEOPTION_NO_ESPIONAGE))
 	{
-		if (eIndex == COMMERCE_CULTURE)
-		{
-			iRate += m_aiCommerceRate[COMMERCE_ESPIONAGE];
+		// novice: Added global define for fixing NO ESPIONAGE
+		if(GC.getDefineINT("ENABLE_NO_ESPIONAGE_FIX") > 0) {
+			//T-hawk for Realms Beyond rebalance mod
+			//Lose the espionage-to-culture conversion for No Espionage
+			/*if (eIndex == COMMERCE_CULTURE)
+			{
+				iRate += m_aiCommerceRate[COMMERCE_ESPIONAGE];
+			}
+			else*/ if (eIndex == COMMERCE_ESPIONAGE)
+			{
+				iRate = 0;
+			}
 		}
-		else if (eIndex == COMMERCE_ESPIONAGE)
-		{
-			iRate = 0;
+		else {
+			// BTS implementation:
+			if (eIndex == COMMERCE_CULTURE)
+			{
+				iRate += m_aiCommerceRate[COMMERCE_ESPIONAGE];
+			}
+			else if (eIndex == COMMERCE_ESPIONAGE)
+			{
+				iRate = 0;
+			}
 		}
 	}
 
@@ -11486,7 +11502,24 @@ void CvCity::setGreatPeopleUnitRate(UnitTypes eIndex, int iNewValue)
 	FAssertMsg(eIndex < GC.getNumUnitInfos(), "eIndex expected to be < GC.getNumUnitInfos()");
 	if (GC.getGameINLINE().isOption(GAMEOPTION_NO_ESPIONAGE) && GC.getUnitInfo(eIndex).getEspionagePoints() > 0)
 	{
-		return;
+		// novice: Added global define for fixing NO ESPIONAGE
+		if(GC.getDefineINT("ENABLE_NO_ESPIONAGE_FIX") > 0) {
+			//T-hawk for Realms Beyond rebalance mod
+			//Great Spy points: don't produce those weird typeless points, instead convert to Merchant points
+			//this is a bit clunky: we have to loop through all unit types looking for the great merchant
+			for (int i = 0; i < (UnitTypes) GC.getNumUnitInfos(); i++)
+			{
+				if(GC.getUnitInfo((UnitTypes)i).getBaseTrade() > 0)
+				{
+					eIndex = (UnitTypes)i;
+					break;
+				}
+			}
+		}
+		else {
+			// BTS implementation:
+			return;
+		}
 	}
 
 	m_paiGreatPeopleUnitRate[eIndex] = iNewValue;
@@ -11668,6 +11701,16 @@ void CvCity::changeMaxSpecialistCount(SpecialistTypes eIndex, int iChange)
 {
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < GC.getNumSpecialistInfos(), "eIndex expected to be < GC.getNumSpecialistInfos()");
+
+
+	// novice: Added global define for fixing NO ESPIONAGE
+	if(GC.getDefineINT("ENABLE_NO_ESPIONAGE_FIX") > 0) {
+		//T-hawk for Realms Beyond rebalance mod
+		//Fix No Espionage: make sure no spy specialist slot ever exists
+		if ((GC.getGameINLINE().isOption(GAMEOPTION_NO_ESPIONAGE))
+			&& GET_PLAYER(getOwnerINLINE()).specialistCommerce(eIndex, COMMERCE_ESPIONAGE) > 0)
+			return;
+	}
 
 	if (iChange != 0)
 	{

@@ -22,6 +22,8 @@
 			<iMaxTeamBuildingProductionModifier>0</iMaxTeamBuildingProductionModifier>
 			<iMaxPlayerBuildingProductionModifier>0</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
+            <ExtraYieldLandThresholds/>
+            <ExtraYieldWaterThresholds/>
 			<TradeYieldModifiers/>
 			<iTradeRouteModifiers>0</iTradeRouteModifiers>
 			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
@@ -46,6 +48,8 @@
 			<iMaxTeamBuildingProductionModifier>0</iMaxTeamBuildingProductionModifier>
 			<iMaxPlayerBuildingProductionModifier>0</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
+            <ExtraYieldLandThresholds/>
+            <ExtraYieldWaterThresholds/>
 			<TradeYieldModifiers/>
 			<iTradeRouteModifiers>0</iTradeRouteModifiers>
 			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
@@ -84,6 +88,8 @@
 			<iMaxTeamBuildingProductionModifier>0</iMaxTeamBuildingProductionModifier>
 			<iMaxPlayerBuildingProductionModifier>0</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
+            <ExtraYieldLandThresholds/>
+            <ExtraYieldWaterThresholds/>
 			<TradeYieldModifiers/>
 			<iTradeRouteModifiers>0</iTradeRouteModifiers>
 			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
@@ -108,6 +114,8 @@
 			<iMaxTeamBuildingProductionModifier>0</iMaxTeamBuildingProductionModifier>
 			<iMaxPlayerBuildingProductionModifier>0</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
+            <ExtraYieldLandThresholds/>
+            <ExtraYieldWaterThresholds/>
 			<TradeYieldModifiers/>
 			<iTradeRouteModifiers>0</iTradeRouteModifiers>
 			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
@@ -132,6 +140,8 @@
 			<iMaxTeamBuildingProductionModifier>50</iMaxTeamBuildingProductionModifier>
 			<iMaxPlayerBuildingProductionModifier>50</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
+            <ExtraYieldLandThresholds/>
+            <ExtraYieldWaterThresholds/>
 			<TradeYieldModifiers/>
 			<iTradeRouteModifiers>0</iTradeRouteModifiers>
 			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
@@ -156,6 +166,8 @@
 			<iMaxTeamBuildingProductionModifier>0</iMaxTeamBuildingProductionModifier>
 			<iMaxPlayerBuildingProductionModifier>0</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
+            <ExtraYieldLandThresholds/>
+            <ExtraYieldWaterThresholds/>
 			<TradeYieldModifiers/>
 			<iTradeRouteModifiers>0</iTradeRouteModifiers>
 			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
@@ -188,6 +200,8 @@
 				<iExtraYieldThreshold>0</iExtraYieldThreshold>
 				<iExtraYieldThreshold>3</iExtraYieldThreshold>
 			</ExtraYieldThresholds>
+            <ExtraYieldLandThresholds/>
+            <ExtraYieldWaterThresholds/>
 			<TradeYieldModifiers/>
 			<iTradeRouteModifiers>0</iTradeRouteModifiers>
 			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
@@ -212,6 +226,8 @@
 			<iMaxTeamBuildingProductionModifier>0</iMaxTeamBuildingProductionModifier>
 			<iMaxPlayerBuildingProductionModifier>0</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
+            <ExtraYieldLandThresholds/>
+            <ExtraYieldWaterThresholds/>
 			<TradeYieldModifiers/>
 			<iTradeRouteModifiers>0</iTradeRouteModifiers>
 			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
@@ -236,6 +252,8 @@
 			<iMaxTeamBuildingProductionModifier>0</iMaxTeamBuildingProductionModifier>
 			<iMaxPlayerBuildingProductionModifier>0</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
+            <ExtraYieldLandThresholds/>
+            <ExtraYieldWaterThresholds/>
 			<TradeYieldModifiers/>
 			<iTradeRouteModifiers>0</iTradeRouteModifiers>
 			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
@@ -260,6 +278,8 @@
 			<iMaxTeamBuildingProductionModifier>0</iMaxTeamBuildingProductionModifier>
 			<iMaxPlayerBuildingProductionModifier>0</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
+            <ExtraYieldLandThresholds/>
+            <ExtraYieldWaterThresholds/>
 			<TradeYieldModifiers/>
 			<iTradeRouteModifiers>0</iTradeRouteModifiers>
 			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
@@ -307,6 +327,8 @@
 			<iMaxTeamBuildingProductionModifier>0</iMaxTeamBuildingProductionModifier>
 			<iMaxPlayerBuildingProductionModifier>0</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
+            <ExtraYieldLandThresholds/>
+            <ExtraYieldWaterThresholds/>
 			<TradeYieldModifiers/>
 			<iTradeRouteModifiers>0</iTradeRouteModifiers>
 			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>

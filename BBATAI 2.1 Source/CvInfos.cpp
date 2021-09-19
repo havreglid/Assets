@@ -16491,6 +16491,10 @@ m_iMaxGlobalBuildingProductionModifier(0),
 m_iMaxTeamBuildingProductionModifier(0),		
 m_iMaxPlayerBuildingProductionModifier(0),
 m_paiExtraYieldThreshold(NULL),
+//Charriu ExtraYieldLandThreshold
+m_paiExtraYieldLandThreshold(NULL),
+//Charriu ExtraYieldWaterThreshold
+m_paiExtraYieldWaterThreshold(NULL),
 m_paiTradeYieldModifier(NULL),
 //Charriu Trade Route Modifier
 m_iTradeRouteModifier(0),
@@ -16513,6 +16517,10 @@ m_pabFreePromotion(NULL)
 CvTraitInfo::~CvTraitInfo()
 {
 	SAFE_DELETE_ARRAY(m_paiExtraYieldThreshold);
+	//Charriu ExtraYieldLandThreshold
+	SAFE_DELETE_ARRAY(m_paiExtraYieldLandThreshold);
+	//Charriu ExtraYieldWaterThreshold
+	SAFE_DELETE_ARRAY(m_paiExtraYieldWaterThreshold);
 	SAFE_DELETE_ARRAY(m_paiTradeYieldModifier);
 	SAFE_DELETE_ARRAY(m_paiCommerceChange);
 	SAFE_DELETE_ARRAY(m_paiCommerceModifier);
@@ -16604,6 +16612,18 @@ int CvTraitInfo::getExtraYieldThreshold(int i) const
 	return m_paiExtraYieldThreshold ? m_paiExtraYieldThreshold[i] : -1; 
 }
 
+//Charriu ExtraYieldLandThreshold
+int CvTraitInfo::getExtraYieldLandThreshold(int i) const
+{
+	return m_paiExtraYieldLandThreshold ? m_paiExtraYieldLandThreshold[i] : -1; 
+}
+
+//Charriu ExtraYieldWaterThreshold
+int CvTraitInfo::getExtraYieldWaterThreshold(int i) const
+{
+	return m_paiExtraYieldWaterThreshold ? m_paiExtraYieldWaterThreshold[i] : -1; 
+}
+
 int CvTraitInfo::getTradeYieldModifier(int i) const
 {
 	return m_paiTradeYieldModifier ? m_paiTradeYieldModifier[i] : -1; 
@@ -16660,6 +16680,28 @@ bool CvTraitInfo::read(CvXMLLoadUtility* pXML)
 	else
 	{
 		pXML->InitList(&m_paiExtraYieldThreshold, NUM_YIELD_TYPES);
+	}
+
+	//Charriu ExtraYieldLandThreshold
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "ExtraYieldLandThresholds"))
+	{
+		pXML->SetYields(&m_paiExtraYieldLandThreshold);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_paiExtraYieldLandThreshold, NUM_YIELD_TYPES);
+	}
+
+	//Charriu ExtraYieldWaterThreshold
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "ExtraYieldWaterThresholds"))
+	{
+		pXML->SetYields(&m_paiExtraYieldWaterThreshold);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_paiExtraYieldWaterThreshold, NUM_YIELD_TYPES);
 	}
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "TradeYieldModifiers"))

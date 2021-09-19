@@ -196,7 +196,14 @@
 			<Help>TXT_KEY_GAME_OPTION_RISING_SEAS_HELP</Help>
 			<bDefault>0</bDefault>
 			<bVisible>1</bVisible>
-		</GameOptionInfo>
+		</GameOptionInfo>		
+        <GameOptionInfo>
+	        <Type>GAMEOPTION_NO_CITY_TRADING</Type>
+	        <Description>TXT_KEY_GAME_OPTION_NO_CITY_TRADING</Description>
+	        <Help>TXT_KEY_GAME_OPTION_NO_CITY_TRADING_HELP</Help>
+   	        <bDefault>0</bDefault>
+ 	        <bVisible>1</bVisible>
+        </GameOptionInfo>
         <GameOptionInfo>
 	        <Type>GAMEOPTION_NO_SCORE</Type>
 	        <Description>TXT_KEY_GAME_OPTION_NO_SCORE</Description>

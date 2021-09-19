@@ -782,6 +782,8 @@ enum GameOptionTypes				// Exposed to Python
 // BUG - Global Warming Mod - end
 	//Charriu for RtR mod
 	GAMEOPTION_NO_SCORE,
+//Plako for RtR mod 11.8.2015
+	GAMEOPTION_NO_CITY_TRADING,
 	GAMEOPTION_NO_WATER_BARB,
 	GAMEOPTION_NO_BARB_CITIES,
 #ifdef _USRDLL

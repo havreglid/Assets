@@ -271,6 +271,7 @@
 		<element type="bFlatlands"/>
 		<element type="bNoRiverSide"/>
 		<element type="bNormalize"/>
+		<element type="bNukeImmune"/>
 		<element type="TerrainBooleans"/>
 		<element type="FeatureBooleans"/>
 		<element type="FeatureTerrainBooleans"/>

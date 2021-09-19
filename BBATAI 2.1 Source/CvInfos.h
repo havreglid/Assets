@@ -3087,6 +3087,8 @@ public:
 	bool isFlatlands() const;						// Exposed to Python
 	bool isNoRiverSide() const;					// Exposed to Python
 	bool isNormalize() const;						// Exposed to Python
+	//Charriu Nuke immune resources
+	bool isNukeImmune() const;						// Exposed to Python
 
 	const TCHAR* getArtDefineTag() const;
 	void setArtDefineTag(const TCHAR* szVal);
@@ -3145,6 +3147,8 @@ protected:
 	bool m_bFlatlands;
 	bool m_bNoRiverSide;
 	bool m_bNormalize;
+	//Charriu Nuke immune resources
+	bool m_bNukeImmune;
 
 	CvString m_szArtDefineTag;
 

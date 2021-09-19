@@ -10574,6 +10574,9 @@ void CvPlayer::setCapitalCity(CvCity* pNewCapitalCity)
 
 	pOldCapitalCity = getCapitalCity();
 
+	if (pOldCapitalCity != NULL) pOldCapitalCity->plot()->updateYield(); // AGDM addition
+	if (pNewCapitalCity != NULL) pNewCapitalCity->plot()->updateYield(); // AGDM addition
+
 	if (pOldCapitalCity != pNewCapitalCity)
 	{
 		bUpdatePlotGroups = ((pOldCapitalCity == NULL) || (pNewCapitalCity == NULL) || (pOldCapitalCity->plot()->getOwnerPlotGroup() != pNewCapitalCity->plot()->getOwnerPlotGroup()));

@@ -211,6 +211,8 @@ void CvTeam::reset(TeamTypes eID, bool bConstructorCall)
 
 	m_bMapCentering = false;
 	m_bCapitulated = false;
+	//Charriu Added for RtR 16.06.2019
+	m_bCircumnavigated = false;
 
 	m_eID = eID;
 
@@ -1396,8 +1398,7 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan, 
 			}
 		}
 
-		GC.getMapINLINE().verifyUnitValidPlot();
-
+		//Charriu fix order of teleporation on war declaration with multiple players
 		for (iI = 0; iI < MAX_PLAYERS; iI++)
 		{
 			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
@@ -1405,6 +1406,8 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan, 
 				GET_PLAYER((PlayerTypes)iI).verifyUnitStacksValid();
 			}
 		}
+
+		GC.getMapINLINE().verifyUnitValidPlot();
 
 		GC.getGameINLINE().AI_makeAssignWorkDirty();
 
@@ -3652,6 +3655,21 @@ void CvTeam::setMapCentering(bool bNewValue)
 		{ 
 			gDLL->getInterfaceIFace()->setDirty(MinimapSection_DIRTY_BIT, true);
 		}
+	}
+}
+
+//Charriu Added for RtR 16.06.2019
+bool CvTeam::isCircumNavigated() const
+{
+	return m_bCircumnavigated;
+}
+
+//Charriu Added for RtR 16.06.2019
+void CvTeam::setCircumNavigated(bool bNewValue)
+{
+	if (isCircumNavigated() != bNewValue)
+	{
+		m_bCircumnavigated = bNewValue;
 	}
 }
 
@@ -5918,6 +5936,14 @@ void CvTeam::testCircumnavigated()
 		return;
 	}
 
+	if (GC.getDefineINT("CIRCUM_FOR_EVERYBODY") > 0)
+	{
+		if (isCircumNavigated())
+		{
+			return;
+		}
+	}
+
 	if (GC.getMapINLINE().isWrapXINLINE())
 	{
 		for (iX = 0; iX < GC.getMapINLINE().getGridWidthINLINE(); iX++)
@@ -5970,32 +5996,81 @@ void CvTeam::testCircumnavigated()
 
 	if (GC.getGameINLINE().getElapsedGameTurns() > 0)
 	{
-		if (GC.getDefineINT("CIRCUMNAVIGATE_FREE_MOVES") != 0)
+		//Charriu unlock circumnavigation with tech
+		bool techUnlocked = false;
+		for (int iTech = 0; iTech < GC.getNumTechInfos(); iTech++)
 		{
-			changeExtraMoves(DOMAIN_SEA, GC.getDefineINT("CIRCUMNAVIGATE_FREE_MOVES"));
-
-			for (int iI = 0; iI < MAX_PLAYERS; iI++)
+			if (iTech == GC.getInfoTypeForString(GC.getDefineSTRING("UNLOCK_CIRCUMNAVIGATION_WITH_TECH")))
 			{
-				if (GET_PLAYER((PlayerTypes)iI).isAlive())
+				if (isHasTech((TechTypes)iTech))
 				{
-					if (getID() == GET_PLAYER((PlayerTypes)iI).getTeam())
-					{
-						szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_CIRC_GLOBE", GC.getDefineINT("CIRCUMNAVIGATE_FREE_MOVES"));
-					}
-					else if (isHasMet(GET_PLAYER((PlayerTypes)iI).getTeam()))
-					{
-						szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_CIRC_GLOBE", getName().GetCString());
-					}
-					else
-					{
-						szBuffer = gDLL->getText("TXT_KEY_MISC_UNKNOWN_CIRC_GLOBE");
-					}
-					gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_GLOBECIRCUMNAVIGATED", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+					techUnlocked = true;
+					break;
 				}
 			}
+		}
 
-			szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_CIRC_GLOBE", getName().GetCString());
-			GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+		if (techUnlocked) 
+		{
+			if (GC.getDefineINT("CIRCUMNAVIGATE_FREE_MOVES") != 0)
+			{
+				setCircumNavigated(true);
+				changeExtraMoves(DOMAIN_SEA, GC.getDefineINT("CIRCUMNAVIGATE_FREE_MOVES"));
+
+				for (int iI = 0; iI < MAX_PLAYERS; iI++)
+				{
+					if (GET_PLAYER((PlayerTypes)iI).isAlive())
+					{
+						if (getID() == GET_PLAYER((PlayerTypes)iI).getTeam())
+						{
+							szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_CIRC_GLOBE", GC.getDefineINT("CIRCUMNAVIGATE_FREE_MOVES"));
+						}
+						else if (isHasMet(GET_PLAYER((PlayerTypes)iI).getTeam()))
+						{
+							szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_CIRC_GLOBE", getName().GetCString());
+						}
+						else
+						{
+							szBuffer = gDLL->getText("TXT_KEY_MISC_UNKNOWN_CIRC_GLOBE");
+						}
+						gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_GLOBECIRCUMNAVIGATED", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+					}
+				}
+
+				szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_CIRC_GLOBE", getName().GetCString());
+				GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+			}
+
+			if (GC.getDefineINT("CIRCUMNAVIGATE_FREE_TRADE_ROUTE") != 0)
+			{
+				setCircumNavigated(true);
+			
+				for (int iI = 0; iI < MAX_PLAYERS; iI++)
+				{
+					if (GET_PLAYER((PlayerTypes)iI).isAlive())
+					{
+						if (getID() == GET_PLAYER((PlayerTypes)iI).getTeam())
+						{
+							GET_PLAYER((PlayerTypes)iI).changeCoastalTradeRoutes(GC.getDefineINT("CIRCUMNAVIGATE_FREE_TRADE_ROUTE"));
+							szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_CIRC_GLOBE_TRADE", GC.getDefineINT("CIRCUMNAVIGATE_FREE_TRADE_ROUTE"));
+							gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_GLOBECIRCUMNAVIGATED", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+						}
+						else if (isHasMet(GET_PLAYER((PlayerTypes)iI).getTeam()))
+						{
+							//Don't show circumnavigation message to others, treat it as a national wonder
+							//szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_CIRC_GLOBE", getName().GetCString());
+						}
+						else
+						{
+							//Don't show circumnavigation message to others, treat it as a national wonder
+							//szBuffer = gDLL->getText("TXT_KEY_MISC_UNKNOWN_CIRC_GLOBE");
+						}
+					}
+				}
+
+				szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_CIRC_GLOBE", getName().GetCString());
+				GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+			}
 		}
 	}
 }
@@ -6570,6 +6645,7 @@ void CvTeam::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iRiverTradeCount);
 	pStream->Read(&m_iEspionagePointsEver);
 
+	pStream->Read(&m_bCircumnavigated);
 	pStream->Read(&m_bMapCentering);
 	pStream->Read(&m_bCapitulated);
 
@@ -6670,6 +6746,7 @@ void CvTeam::write(FDataStreamBase* pStream)
 	pStream->Write(m_iRiverTradeCount);
 	pStream->Write(m_iEspionagePointsEver);
 
+	pStream->Write(m_bCircumnavigated);
 	pStream->Write(m_bMapCentering);
 	pStream->Write(m_bCapitulated);
 

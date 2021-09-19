@@ -3993,10 +3993,12 @@ bool CvGame::circumnavigationAvailable() const
 {
 	if (isCircumnavigated())
 	{
-		return false;
+		//Charriu Uncommented for RtR 16.06.2019
+		if (GC.getDefineINT("CIRCUM_FOR_EVERYBODY") < 1)
+			return false;
 	}
 
-	if (GC.getDefineINT("CIRCUMNAVIGATE_FREE_MOVES") == 0)
+	if (GC.getDefineINT("CIRCUMNAVIGATE_FREE_MOVES") == 0 && GC.getDefineINT("CIRCUMNAVIGATE_FREE_TRADE_ROUTE") == 0)
 	{
 		return false;
 	}

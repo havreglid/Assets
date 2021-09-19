@@ -6555,6 +6555,11 @@ void CvGame::createBarbarianCities()
 		return;
 	}
 
+	if (isOption(GAMEOPTION_NO_BARB_CITIES))
+	{
+		return;
+	}
+
 	lResult = 0;
 	gDLL->getPythonIFace()->callFunction(PYGameModule, "createBarbarianCities", NULL, &lResult);
 	if (lResult == 1)

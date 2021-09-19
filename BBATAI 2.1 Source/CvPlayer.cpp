@@ -5096,7 +5096,7 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 		break;
 
 	case TRADE_WAR:
-		if (!(GET_TEAM(getTeam()).isHuman()))
+		if (!(GET_TEAM(getTeam()).isHuman()) || GC.getGame().isOption(GAMEOPTION_TRUE_AI_DIPLO))
 		{
 			if (!(GET_TEAM(getTeam()).isAVassal()))
 			{
@@ -5115,7 +5115,7 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 		break;
 
 	case TRADE_EMBARGO:
-		if (!(GET_TEAM(getTeam()).isHuman()))
+		if (!(GET_TEAM(getTeam()).isHuman()) || GC.getGame().isOption(GAMEOPTION_TRUE_AI_DIPLO))
 		{
 			if (GET_TEAM(getTeam()).isHasMet((TeamTypes)(item.m_iData)) && GET_TEAM(GET_PLAYER(eWhoTo).getTeam()).isHasMet((TeamTypes)(item.m_iData)))
 			{
@@ -5136,7 +5136,7 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 /* original bts code
 		if (!(GET_TEAM(getTeam()).isHuman()))
 */
-		if (!(GET_TEAM(getTeam()).isHuman()) || (getTeam() == GET_PLAYER(eWhoTo).getTeam()))
+        if (!(GET_TEAM(getTeam()).isHuman()) || (getTeam() == GET_PLAYER(eWhoTo).getTeam()) || GC.getGame().isOption(GAMEOPTION_TRUE_AI_DIPLO))
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
@@ -5163,7 +5163,7 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 /* original bts code
 		if (!(GET_TEAM(getTeam()).isHuman()))
 */
-		if (!(GET_TEAM(getTeam()).isHuman()) || (getTeam() == GET_PLAYER(eWhoTo).getTeam()))
+        if (!(GET_TEAM(getTeam()).isHuman()) || (getTeam() == GET_PLAYER(eWhoTo).getTeam()) || GC.getGame().isOption(GAMEOPTION_TRUE_AI_DIPLO))
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
@@ -22867,7 +22867,7 @@ void CvPlayer::buildTradeTable(PlayerTypes eOtherPlayer, CLinkList<TradeData>& o
 			break;
 
 		case TRADE_PEACE:
-			if (!isHuman())
+			if (!isHuman() || GC.getGame().isOption(GAMEOPTION_TRUE_AI_DIPLO))
 			{
 				for (int j = 0; j < MAX_CIV_TEAMS; j++)
 				{
@@ -22888,7 +22888,7 @@ void CvPlayer::buildTradeTable(PlayerTypes eOtherPlayer, CLinkList<TradeData>& o
 			break;
 
 		case TRADE_WAR:
-			if (!isHuman())
+			if (!isHuman() || GC.getGame().isOption(GAMEOPTION_TRUE_AI_DIPLO))
 			{
 				for (int j = 0; j < MAX_CIV_TEAMS; j++)
 				{
@@ -22909,7 +22909,7 @@ void CvPlayer::buildTradeTable(PlayerTypes eOtherPlayer, CLinkList<TradeData>& o
 			break;
 
 		case TRADE_EMBARGO:
-			if (!isHuman())
+			if (!isHuman() || GC.getGame().isOption(GAMEOPTION_TRUE_AI_DIPLO))
 			{
 				for (int j = 0; j < MAX_CIV_TEAMS; j++)
 				{

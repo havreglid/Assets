@@ -1695,6 +1695,10 @@
 		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
 	<Define>
+		<DefineName>BARBS_NEVER_RAZE</DefineName>
+		<iDefineIntVal>1</iDefineIntVal>
+	</Define>
+	<Define>
 		<DefineName>UNLOCK_CIRCUMNAVIGATION_WITH_TECH</DefineName>
 		<DefineTextVal>TECH_OPTICS</DefineTextVal>
 	</Define>

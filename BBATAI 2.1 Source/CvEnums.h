@@ -781,6 +781,7 @@ enum GameOptionTypes				// Exposed to Python
 #endif
 // BUG - Global Warming Mod - end
 
+	GAMEOPTION_NO_WATER_BARB,
 	GAMEOPTION_NO_BARB_CITIES,
 #ifdef _USRDLL
 	NUM_GAMEOPTION_TYPES

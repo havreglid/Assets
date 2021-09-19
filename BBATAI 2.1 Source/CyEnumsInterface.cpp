@@ -575,6 +575,7 @@ void CyEnumsPythonInterface()
 #endif
 // BUG - Global Warming Mod - end
 		.value("GAMEOPTION_NO_BARB_CITIES", GAMEOPTION_NO_BARB_CITIES)
+		.value("GAMEOPTION_NO_WATER_BARB", GAMEOPTION_NO_WATER_BARB)
 		.value("NUM_GAMEOPTION_TYPES", NUM_GAMEOPTION_TYPES)
 		;
 

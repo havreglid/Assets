@@ -6724,6 +6724,10 @@ void CvGame::createBarbarianUnits()
 			{
 				eBarbUnitAI = UNITAI_ATTACK_SEA;
 				iDivisor = GC.getHandicapInfo(getHandicapType()).getUnownedWaterTilesPerBarbarianUnit();
+				if (isOption(GAMEOPTION_NO_WATER_BARB))
+				{
+					iDivisor = 0;
+				}
 			}
 			else
 			{

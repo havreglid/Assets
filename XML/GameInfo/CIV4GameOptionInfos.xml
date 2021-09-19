@@ -198,6 +198,13 @@
 			<bVisible>1</bVisible>
 		</GameOptionInfo>
         <GameOptionInfo>
+            <Type>GAMEOPTION_NO_WATER_BARB</Type>
+            <Description>TXT_KEY_GAME_OPTION_NO_WATER_BARB</Description>
+            <Help>TXT_KEY_GAME_OPTION_NO_WATER_BARB</Help>
+            <bDefault>0</bDefault>
+            <bVisible>1</bVisible>
+        </GameOptionInfo>
+        <GameOptionInfo>
             <Type>GAMEOPTION_NO_BARB_CITIES</Type>
             <Description>TXT_KEY_GAME_OPTION_NO_BARB_CITIES</Description>
             <Help>TXT_KEY_GAME_OPTION_NO_BARB_CITIES</Help>

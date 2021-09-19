@@ -6205,6 +6205,10 @@ void CvGame::doHolyCity()
 	int iValue;
 	int iBestValue;
 	int iI, iJ, iK;
+	//Charriu for RtR mod equalize religion spread in late starts
+	std::vector<int> foundedReligions;
+	int currentReligion = 0;
+	int iNumSettlers = GC.getEraInfo(getStartEra()).getStartingUnitMultiplier();
 
 	lResult = 0;
 	gDLL->getPythonIFace()->callFunction(PYGameModule, "doHolyCity", NULL, &lResult);
@@ -6310,11 +6314,84 @@ void CvGame::doHolyCity()
 					if (NO_RELIGION != eReligion)
 					{
 						GET_PLAYER(eBestPlayer).foundReligion(eReligion, (ReligionTypes)iI, false);
+						//Charriu for RtR mod equalize religion spread in late starts
+						foundedReligions.push_back(iI);
 					}
 				}
 			}
 		}
 	}
+	//Charriu for RtR mod equalize religion spread in late starts Start
+	if (getElapsedGameTurns() > 5 || isOption(GAMEOPTION_ADVANCED_START))
+	{
+		return;
+	}
+
+	if (foundedReligions.size() == 0)
+	{
+		return;
+	}
+
+	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		{
+			if (GET_PLAYER((PlayerTypes)iI).getNumCities() > 0)
+			{
+				CvCity* pCapital = GET_PLAYER((PlayerTypes)iI).getCapitalCity();
+				bool playerHasHolyCity = false;
+				int playersReligion = -1;
+				
+				for (iJ = 0; iJ < foundedReligions.size(); iJ++)
+				{
+					if (GET_PLAYER((PlayerTypes)iI).hasHolyCity((ReligionTypes)foundedReligions[iJ]))
+					{
+						playerHasHolyCity = true;
+						playersReligion = foundedReligions[iJ];
+						break;
+					}
+				}
+				
+				for (iJ = 0; iJ < GC.getNumUnitClassInfos(); iJ++)
+				{
+					UnitTypes eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(GET_PLAYER((PlayerTypes)iI).getCivilizationType()).getCivilizationUnits(iJ)));
+
+					if (eLoopUnit != NO_UNIT)
+					{
+						CvUnitInfo& kUnitInfo = GC.getUnitInfo(eLoopUnit);
+
+						if (playerHasHolyCity)
+						{
+							if (kUnitInfo.getReligionSpreads((ReligionTypes)playersReligion) > 0)
+							{
+								for (iK = 0; iK < iNumSettlers - 1; iK++)
+								{
+									GET_PLAYER((PlayerTypes)iI).initUnit(eLoopUnit,pCapital->getX_INLINE(),pCapital->getY_INLINE());
+								}
+							}
+						}
+						else
+						{
+							if (kUnitInfo.getReligionSpreads((ReligionTypes)foundedReligions[currentReligion]) > 0)
+							{
+								for (iK = 0; iK < iNumSettlers; iK++)
+								{
+									GET_PLAYER((PlayerTypes)iI).initUnit(eLoopUnit,pCapital->getX_INLINE(),pCapital->getY_INLINE());
+								}
+
+								currentReligion++;
+								if (currentReligion >= foundedReligions.size())
+									currentReligion = 0;
+
+								break;
+							}							
+						}
+					}
+				}
+			}
+		}
+	}
+	//Charriu for RtR mod equalize religion spread in late starts End
 }
 
 

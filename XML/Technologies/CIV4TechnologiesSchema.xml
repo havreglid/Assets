@@ -17,6 +17,7 @@
 	<ElementType name="iAdvancedStartCostIncrease" content="textOnly" dt:type="int"/>
 	<ElementType name="Era" content="textOnly"/>
 	<ElementType name="FirstFreeUnitClass" content="textOnly"/>
+	<ElementType name="FreeUnitEverybodyClass" content="textOnly"/>
 	<ElementType name="iFeatureProductionModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iWorkerSpeedModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iTradeRoutes" content="textOnly" dt:type="int"/>
@@ -108,6 +109,7 @@
 		<element type="iAdvancedStartCostIncrease"/>
 		<element type="Era"/>
 		<element type="FirstFreeUnitClass"/>
+		<element type="FreeUnitEverybodyClass"/>
 		<element type="iFeatureProductionModifier" minOccurs="0"/>
 		<element type="iWorkerSpeedModifier"/>
 		<element type="iTradeRoutes"/>

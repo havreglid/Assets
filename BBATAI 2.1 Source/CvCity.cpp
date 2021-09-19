@@ -435,6 +435,8 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iBuildingBadHappiness = 0;
 	m_iExtraBuildingGoodHappiness = 0;
 	m_iExtraBuildingBadHappiness = 0;
+	//Charriu TradeRouteModifierTrait
+	m_iExtraBuildingTradeRouteModifier = 0;
 	m_iExtraBuildingGoodHealth = 0;
 	m_iExtraBuildingBadHealth = 0;
 	m_iFeatureGoodHappiness = 0;
@@ -4001,6 +4003,8 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		}
 
 		updateExtraBuildingHappiness();
+		//Charriu TradeRouteModifierTrait
+		updateExtraBuildingTradeRouteModifier();
 		updateExtraBuildingHealth();
 
 		GET_PLAYER(getOwnerINLINE()).changeAssets(GC.getBuildingInfo(eBuilding).getAssetValue() * iChange);
@@ -7148,6 +7152,34 @@ int CvCity::getAdditionalHealthByPlayerBuildingOnlyHealthy(int iIgnoreBuildingOn
 /* 	New Civic AI												END 			*/
 /********************************************************************************/
 
+
+//Charriu TradeRouteModifierTrait
+int CvCity::getExtraBuildingTradeRouteModifier() const
+{
+	return m_iExtraBuildingTradeRouteModifier;
+}
+
+void CvCity::updateExtraBuildingTradeRouteModifier()
+{
+	int iNewExtraBuildingTradeRouteModifier;
+	int iChange;
+	int iI;
+
+	iNewExtraBuildingTradeRouteModifier = 0;
+
+	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	{
+		iChange = getNumActiveBuilding((BuildingTypes)iI) * GET_PLAYER(getOwnerINLINE()).getExtraBuildingTradeRouteModifier((BuildingTypes)iI);
+
+		iNewExtraBuildingTradeRouteModifier += iChange;
+	}
+
+	if (getExtraBuildingTradeRouteModifier() != iNewExtraBuildingTradeRouteModifier)
+	{
+		m_iExtraBuildingTradeRouteModifier = iNewExtraBuildingTradeRouteModifier;
+		FAssert(getExtraBuildingTradeRouteModifier() >= 0);
+	}
+}
 // BUG - Building Additional Happiness - start
 /*
  * Returns the total additional happiness that adding one of the given buildings will provide.
@@ -9050,6 +9082,9 @@ int CvCity::getAdditionalBaseYieldRateByBuilding(YieldTypes eIndex, BuildingType
 					int iTradeYield = iTradeProfit * iTradeModifier / iTradeProfitDivisor * iPlayerTradeYieldModifier / 100;
 					iTotalTradeYield += iTradeYield;
 
+					//Charriu TradeRouteModifierTrait
+					iTradeModifier += GET_PLAYER(getOwnerINLINE()).getExtraBuildingTradeRouteModifier(eBuilding);
+
 					iTradeModifier += kBuilding.getTradeRouteModifier();
 					if (pCity->getOwnerINLINE() != getOwnerINLINE())
 					{
@@ -9375,6 +9410,12 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 
 	iModifier += getPopulationTradeModifier();
 
+	//Charriu TradeRouteModifierTrait
+	iModifier += getExtraBuildingTradeRouteModifier();
+
+	//Charriu Trade Route Modifier
+	iModifier += getTraitTradeModifier();
+
 	if (isConnectedToCapital())
 	{
 		iModifier += GC.getDefineINT("CAPITAL_TRADE_MODIFIER");
@@ -9393,6 +9434,11 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 
 			iModifier += getPeaceTradeModifier(pOtherCity->getTeam());
 		}
+		else
+		{
+			//Charriu Domestic Trade Route Modifier
+			iModifier += getTraitDomesticTradeModifier();
+		}
 	}
 
 	return iModifier;
@@ -9401,6 +9447,18 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 int CvCity::getPopulationTradeModifier() const
 {
 	return std::max(0, (getPopulation() + GC.getDefineINT("OUR_POPULATION_TRADE_MODIFIER_OFFSET")) * GC.getDefineINT("OUR_POPULATION_TRADE_MODIFIER"));
+}
+
+//Charriu Trade Route Modifier
+int CvCity::getTraitTradeModifier() const
+{
+	return std::max(0, GET_PLAYER(getOwnerINLINE()).getTradeRouteModifier());
+}
+
+//Charriu Domestic Trade Route Modifier
+int CvCity::getTraitDomesticTradeModifier() const
+{
+	return std::max(0, GET_PLAYER(getOwnerINLINE()).getDomesticTradeRouteModifier());
 }
 
 int CvCity::getPeaceTradeModifier(TeamTypes eTeam) const
@@ -14032,6 +14090,8 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iBuildingBadHappiness);
 	pStream->Read(&m_iExtraBuildingGoodHappiness);
 	pStream->Read(&m_iExtraBuildingBadHappiness);
+	//Charriu TradeRouteModifierTrait
+	pStream->Read(&m_iExtraBuildingTradeRouteModifier);
 	pStream->Read(&m_iExtraBuildingGoodHealth);
 	pStream->Read(&m_iExtraBuildingBadHealth);
 	pStream->Read(&m_iFeatureGoodHappiness);
@@ -14272,6 +14332,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iBuildingBadHappiness);
 	pStream->Write(m_iExtraBuildingGoodHappiness);
 	pStream->Write(m_iExtraBuildingBadHappiness);
+	//Charriu TradeRouteModifierTrait
+	pStream->Write(m_iExtraBuildingTradeRouteModifier);
 	pStream->Write(m_iExtraBuildingGoodHealth);
 	pStream->Write(m_iExtraBuildingBadHealth);
 	pStream->Write(m_iFeatureGoodHappiness);

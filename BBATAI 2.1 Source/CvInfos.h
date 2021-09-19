@@ -1748,6 +1748,8 @@ public:
 	int getProductionTraits(int i) const;				// Exposed to Python
 	int getHappinessTraits(int i) const;				// Exposed to Python
 	int getBuildingHappinessChanges(int i) const;				// Exposed to Python
+	//Charriu TradeRouteModifierTrait
+	int getTradeRouteModifierTraits(int i) const;				// Exposed to Python
 	int getPrereqNumOfBuildingClass(int i) const;				// Exposed to Python
 	int getFlavorValue(int i) const;				// Exposed to Python
 	int getImprovementFreeSpecialist(int i) const;				// Exposed to Python
@@ -1913,6 +1915,8 @@ protected:
 	int* m_piPrereqOrBonuses;
 	int* m_piProductionTraits;
 	int* m_piHappinessTraits;
+	//Charriu TradeRouteModifierTrait
+	int* m_piTradeRouteModifierTraits;
 	int* m_piSeaPlotYieldChange;
 	int* m_piRiverPlotYieldChange;
 	int* m_piGlobalSeaPlotYieldChange;
@@ -4239,6 +4243,11 @@ public:
 	int getHappiness() const;				// Exposed to Python
 	int getMaxAnarchy() const;				// Exposed to Python
 	int getUpkeepModifier() const;				// Exposed to Python
+	//Charriu Trade Route Modifier
+	int getTradeRouteModifier() const;				// Exposed to Python
+	//Charriu Domestic Trade Route Modifier
+	int getDomesticTradeRouteModifier() const;				// Exposed to Python
+	//Charriu Unit Maintenance Modifier
 	int getLevelExperienceModifier() const;				// Exposed to Python
 	int getGreatPeopleRateModifier() const;				// Exposed to Python
 	int getGreatGeneralRateModifier() const;				// Exposed to Python
@@ -4283,6 +4292,10 @@ protected:
 
 	int* m_paiExtraYieldThreshold;
 	int* m_paiTradeYieldModifier;
+	//Charriu Trade Route Modifier
+	int m_iTradeRouteModifier;
+	//Charriu Domestic Trade Route Modifier
+	int m_iDomesticTradeRouteModifier;
 	int* m_paiCommerceChange;
 	int* m_paiCommerceModifier;
 

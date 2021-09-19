@@ -139,6 +139,8 @@ public:
 	void updateYield();
 	void updateMaintenance();
 	void updatePowerHealth();
+	//Charriu TradeRouteModifierTrait
+	void updateExtraBuildingTradeRouteModifier();
 /********************************************************************************/
 /* 	New Civic AI						02.08.2010				Fuyu			*/
 /********************************************************************************/
@@ -576,6 +578,14 @@ public:
 	int getUpkeepModifier() const;																																						// Exposed to Python
 	void changeUpkeepModifier(int iChange);
 
+	//Charriu Trade Route Modifier
+	int getTradeRouteModifier() const;																																						// Exposed to Python
+	void changeTradeRouteModifier(int iChange);
+
+	//Charriu Domestic Trade Route Modifier
+	int getDomesticTradeRouteModifier() const;																																						// Exposed to Python
+	void changeDomesticTradeRouteModifier(int iChange);
+
 	int getLevelExperienceModifier() const;																																						// Exposed to Python
 	void changeLevelExperienceModifier(int iChange);
 
@@ -866,6 +876,10 @@ public:
 /********************************************************************************/
 /* 	New Civic AI												END 			*/
 /********************************************************************************/
+	
+	//Charriu TradeRouteModifierTrait
+	int getExtraBuildingTradeRouteModifier(BuildingTypes eIndex) const;																				// Exposed to Python
+	void changeExtraBuildingTradeRouteModifier(BuildingTypes eIndex, int iChange);
 	int getExtraBuildingHealth(BuildingTypes eIndex) const;																				// Exposed to Python
 /********************************************************************************/
 /* 	New Civic AI						02.08.2010				Fuyu			*/
@@ -1375,6 +1389,10 @@ protected:
 	int* m_aiCapitalYieldRateModifier;
 	int* m_aiExtraYieldThreshold;
 	int* m_aiTradeYieldModifier;
+	//Charriu Trade Route Modifier
+	int m_iTradeRouteModifier;
+	//Charriu Domestic Trade Route Modifier
+	int m_iDomesticTradeRouteModifier;
 	int* m_aiFreeCityCommerce;
 	int* m_aiCommercePercent;
 	int* m_aiCommerceRate;
@@ -1396,6 +1414,8 @@ protected:
 	int* m_paiImprovementCount;
 	int* m_paiFreeBuildingCount;
 	int* m_paiExtraBuildingHappiness;
+	//Charriu TradeRouteModifierTrait
+	int* m_paiExtraBuildingTradeRouteModifier;
 	int* m_paiExtraBuildingHealth;
 	int** m_paiExtraBuildingYield;
 	int** m_paiExtraBuildingCommerce;

@@ -429,6 +429,10 @@ public:
 
 	int getExtraBuildingGoodHappiness() const;														// Exposed to Python
 	int getExtraBuildingBadHappiness() const;															// Exposed to Python
+
+	//Charriu TradeRouteModifierTrait
+	int getExtraBuildingTradeRouteModifier() const;															// Exposed to Python
+	void updateExtraBuildingTradeRouteModifier();
 /********************************************************************************/
 /* 	New Civic AI						19.08.2010				Fuyu			*/
 /********************************************************************************/
@@ -701,6 +705,10 @@ public:
 	int getTradeYield(YieldTypes eIndex) const;																	// Exposed to Python
 	int totalTradeModifier(CvCity* pOtherCity = NULL) const;																							// Exposed to Python
 	int getPopulationTradeModifier() const;
+	//Charriu Trade Route Modifier
+	int getTraitTradeModifier() const;
+	//Charriu Domestic Trade Route Modifier
+	int getTraitDomesticTradeModifier() const;
 	int getPeaceTradeModifier(TeamTypes eTeam) const;
 	int getBaseTradeProfit(CvCity* pCity) const;
 // BUG - Fractional Trade Routes - start
@@ -1153,6 +1161,8 @@ protected:
 	int m_iBuildingBadHappiness;
 	int m_iExtraBuildingGoodHappiness;
 	int m_iExtraBuildingBadHappiness;
+	//Charriu TradeRouteModifierTrait
+	int m_iExtraBuildingTradeRouteModifier;
 	int m_iExtraBuildingGoodHealth;
 	int m_iExtraBuildingBadHealth;
 	int m_iFeatureGoodHappiness;

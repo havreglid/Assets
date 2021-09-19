@@ -6294,6 +6294,18 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 			}
 		}
 
+		//Charriu Trade Route Modifier
+		if (GC.getTraitInfo(eTrait).getTradeRouteModifier() != 0)
+		{
+			szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_TRADE_ROUTE_MODIFIER", GC.getTraitInfo(eTrait).getTradeRouteModifier()));
+		}
+
+		//Charriu Domestic Trade Route Modifier
+		if (GC.getTraitInfo(eTrait).getDomesticTradeRouteModifier() != 0)
+		{
+			szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_DOMESTIC_TRADE_ROUTE_MODIFIER", GC.getTraitInfo(eTrait).getDomesticTradeRouteModifier()));
+		}
+
 		// Free Promotions
 		bool bFoundPromotion = false;
 		szTempBuffer.clear();
@@ -6470,6 +6482,18 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 					szBuilding.Format(L"<link=literal>%s</link>", GC.getBuildingInfo(eLoopBuilding).getDescription());
 					setListHelp(szHelpString, szText.GetCString(), szBuilding, L", ", (iHappiness != iLast));
 					iLast = iHappiness;
+				}
+
+				//Charriu TradeRouteModifierTrait
+				int iTradeRouteModifier = GC.getBuildingInfo(eLoopBuilding).getTradeRouteModifierTraits(eTrait);
+				if (iTradeRouteModifier != 0)
+				{
+					szText = gDLL->getText("TXT_KEY_TRAIT_BUILDING_TRADEROUTEMODIFIER", iTradeRouteModifier);
+
+					CvWString szBuilding;
+					szBuilding.Format(L"<link=literal>%s</link>", GC.getBuildingInfo(eLoopBuilding).getDescription());
+					setListHelp(szHelpString, szText.GetCString(), " " + szBuilding, L", ", (iTradeRouteModifier != iLast));
+					iLast = iTradeRouteModifier;
 				}
 			}
 		}
@@ -10753,6 +10777,27 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 			{
 				szBuffer.append(NEWLINE);
 				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_HAPPINESS_TRAIT", kBuilding.getHappinessTraits((TraitTypes)i), GC.getTraitInfo((TraitTypes)i).getTextKeyWide()));
+			}
+
+			//Charriu TradeRouteModifierTrait
+			if (kBuilding.getTradeRouteModifierTraits((TraitTypes)i) != 0)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_TRADEROUTEMODIFIER_TRAIT", kBuilding.getTradeRouteModifierTraits((TraitTypes)i), kBuilding.getTextKeyWide(), GC.getTraitInfo((TraitTypes)i).getTextKeyWide()));
+			}
+	//Charriu TradeRouteModifierTrait
+	else if (ePlayer != NO_PLAYER)
+	{
+		for (int i = 0; i < GC.getNumTraitInfos(); ++i)
+		{
+			CvLeaderHeadInfo& kLeaderInfo = GC.getLeaderHeadInfo(GET_PLAYER(ePlayer).getLeaderType());
+			if (kLeaderInfo.hasTrait(i))
+			{
+				if (kBuilding.getTradeRouteModifierTraits((TraitTypes)i) != 0)
+				{
+					szBuffer.append(NEWLINE);
+					szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_TRADEROUTEMODIFIER_TRAIT", kBuilding.getTradeRouteModifierTraits((TraitTypes)i), kBuilding.getTextKeyWide(), GC.getTraitInfo((TraitTypes)i).getTextKeyWide()));
+				}
 			}
 		}
 	}
@@ -17947,6 +17992,15 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 				}
 			}
 
+			//Charriu TradeRouteModifierTrait
+			iNewMod = pCity->getExtraBuildingTradeRouteModifier();
+			if (0 != iNewMod)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_BUILDING_TRAIT", iNewMod));
+				iModifier += iNewMod;
+			}
+
 			iNewMod = pCity->getPopulationTradeModifier();
 			if (0 != iNewMod)
 			{
@@ -17964,6 +18018,15 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 					szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_CAPITAL", iNewMod));
 					iModifier += iNewMod;
 				}
+			}
+
+			//Charriu Trade Route Modifier
+			iNewMod = pCity->getTraitTradeModifier();
+			if (0 != iNewMod)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_TRAIT_MODIFIER", iNewMod));
+				iModifier += iNewMod;
 			}
 
 			if (NULL != pOtherCity)
@@ -17994,6 +18057,17 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 					{
 						szBuffer.append(NEWLINE);
 						szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_PEACE", iNewMod));
+						iModifier += iNewMod;
+					}
+				}
+				else
+				{
+					//Charriu Domestic Trade Route Modifier
+					iNewMod = pCity->getTraitDomesticTradeModifier();
+					if (0 != iNewMod)
+					{
+						szBuffer.append(NEWLINE);
+						szBuffer.append(gDLL->getText("TXT_KEY_DOMESTIC_TRADE_ROUTE_TRAIT_MODIFIER", iNewMod));
 						iModifier += iNewMod;
 					}
 				}

@@ -82,6 +82,8 @@ CvPlayer::CvPlayer()
 	m_paiImprovementCount = NULL;
 	m_paiFreeBuildingCount = NULL;
 	m_paiExtraBuildingHappiness = NULL;
+	//Charriu TradeRouteModifierTrait
+	m_paiExtraBuildingTradeRouteModifier = NULL;
 	m_paiExtraBuildingHealth = NULL;
 	m_paiFeatureHappiness = NULL;
 	m_paiUnitClassCount = NULL;
@@ -259,9 +261,15 @@ void CvPlayer::init(PlayerTypes eID)
 				for (iJ = 0; iJ < GC.getNumBuildingInfos(); iJ++)
 				{
 					changeExtraBuildingHappiness((BuildingTypes)iJ, GC.getBuildingInfo((BuildingTypes)iJ).getHappinessTraits(iI));
+					//Charriu TradeRouteModifierTrait
+					changeExtraBuildingTradeRouteModifier((BuildingTypes)iJ, GC.getBuildingInfo((BuildingTypes)iJ).getTradeRouteModifierTraits(iI));
 				}
 
 				changeUpkeepModifier(GC.getTraitInfo((TraitTypes)iI).getUpkeepModifier());
+				//Charriu Trade Route Modifier
+				changeTradeRouteModifier(GC.getTraitInfo((TraitTypes)iI).getTradeRouteModifier());
+				//Charriu Domestic Trade Route Modifier
+				changeDomesticTradeRouteModifier(GC.getTraitInfo((TraitTypes)iI).getDomesticTradeRouteModifier());
 				changeLevelExperienceModifier(GC.getTraitInfo((TraitTypes)iI).getLevelExperienceModifier());
 				changeGreatPeopleRateModifier(GC.getTraitInfo((TraitTypes)iI).getGreatPeopleRateModifier());
 				changeGreatGeneralRateModifier(GC.getTraitInfo((TraitTypes)iI).getGreatGeneralRateModifier());
@@ -608,6 +616,8 @@ void CvPlayer::uninit()
 	SAFE_DELETE_ARRAY(m_paiImprovementCount);
 	SAFE_DELETE_ARRAY(m_paiFreeBuildingCount);
 	SAFE_DELETE_ARRAY(m_paiExtraBuildingHappiness);
+	//Charriu TradeRouteModifierTrait
+	SAFE_DELETE_ARRAY(m_paiExtraBuildingTradeRouteModifier);
 	SAFE_DELETE_ARRAY(m_paiExtraBuildingHealth);
 	SAFE_DELETE_ARRAY(m_paiFeatureHappiness);
 	SAFE_DELETE_ARRAY(m_paiUnitClassCount);
@@ -741,6 +751,10 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iCorporationMaintenanceModifier = 0;
 	m_iTotalMaintenance = 0;
 	m_iUpkeepModifier = 0;
+	//Charriu Trade Route Modifier
+	m_iTradeRouteModifier = 0;
+	//Charriu Domestic Trade Route Modifier
+	m_iDomesticTradeRouteModifier = 0;
 	m_iLevelExperienceModifier = 0;
 	m_iExtraHealth = 0;
 	m_iBuildingGoodHealth = 0;
@@ -911,12 +925,17 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		m_paiFreeBuildingCount = new int [GC.getNumBuildingInfos()];
 		FAssertMsg(m_paiExtraBuildingHappiness==NULL, "about to leak memory, CvPlayer::m_paiExtraBuildingHappiness");
 		m_paiExtraBuildingHappiness = new int [GC.getNumBuildingInfos()];
+		//Charriu TradeRouteModifierTrait
+		FAssertMsg(m_paiExtraBuildingTradeRouteModifier==NULL, "about to leak memory, CvPlayer::m_paiExtraBuildingHappiness");
+		m_paiExtraBuildingTradeRouteModifier = new int [GC.getNumBuildingInfos()];
 		FAssertMsg(m_paiExtraBuildingHealth==NULL, "about to leak memory, CvPlayer::m_paiExtraBuildingHealth");
 		m_paiExtraBuildingHealth = new int [GC.getNumBuildingInfos()];
 		for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 		{
 			m_paiFreeBuildingCount[iI] = 0;
 			m_paiExtraBuildingHappiness[iI] = 0;
+			//Charriu TradeRouteModifierTrait
+			m_paiExtraBuildingTradeRouteModifier[iI] = 0;
 			m_paiExtraBuildingHealth[iI] = 0;
 		}
 
@@ -3678,6 +3697,19 @@ void CvPlayer::updateExtraBuildingHappiness(bool bLimited)
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
 		pLoopCity->updateExtraBuildingHappiness(bLimited);
+	}
+}
+
+
+//Charriu TradeRouteModifierTrait
+void CvPlayer::updateExtraBuildingTradeRouteModifier()
+{
+	CvCity* pLoopCity;
+	int iLoop;
+
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		pLoopCity->updateExtraBuildingTradeRouteModifier();
 	}
 }
 
@@ -9953,6 +9985,30 @@ void CvPlayer::changeUpkeepModifier(int iChange)
 	m_iUpkeepModifier = (m_iUpkeepModifier + iChange);
 }
 
+//Charriu Trade Route Modifier
+int CvPlayer::getTradeRouteModifier() const
+{
+	return m_iTradeRouteModifier;
+}
+
+//Charriu Trade Route Modifier
+void CvPlayer::changeTradeRouteModifier(int iChange)
+{
+	m_iTradeRouteModifier = (m_iTradeRouteModifier + iChange);
+}
+
+//Charriu Domestic Trade Route Modifier
+int CvPlayer::getDomesticTradeRouteModifier() const
+{
+	return m_iDomesticTradeRouteModifier;
+}
+
+//Charriu Domestic Trade Route Modifier
+void CvPlayer::changeDomesticTradeRouteModifier(int iChange)
+{
+	m_iDomesticTradeRouteModifier = (m_iDomesticTradeRouteModifier + iChange);
+}
+
 
 int CvPlayer::getLevelExperienceModifier() const
 {
@@ -12585,6 +12641,28 @@ void CvPlayer::changeExtraBuildingHappiness(BuildingTypes eIndex, int iChange, b
 		updateExtraBuildingHappiness(bLimited);
 	}
 }
+
+//Charriu TradeRouteModifierTrait
+int CvPlayer::getExtraBuildingTradeRouteModifier(BuildingTypes eIndex) const 
+{
+	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	FAssertMsg(eIndex < GC.getNumBuildingInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+	return m_paiExtraBuildingTradeRouteModifier[eIndex];
+}
+
+void CvPlayer::changeExtraBuildingTradeRouteModifier(BuildingTypes eIndex, int iChange)
+{
+	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	FAssertMsg(eIndex < GC.getNumBuildingInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+
+	if (iChange != 0)
+	{
+		m_paiExtraBuildingTradeRouteModifier[eIndex] += iChange;
+
+		updateExtraBuildingTradeRouteModifier();
+	}
+}
+
 
 int CvPlayer::getExtraBuildingHealth(BuildingTypes eIndex) const 
 {
@@ -17466,6 +17544,10 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCorporationMaintenanceModifier);
 	pStream->Read(&m_iTotalMaintenance);
 	pStream->Read(&m_iUpkeepModifier);
+	//Charriu Trade Route Modifier
+	pStream->Read(&m_iTradeRouteModifier);
+	//Charriu Domestic Trade Route Modifier
+	pStream->Read(&m_iDomesticTradeRouteModifier);
 	pStream->Read(&m_iLevelExperienceModifier);
 	pStream->Read(&m_iExtraHealth);
 	pStream->Read(&m_iBuildingGoodHealth);
@@ -17546,6 +17628,8 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumImprovementInfos(), m_paiImprovementCount);
 	pStream->Read(GC.getNumBuildingInfos(), m_paiFreeBuildingCount);
 	pStream->Read(GC.getNumBuildingInfos(), m_paiExtraBuildingHappiness);
+	//Charriu TradeRouteModifierTrait
+	pStream->Read(GC.getNumBuildingInfos(), m_paiExtraBuildingTradeRouteModifier);
 	pStream->Read(GC.getNumBuildingInfos(), m_paiExtraBuildingHealth);
 	pStream->Read(GC.getNumFeatureInfos(), m_paiFeatureHappiness);
 	pStream->Read(GC.getNumUnitClassInfos(), m_paiUnitClassCount);
@@ -17929,6 +18013,10 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iCorporationMaintenanceModifier);
 	pStream->Write(m_iTotalMaintenance);
 	pStream->Write(m_iUpkeepModifier);
+	//Charriu Trade Route Modifier
+	pStream->Write(m_iTradeRouteModifier);
+	//Charriu Domestic Trade Route Modifier
+	pStream->Write(m_iDomesticTradeRouteModifier);
 	pStream->Write(m_iLevelExperienceModifier);
 	pStream->Write(m_iExtraHealth);
 	pStream->Write(m_iBuildingGoodHealth);
@@ -18008,6 +18096,8 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumImprovementInfos(), m_paiImprovementCount);
 	pStream->Write(GC.getNumBuildingInfos(), m_paiFreeBuildingCount);
 	pStream->Write(GC.getNumBuildingInfos(), m_paiExtraBuildingHappiness);
+	//Charriu TradeRouteModifierTrait
+	pStream->Write(GC.getNumBuildingInfos(), m_paiExtraBuildingTradeRouteModifier);
 	pStream->Write(GC.getNumBuildingInfos(), m_paiExtraBuildingHealth);
 	pStream->Write(GC.getNumFeatureInfos(), m_paiFeatureHappiness);
 	pStream->Write(GC.getNumUnitClassInfos(), m_paiUnitClassCount);

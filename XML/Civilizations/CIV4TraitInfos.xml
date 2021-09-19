@@ -23,6 +23,8 @@
 			<iMaxPlayerBuildingProductionModifier>0</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
 			<TradeYieldModifiers/>
+			<iTradeRouteModifiers>0</iTradeRouteModifiers>
+			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
 			<CommerceChanges/>
 			<CommerceModifiers/>
 			<FreePromotions/>
@@ -45,6 +47,8 @@
 			<iMaxPlayerBuildingProductionModifier>0</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
 			<TradeYieldModifiers/>
+			<iTradeRouteModifiers>0</iTradeRouteModifiers>
+			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
 			<CommerceChanges/>
 			<CommerceModifiers/>
 			<FreePromotions>
@@ -81,6 +85,8 @@
 			<iMaxPlayerBuildingProductionModifier>0</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
 			<TradeYieldModifiers/>
+			<iTradeRouteModifiers>0</iTradeRouteModifiers>
+			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
 			<CommerceChanges/>
 			<CommerceModifiers/>
 			<FreePromotions/>
@@ -103,6 +109,8 @@
 			<iMaxPlayerBuildingProductionModifier>0</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
 			<TradeYieldModifiers/>
+			<iTradeRouteModifiers>0</iTradeRouteModifiers>
+			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
 			<CommerceChanges/>
 			<CommerceModifiers/>
 			<FreePromotions/>
@@ -125,6 +133,8 @@
 			<iMaxPlayerBuildingProductionModifier>50</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
 			<TradeYieldModifiers/>
+			<iTradeRouteModifiers>0</iTradeRouteModifiers>
+			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
 			<CommerceChanges/>
 			<CommerceModifiers/>
 			<FreePromotions/>
@@ -147,6 +157,8 @@
 			<iMaxPlayerBuildingProductionModifier>0</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
 			<TradeYieldModifiers/>
+			<iTradeRouteModifiers>0</iTradeRouteModifiers>
+			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
 			<CommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
@@ -177,6 +189,8 @@
 				<iExtraYieldThreshold>3</iExtraYieldThreshold>
 			</ExtraYieldThresholds>
 			<TradeYieldModifiers/>
+			<iTradeRouteModifiers>0</iTradeRouteModifiers>
+			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
 			<CommerceChanges/>
 			<CommerceModifiers/>
 			<FreePromotions/>
@@ -199,6 +213,8 @@
 			<iMaxPlayerBuildingProductionModifier>0</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
 			<TradeYieldModifiers/>
+			<iTradeRouteModifiers>0</iTradeRouteModifiers>
+			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
 			<CommerceChanges/>
 			<CommerceModifiers/>
 			<FreePromotions/>
@@ -221,6 +237,8 @@
 			<iMaxPlayerBuildingProductionModifier>0</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
 			<TradeYieldModifiers/>
+			<iTradeRouteModifiers>0</iTradeRouteModifiers>
+			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
 			<CommerceChanges/>
 			<CommerceModifiers/>
 			<FreePromotions/>
@@ -243,6 +261,8 @@
 			<iMaxPlayerBuildingProductionModifier>0</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
 			<TradeYieldModifiers/>
+			<iTradeRouteModifiers>0</iTradeRouteModifiers>
+			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
 			<CommerceChanges/>
 			<CommerceModifiers>
 				<iCommerce>0</iCommerce>
@@ -288,6 +308,8 @@
 			<iMaxPlayerBuildingProductionModifier>0</iMaxPlayerBuildingProductionModifier>
 			<ExtraYieldThresholds/>
 			<TradeYieldModifiers/>
+			<iTradeRouteModifiers>0</iTradeRouteModifiers>
+			<iDomesticTradeRouteModifiers>0</iDomesticTradeRouteModifiers>
 			<CommerceChanges/>
 			<CommerceModifiers/>
 			<FreePromotions/>

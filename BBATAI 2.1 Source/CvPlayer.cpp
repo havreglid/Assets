@@ -278,6 +278,8 @@ void CvPlayer::init(PlayerTypes eID)
 				}
 
 				changeUpkeepModifier(GC.getTraitInfo((TraitTypes)iI).getUpkeepModifier());
+				//T-hawk for RB balance mod
+				changeCityUpkeepModifier(GC.getTraitInfo((TraitTypes)iI).getCityUpkeepModifier());
 				//Charriu Trade Route Modifier
 				changeTradeRouteModifier(GC.getTraitInfo((TraitTypes)iI).getTradeRouteModifier());
 				//Charriu Domestic Trade Route Modifier
@@ -771,6 +773,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iCorporationMaintenanceModifier = 0;
 	m_iTotalMaintenance = 0;
 	m_iUpkeepModifier = 0;
+	m_iCityUpkeepModifier = 0;		//T-hawk for RB balance mod
 	//Charriu Trade Route Modifier
 	m_iTradeRouteModifier = 0;
 	//Charriu Domestic Trade Route Modifier
@@ -10037,6 +10040,18 @@ void CvPlayer::changeUpkeepModifier(int iChange)
 	m_iUpkeepModifier = (m_iUpkeepModifier + iChange);
 }
 
+//T-hawk for RB balance mod
+int CvPlayer::getCityUpkeepModifier() const
+{
+	return m_iCityUpkeepModifier;
+}
+
+//T-hawk for RB balance mod
+void CvPlayer::changeCityUpkeepModifier(int iChange)
+{
+	m_iCityUpkeepModifier = (m_iCityUpkeepModifier + iChange);
+}
+
 //Charriu Trade Route Modifier
 int CvPlayer::getTradeRouteModifier() const
 {
@@ -17713,6 +17728,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCorporationMaintenanceModifier);
 	pStream->Read(&m_iTotalMaintenance);
 	pStream->Read(&m_iUpkeepModifier);
+	pStream->Read(&m_iCityUpkeepModifier);			//T-hawk for RB balance mod
 	//Charriu Trade Route Modifier
 	pStream->Read(&m_iTradeRouteModifier);
 	//Charriu Domestic Trade Route Modifier
@@ -18190,6 +18206,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iCorporationMaintenanceModifier);
 	pStream->Write(m_iTotalMaintenance);
 	pStream->Write(m_iUpkeepModifier);
+	pStream->Write(m_iCityUpkeepModifier);			//T-hawk for RB balance mod
 	//Charriu Trade Route Modifier
 	pStream->Write(m_iTradeRouteModifier);
 	//Charriu Domestic Trade Route Modifier

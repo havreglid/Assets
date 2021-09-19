@@ -298,6 +298,7 @@
 	<ElementType name="iHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iMaxAnarchy" content="textOnly" dt:type="int"/>
 	<ElementType name="iUpkeepModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="iCityUpkeepModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iLevelExperienceModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iGreatPeopleRateModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iGreatGeneralRateModifier" content="textOnly" dt:type="int"/>
@@ -366,6 +367,7 @@
 		<element type="iHappiness"/>
 		<element type="iMaxAnarchy"/>
 		<element type="iUpkeepModifier"/>
+		<element type="iCityUpkeepModifier"/>
 		<element type="iLevelExperienceModifier"/>
 		<element type="iGreatPeopleRateModifier"/>
 		<element type="iGreatGeneralRateModifier"/>

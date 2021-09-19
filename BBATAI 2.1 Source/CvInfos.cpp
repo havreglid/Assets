@@ -16483,6 +16483,7 @@ m_iHealth(0),
 m_iHappiness(0),													
 m_iMaxAnarchy(0),											
 m_iUpkeepModifier(0),									
+m_iCityUpkeepModifier(0),									//T-hawk for RB balance mod
 m_iLevelExperienceModifier(0),									
 m_iGreatPeopleRateModifier(0),						
 m_iGreatGeneralRateModifier(0),						
@@ -16554,6 +16555,12 @@ int CvTraitInfo::getMaxAnarchy() const
 int CvTraitInfo::getUpkeepModifier() const					
 {
 	return m_iUpkeepModifier; 
+}
+
+//T-hawk for RB balance mod
+int CvTraitInfo::getCityUpkeepModifier() const					
+{
+	return m_iCityUpkeepModifier; 
 }
 
 //Charriu Trade Route Modifier
@@ -16689,6 +16696,8 @@ bool CvTraitInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iHappiness, "iHappiness");
 	pXML->GetChildXmlValByName(&m_iMaxAnarchy, "iMaxAnarchy");
 	pXML->GetChildXmlValByName(&m_iUpkeepModifier, "iUpkeepModifier");
+	//T-hawk for RB balance mod
+	pXML->GetChildXmlValByName(&m_iCityUpkeepModifier, "iCityUpkeepModifier");
 	pXML->GetChildXmlValByName(&m_iLevelExperienceModifier, "iLevelExperienceModifier");
 	pXML->GetChildXmlValByName(&m_iGreatPeopleRateModifier, "iGreatPeopleRateModifier");
 	pXML->GetChildXmlValByName(&m_iGreatGeneralRateModifier, "iGreatGeneralRateModifier");

@@ -14,6 +14,7 @@
 			<iHappiness>0</iHappiness>
 			<iMaxAnarchy>-1</iMaxAnarchy>
 			<iUpkeepModifier>0</iUpkeepModifier>
+			<iCityUpkeepModifier>0</iCityUpkeepModifier>
 			<iLevelExperienceModifier>0</iLevelExperienceModifier>
 			<iGreatPeopleRateModifier>150</iGreatPeopleRateModifier>
 			<iGreatGeneralRateModifier>0</iGreatGeneralRateModifier>
@@ -43,6 +44,7 @@
 			<iHappiness>0</iHappiness>
 			<iMaxAnarchy>-1</iMaxAnarchy>
 			<iUpkeepModifier>0</iUpkeepModifier>
+			<iCityUpkeepModifier>0</iCityUpkeepModifier>
 			<iLevelExperienceModifier>0</iLevelExperienceModifier>
 			<iGreatPeopleRateModifier>0</iGreatPeopleRateModifier>
 			<iGreatGeneralRateModifier>0</iGreatGeneralRateModifier>
@@ -86,6 +88,7 @@
 			<iHappiness>0</iHappiness>
 			<iMaxAnarchy>0</iMaxAnarchy>
 			<iUpkeepModifier>0</iUpkeepModifier>
+			<iCityUpkeepModifier>0</iCityUpkeepModifier>
 			<iLevelExperienceModifier>0</iLevelExperienceModifier>
 			<iGreatPeopleRateModifier>0</iGreatPeopleRateModifier>
 			<iGreatGeneralRateModifier>0</iGreatGeneralRateModifier>
@@ -115,6 +118,7 @@
 			<iHappiness>0</iHappiness>
 			<iMaxAnarchy>-1</iMaxAnarchy>
 			<iUpkeepModifier>0</iUpkeepModifier>
+			<iCityUpkeepModifier>0</iCityUpkeepModifier>
 			<iLevelExperienceModifier>0</iLevelExperienceModifier>
 			<iGreatPeopleRateModifier>0</iGreatPeopleRateModifier>
 			<iGreatGeneralRateModifier>0</iGreatGeneralRateModifier>
@@ -144,6 +148,7 @@
 			<iHappiness>0</iHappiness>
 			<iMaxAnarchy>-1</iMaxAnarchy>
 			<iUpkeepModifier>0</iUpkeepModifier>
+			<iCityUpkeepModifier>0</iCityUpkeepModifier>
 			<iLevelExperienceModifier>0</iLevelExperienceModifier>
 			<iGreatPeopleRateModifier>0</iGreatPeopleRateModifier>
 			<iGreatGeneralRateModifier>0</iGreatGeneralRateModifier>
@@ -173,6 +178,7 @@
 			<iHappiness>0</iHappiness>
 			<iMaxAnarchy>-1</iMaxAnarchy>
 			<iUpkeepModifier>0</iUpkeepModifier>
+			<iCityUpkeepModifier>0</iCityUpkeepModifier>
 			<iLevelExperienceModifier>0</iLevelExperienceModifier>
 			<iGreatPeopleRateModifier>0</iGreatPeopleRateModifier>
 			<iGreatGeneralRateModifier>0</iGreatGeneralRateModifier>
@@ -206,6 +212,7 @@
 			<iHappiness>0</iHappiness>
 			<iMaxAnarchy>-1</iMaxAnarchy>
 			<iUpkeepModifier>0</iUpkeepModifier>
+			<iCityUpkeepModifier>0</iCityUpkeepModifier>
 			<iLevelExperienceModifier>0</iLevelExperienceModifier>
 			<iGreatPeopleRateModifier>0</iGreatPeopleRateModifier>
 			<iGreatGeneralRateModifier>0</iGreatGeneralRateModifier>
@@ -239,6 +246,7 @@
 			<iHappiness>0</iHappiness>
 			<iMaxAnarchy>-1</iMaxAnarchy>
 			<iUpkeepModifier>-50</iUpkeepModifier>
+			<iCityUpkeepModifier>0</iCityUpkeepModifier>
 			<iLevelExperienceModifier>0</iLevelExperienceModifier>
 			<iGreatPeopleRateModifier>0</iGreatPeopleRateModifier>
 			<iGreatGeneralRateModifier>0</iGreatGeneralRateModifier>
@@ -268,6 +276,7 @@
 			<iHappiness>2</iHappiness>
 			<iMaxAnarchy>-1</iMaxAnarchy>
 			<iUpkeepModifier>0</iUpkeepModifier>
+			<iCityUpkeepModifier>0</iCityUpkeepModifier>
 			<iLevelExperienceModifier>-25</iLevelExperienceModifier>
 			<iGreatPeopleRateModifier>0</iGreatPeopleRateModifier>
 			<iGreatGeneralRateModifier>0</iGreatGeneralRateModifier>
@@ -297,6 +306,7 @@
 			<iHappiness>0</iHappiness>
 			<iMaxAnarchy>-1</iMaxAnarchy>
 			<iUpkeepModifier>0</iUpkeepModifier>
+			<iCityUpkeepModifier>0</iCityUpkeepModifier>
 			<iLevelExperienceModifier>0</iLevelExperienceModifier>
 			<iGreatPeopleRateModifier>0</iGreatPeopleRateModifier>
 			<iGreatGeneralRateModifier>0</iGreatGeneralRateModifier>
@@ -349,6 +359,7 @@
 			<iHappiness>0</iHappiness>
 			<iMaxAnarchy>-1</iMaxAnarchy>
 			<iUpkeepModifier>0</iUpkeepModifier>
+			<iCityUpkeepModifier>0</iCityUpkeepModifier>
 			<iLevelExperienceModifier>0</iLevelExperienceModifier>
 			<iGreatPeopleRateModifier>0</iGreatPeopleRateModifier>
 			<iGreatGeneralRateModifier>100</iGreatGeneralRateModifier>

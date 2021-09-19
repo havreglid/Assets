@@ -6216,6 +6216,12 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 			szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_CIVIC_UPKEEP_MODIFIER", GC.getTraitInfo(eTrait).getUpkeepModifier()));
 		}
 
+		// AGDM addition: Describe effect of iCityUpkeepModifier tag introduced by T-Hawk for RB Mod
+		if (GC.getTraitInfo(eTrait).getCityUpkeepModifier() != 0)
+		{
+			szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_CITY_UPKEEP_MODIFIER", 0 - GC.getTraitInfo(eTrait).getCityUpkeepModifier()));
+		}
+
 		// iLevelExperienceModifier
 		if (GC.getTraitInfo(eTrait).getLevelExperienceModifier() != 0)
 		{

@@ -4247,6 +4247,8 @@ public:
 	int getHappiness() const;				// Exposed to Python
 	int getMaxAnarchy() const;				// Exposed to Python
 	int getUpkeepModifier() const;				// Exposed to Python
+	//T-hawk for RB balance mod
+	int getCityUpkeepModifier() const;				// Exposed to Python
 	//Charriu Trade Route Modifier
 	int getTradeRouteModifier() const;				// Exposed to Python
 	//Charriu Domestic Trade Route Modifier
@@ -4291,6 +4293,7 @@ protected:
 	int m_iHappiness;
 	int m_iMaxAnarchy;											
 	int m_iUpkeepModifier;									
+	int m_iCityUpkeepModifier;						//T-hawk for RB balance mod
 	int m_iLevelExperienceModifier;									
 	int m_iGreatPeopleRateModifier;						
 	int m_iGreatGeneralRateModifier;						

@@ -5851,6 +5851,11 @@ void CvCity::updateMaintenance()
 	if (!isDisorder() && !isWeLoveTheKingDay() && (getPopulation() > 0))
 	{
 		iNewMaintenance = (calculateBaseMaintenanceTimes100() * std::max(0, (getMaintenanceModifier() + 100))) / 100;
+
+		//T-hawk for RB balance mod.  Added a trait to reduce city maintenance.  Works multiplicatively after discounts from courthouse/etc.
+		int iCityUpkeepModifier = GET_PLAYER(getOwnerINLINE()).getCityUpkeepModifier();
+		if (iCityUpkeepModifier > 0)
+			iNewMaintenance -= iNewMaintenance * iCityUpkeepModifier / 100;
 	}
 
 	if (iOldMaintenance != iNewMaintenance)

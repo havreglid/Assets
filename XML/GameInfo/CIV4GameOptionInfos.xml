@@ -219,6 +219,13 @@
 	        <bVisible>1</bVisible>
         </GameOptionInfo>
         <GameOptionInfo>
+	        <Type>GAMEOPTION_NO_WW</Type>
+	        <Description>TXT_KEY_GAME_OPTION_NO_WW</Description>
+  	        <Help>TXT_KEY_GAME_OPTION_NO_WW_HELP</Help>
+	        <bDefault>0</bDefault>
+	        <bVisible>1</bVisible>
+        </GameOptionInfo>
+        <GameOptionInfo>
 	        <Type>GAMEOPTION_NO_SCORE</Type>
 	        <Description>TXT_KEY_GAME_OPTION_NO_SCORE</Description>
   	        <Help>TXT_KEY_GAME_OPTION_NO_SCORE_HELP</Help>

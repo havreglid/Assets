@@ -1672,11 +1672,11 @@
 	</Define>
 	<Define>
 		<DefineName>ENABLE_NO_ESPIONAGE_FIX</DefineName>
-		<iDefineIntVal>1</iDefineIntVal>
+		<iDefineIntVal>0</iDefineIntVal>
 	</Define>
   	<Define>
     	<DefineName>CIRCUM_FOR_EVERYBODY</DefineName>
-    	<iDefineIntVal>1</iDefineIntVal>
+    	<iDefineIntVal>0</iDefineIntVal>
   	</Define>
 	<Define>
 		<DefineName>ENABLE_FINANCIAL_RIVERSIDE_PENALTY</DefineName>
@@ -1684,7 +1684,7 @@
 	</Define>
 	<Define>
 		<DefineName>ENABLE_TREAT_TOROIDAL_MAINTENANCE_AS_CYLINDRICAL</DefineName>
-		<iDefineIntVal>1</iDefineIntVal>
+		<iDefineIntVal>0</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>OWN_CITY_FAIL_GOLD_MULTIPLIER</DefineName>
@@ -1692,22 +1692,22 @@
 	</Define>
   	<Define>
     	<DefineName>ENABLE_ALWAYS_SUCCESSFUL_DOMESTIC_RELIGION_SPREAD</DefineName>
-    	<iDefineIntVal>1</iDefineIntVal>
+    	<iDefineIntVal>0</iDefineIntVal>
   	</Define>
   	<Define>
     	<DefineName>ENABLE_RIVER_SIDE_YIELD_ALSO_ON_CORNER</DefineName>
-    	<iDefineIntVal>1</iDefineIntVal>
+    	<iDefineIntVal>0</iDefineIntVal>
   	</Define>
   	<Define>
 		<DefineName>CIRCUMNAVIGATE_FREE_TRADE_ROUTE</DefineName>
-		<iDefineIntVal>1</iDefineIntVal>
+		<iDefineIntVal>0</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>BARBS_NEVER_RAZE</DefineName>
-		<iDefineIntVal>1</iDefineIntVal>
+		<iDefineIntVal>0</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>UNLOCK_CIRCUMNAVIGATION_WITH_TECH</DefineName>
-		<DefineTextVal>TECH_OPTICS</DefineTextVal>
+		<DefineTextVal>TECH_MINING</DefineTextVal>
 	</Define>
 </Civ4Defines>

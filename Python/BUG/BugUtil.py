@@ -253,19 +253,23 @@ def trace(message, *args):
 
 def debug(message, *args):
 	"""Logs a message at DEBUG level."""
-	log(DEBUG, message, args)
+	if not (CyGame().isPitbossHost()):
+		log(DEBUG, message, args)
 
 def info(message, *args):
 	"""Logs a message at INFO level."""
-	log(INFO, message, args)
+	if not (CyGame().isPitbossHost()):
+		log(INFO, message, args)
 
 def warn(message, *args):
 	"""Logs a message at WARN level."""
-	log(WARN, message, args)
+	if not (CyGame().isPitbossHost()):
+		log(WARN, message, args)
 
 def error(message, *args):
 	"""Logs a message at ERROR level."""
-	log(ERROR, message, args)
+	if not (CyGame().isPitbossHost()):
+		log(ERROR, message, args)
 
 def log(level, message, args=()):
 	"""
@@ -697,7 +701,7 @@ def extend(function, toModule, asName=None, how=EXTEND_INSTEAD, log=True):
 	else:
 		raise ConfigError("Invalid how '%s' in extend()" % how)
 	newFunc.__module__ = function.__module__
-	if not isMac():
+	if not isMac(): 
 		newFunc.__name__ = asName
 	if log:
 		if asName != function.__name__:

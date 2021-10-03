@@ -856,7 +856,9 @@ void CvCityAI::AI_chooseProduction()
     bool bAggressiveAI = GC.getGameINLINE().isOption(GAMEOPTION_AGGRESSIVE_AI);
     bool bAlwaysPeace = GC.getGameINLINE().isOption(GAMEOPTION_ALWAYS_PEACE);
 
-	int iUnitCostPercentage = (kPlayer.calculateUnitCost() * 100) / std::max(1, kPlayer.calculatePreInflatedCosts());
+	//Charriu Unit Maintenance Modifier
+	int iUnitBaseCost = kPlayer.calculateUnitCost();
+	int iUnitCostPercentage = ((iUnitBaseCost - kPlayer.calculateUnitCostTraitReduction(iUnitBaseCost)) * 100) / std::max(1, kPlayer.calculatePreInflatedCosts());
 	int iWaterPercent = AI_calculateWaterWorldPercent();
 	
 	int iBuildUnitProb = AI_buildUnitProb();
@@ -9340,7 +9342,8 @@ bool CvCityAI::AI_addBestCitizen(bool bWorkers, bool bSpecialists, int* piBestPl
 			int iTotalSpecialists = 1 + getSpecialistPopulation();
 			for (int iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 			{
-				if (isSpecialistValid((SpecialistTypes)iI, 1))
+				//Charriu Lock Specialist
+				if (isSpecialistValid((SpecialistTypes)iI, 1) && (isSpecialistLockedForAI((SpecialistTypes)iI) == false))
 				{
 					int iForcedSpecialistCount = getForceSpecialistCount((SpecialistTypes)iI);
 					if (iForcedSpecialistCount > 0)
@@ -9372,7 +9375,8 @@ bool CvCityAI::AI_addBestCitizen(bool bWorkers, bool bSpecialists, int* piBestPl
 		{
 			for (int iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 			{
-				if (isSpecialistValid((SpecialistTypes)iI, 1))
+				//Charriu Lock Specialist
+				if (isSpecialistValid((SpecialistTypes)iI, 1) && (isSpecialistLockedForAI((SpecialistTypes)iI) == false))
 				{
 					int iValue = AI_specialistValue(((SpecialistTypes)iI), bAvoidGrowth, false);
 					if (iValue >= iBestSpecialistValue)
@@ -9498,7 +9502,8 @@ bool CvCityAI::AI_removeWorstCitizen(SpecialistTypes eIgnoreSpecialist)
 	{
 		for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 		{
-			if (eIgnoreSpecialist != iI)
+			//Charriu Lock Specialsit
+			if (eIgnoreSpecialist != iI && (isSpecialistLockedForAI((SpecialistTypes)iI) == false))
 			{
 				if (getSpecialistCount((SpecialistTypes)iI) > getForceSpecialistCount((SpecialistTypes)iI))
 				{
@@ -9555,15 +9560,19 @@ bool CvCityAI::AI_removeWorstCitizen(SpecialistTypes eIgnoreSpecialist)
 	{
 		for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 		{
-			if (getSpecialistCount((SpecialistTypes)iI) > 0)
+			//Charriu Lock Specialsit
+			if (isSpecialistLockedForAI((SpecialistTypes)iI) == false)
 			{
-				iValue = AI_specialistValue(((SpecialistTypes)iI), bAvoidGrowth, /*bRemove*/ true);
-
-				if (iValue < iWorstValue)
+				if (getSpecialistCount((SpecialistTypes)iI) > 0)
 				{
-					iWorstValue = iValue;
-					eWorstSpecialist = ((SpecialistTypes)iI);
-					iWorstPlot = -1;
+					iValue = AI_specialistValue(((SpecialistTypes)iI), bAvoidGrowth, /*bRemove*/ true);
+
+					if (iValue < iWorstValue)
+					{
+						iWorstValue = iValue;
+						eWorstSpecialist = ((SpecialistTypes)iI);
+						iWorstPlot = -1;
+					}
 				}
 			}
 		}

@@ -125,6 +125,12 @@ bool CyCity::isBuildingsMaxed()
 	return m_pCity ? m_pCity->isBuildingsMaxed() : false;
 }
 
+//Charriu Add Act as fresh water
+bool CyCity::isAddsFreshWater()
+{
+	return m_pCity ? m_pCity->isAddsFreshWater() : false;
+}
+
 bool CyCity::canTrain( int /*UnitTypes*/ eUnit, bool bContinue, bool bTestVisible )
 {
 	return m_pCity ? m_pCity->canTrain((UnitTypes)eUnit, bContinue, bTestVisible) : false;
@@ -2238,6 +2244,18 @@ void CyCity::alterSpecialistCount(int /*SpecialistTypes*/ eIndex, int iChange)
 {
 	if (m_pCity)
 		m_pCity->alterSpecialistCount((SpecialistTypes)eIndex, iChange);
+}
+
+//Charriu Lock Specialist
+void CyCity::lockSpecialistForAI(int /*SpecialistTypes*/ eIndex)
+{
+	if (m_pCity)
+		m_pCity->lockSpecialistForAI((SpecialistTypes)eIndex);
+}
+
+bool CyCity::isSpecialistLockedForAI(int /*SpecialistTypes*/ eIndex)
+{
+	return m_pCity ? m_pCity->isSpecialistLockedForAI((SpecialistTypes) eIndex) : false;
 }
 
 int CyCity::getMaxSpecialistCount(int /*SpecialistTypes*/ eIndex)

@@ -573,6 +573,10 @@ enum WidgetTypes					// Exposed to Python
 	WIDGET_LEADERHEAD_RELATIONS,
 // BUG - Leaderhead Relations - end
 
+//Charriu FreeUnitForEverybody
+	WIDGET_HELP_FREE_UNIT_EVERYBODY,
+//Charriu Lock Specialists
+	WIDGET_LOCK_SPECIALIST,
 #ifdef _USRDLL
 	NUM_WIDGET_TYPES
 #endif
@@ -778,7 +782,22 @@ enum GameOptionTypes				// Exposed to Python
 	GAMEOPTION_RISING_SEAS,
 #endif
 // BUG - Global Warming Mod - end
-
+	//Charriu for RtR mod
+	GAMEOPTION_NO_SCORE,
+//Plako for RtR mod 11.8.2015
+	GAMEOPTION_NO_CITY_TRADING,
+//Charriu for RtR mod 14.04.2019
+	GAMEOPTION_NO_MAP_TRADING,
+//Charriu for RtR mod
+	GAMEOPTION_TRUE_AI_DIPLO,
+//Charriu for RtR mod
+	GAMEOPTION_NO_WW,
+	//Charriu for RtR mod
+	GAMEOPTION_CITYCOUNT_TIED_TO_ESPIONAGE,
+	GAMEOPTION_NO_UNIT_GIFTING,
+	GAMEOPTION_NO_WATER_BARB,
+	GAMEOPTION_NO_BARB_CITIES,
+	GAMEOPTION_NO_SPIES,
 #ifdef _USRDLL
 	NUM_GAMEOPTION_TYPES
 #endif
@@ -1119,6 +1138,8 @@ enum TaskTypes				// Exposed to Python
 	TASK_RALLY_PLOT,
 	TASK_CLEAR_RALLY_PLOT,
 	TASK_LIBERATE,
+	//Charriu Lock Specialist
+	TASK_LOCK_SPECIALIST,
 
 #ifdef _USRDLL
 	NUM_TASK_TYPES

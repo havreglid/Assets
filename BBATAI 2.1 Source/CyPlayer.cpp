@@ -521,6 +521,29 @@ int CyPlayer::calculateUnitCost()
 	return m_pPlayer ? m_pPlayer->calculateUnitCost() : -1;
 }
 
+//Charriu Unit Maintenance Modifier
+int CyPlayer::calculateUnitCostTraitReduction()
+{
+	int baseCost = calculateUnitCost();
+	int reducedCost = 0;
+	if (m_pPlayer != NULL)
+	{
+		int cacheUnitModifier = m_pPlayer->getUnitMaintenanceModifier();
+		if (cacheUnitModifier == 0)
+		{
+			m_pPlayer->changeUnitMaintenanceModifier(50);
+		}
+
+		reducedCost = m_pPlayer->calculateUnitCostTraitReduction(baseCost);
+
+		if (cacheUnitModifier == 0)
+		{
+			m_pPlayer->changeUnitMaintenanceModifier(-50);
+		}
+	}
+	return reducedCost;
+}
+
 int CyPlayer::calculateUnitSupply()
 {
 	return m_pPlayer ? m_pPlayer->calculateUnitSupply() : -1;
@@ -1542,6 +1565,18 @@ int CyPlayer::getExtraYieldThreshold(YieldTypes eIndex)
 	return m_pPlayer ? m_pPlayer->getExtraYieldThreshold(eIndex) : NO_YIELD;
 }
 
+//Charriu ExtraYieldLandThreshold
+int CyPlayer::getExtraYieldLandThreshold(YieldTypes eIndex)
+{
+	return m_pPlayer ? m_pPlayer->getExtraYieldLandThreshold(eIndex) : NO_YIELD;
+}
+
+//Charriu ExtraYieldWaterThreshold
+int CyPlayer::getExtraYieldWaterThreshold(YieldTypes eIndex)
+{
+	return m_pPlayer ? m_pPlayer->getExtraYieldWaterThreshold(eIndex) : NO_YIELD;
+}
+
 int CyPlayer::getTradeYieldModifier(YieldTypes eIndex)
 {
 	return m_pPlayer ? m_pPlayer->getTradeYieldModifier(eIndex) : NO_YIELD;
@@ -1686,6 +1721,18 @@ bool CyPlayer::isBuildingFree(int /*BuildingTypes*/ iIndex)
 int CyPlayer::getExtraBuildingHappiness(int /*BuildingTypes*/ iIndex)
 {
 	return m_pPlayer ? m_pPlayer->getExtraBuildingHappiness((BuildingTypes)iIndex) : -1;
+}
+
+//Charriu TradeRouteModifierTrait
+int CyPlayer::getExtraBuildingTradeRouteModifier(int /*BuildingTypes*/ iIndex)
+{
+	return m_pPlayer ? m_pPlayer->getExtraBuildingTradeRouteModifier((BuildingTypes)iIndex) : -1;
+}
+
+//Charriu SeaPlotYieldChangesTrait
+int CyPlayer::getExtraBuildingSeaPlotYieldChanges(int /*BuildingTypes*/ iIndex)
+{
+	return m_pPlayer ? m_pPlayer->getExtraBuildingSeaPlotYieldChanges((BuildingTypes)iIndex) : -1;
 }
 
 int CyPlayer::getExtraBuildingHealth(int /*BuildingTypes*/ iIndex)

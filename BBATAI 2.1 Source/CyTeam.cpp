@@ -223,6 +223,11 @@ bool CyTeam::isBarbarian()
 	return m_pTeam ? m_pTeam->isBarbarian() : false;
 }
 
+bool CyTeam::isCapitulated()
+{
+	return m_pTeam ? m_pTeam->isCapitulated() : false;
+}
+
 bool CyTeam::isMinorCiv()
 {
 	return m_pTeam ? m_pTeam->isMinorCiv() : false;

@@ -28,7 +28,7 @@ gc = CyGlobalContext()
 Z_DEPTH = -0.3
 
 # Columns IDs
-NUM_PARTS = 25
+NUM_PARTS = 26
 (
 	ALIVE,
 	WAR,
@@ -54,7 +54,8 @@ NUM_PARTS = 25
 	CITIES,
 	WAITING,
 	NET_STATS,
-	OOS
+	OOS,
+	GWAR
 ) = range(NUM_PARTS)
 
 # Types
@@ -90,7 +91,7 @@ def init():
 	global columns
 	
 	# Used keys:
-	# ABCDEFHIKLMNOPQRSTUVWZ*?
+	# ABCDEFGHIKLMNOPQRSTUVWZ*?
 	# GJXY
 	columns.append(Column('', ALIVE))
 	columns.append(Column('S', SCORE, DYNAMIC))
@@ -101,6 +102,7 @@ def init():
 	columns.append(Column('C', NAME, DYNAMIC))
 	columns.append(Column('?', NOT_MET, FIXED, smallText("?")))
 	columns.append(Column('W', WAR, DYNAMIC))
+	columns.append(Column('G', GWAR, FIXED, "(" + BugUtil.colorText("WAR","COLOR_RED") + ")"))
 	columns.append(Column('P', POWER, DYNAMIC))
 	columns.append(Column('T', RESEARCH, SPECIAL))
 	columns.append(Column('U', RESEARCH_TURNS, DYNAMIC))
@@ -138,6 +140,8 @@ def smallSymbol(symbol):
 
 def onDealCanceled(argsList):
 	"""Sets the scoreboard dirty bit so it will redraw."""
+	if CyGame().isPitbossHost():
+		return
 	CyInterface().setDirty(InterfaceDirtyBits.Score_DIRTY_BIT, True)
 
 
@@ -149,7 +153,9 @@ class Column:
 		self.type = type
 		self.text = text
 		self.alt = alt
-		if (type == FIXED):
+		if CyGame().isPitbossHost():
+			self.width = 0 
+		elif (type == FIXED):
 			self.width = CyInterface().determineWidth( text )
 		else:
 			self.width = 0
@@ -237,6 +243,7 @@ class Scoreboard:
 		
 	def setWar(self):
 		self._set(WAR, WAR_ICON)
+		self._set(GWAR)
 		
 	def setPeace(self):
 		self._set(WAR, PEACE_ICON, self._getDealWidget(TradeableItems.TRADE_PEACE_TREATY))
@@ -345,6 +352,8 @@ class Scoreboard:
 		
 	def draw(self, screen):
 		"""Sorts and draws the scoreboard right-to-left, bottom-to-top."""
+		if CyGame().isPitbossHost():
+			return
 		timer = BugUtil.Timer("scores")
 		self.hide(screen)
 		self.assignRanks()
@@ -353,6 +362,12 @@ class Scoreboard:
 		interface = CyInterface()
 		xResolution = screen.getXResolution()
 		yResolution = screen.getYResolution()
+
+		if ScoreOpt.isMPContactsOnly() and CyGame().isGameMultiPlayer():
+			playersToShow = [pl for pl in self._playerScores if not pl.has(NOT_MET)]
+		else:
+			playersToShow = self._playerScores
+
 		
 		x = xResolution - 12 # start here and shift left with each column
 		if ( interface.getShowInterface() == InterfaceVisibility.INTERFACE_SHOW or interface.isInAdvancedStart()):
@@ -395,7 +410,7 @@ class Scoreboard:
 				width = column.width
 				value = column.text
 				x -= spacing
-				for p, playerScore in enumerate(self._playerScores):
+				for p, playerScore in enumerate(playersToShow):
 					if (playerScore.has(c) and playerScore.value(c)):
 						name = "ScoreText%d-%d" %( p, c )
 						widget = playerScore.widget(c)
@@ -414,7 +429,7 @@ class Scoreboard:
 			
 			elif (type == DYNAMIC):
 				width = 0
-				for playerScore in self._playerScores:
+				for playerScore in playersToShow:
 					if (playerScore.has(c)):
 						value = playerScore.value(c)
 						if (c == NAME and playerScore.isVassal() and ScoreOpt.isGroupVassals()):
@@ -429,7 +444,7 @@ class Scoreboard:
 					spacing = defaultSpacing
 					continue
 				x -= spacing
-				for p, playerScore in enumerate(self._playerScores):
+				for p, playerScore in enumerate(playersToShow):
 					if (playerScore.has(c)):
 						name = "ScoreText%d-%d" %( p, c )
 						value = playerScore.value(c)
@@ -462,7 +477,7 @@ class Scoreboard:
 			else: # SPECIAL
 				if (c == RESEARCH):
 					x -= spacing
-					for p, playerScore in enumerate(self._playerScores):
+					for p, playerScore in enumerate(playersToShow):
 						if (playerScore.has(c)):
 							tech = playerScore.value(c)
 							name = "ScoreTech%d" % p
@@ -473,15 +488,16 @@ class Scoreboard:
 					totalWidth += techIconSize + spacing
 					spacing = defaultSpacing
 		
-		for playerScore in self._playerScores:
+		for playerScore in playersToShow:
 			interface.checkFlashReset( playerScore.getID() )
 		
 		if ( interface.getShowInterface() == InterfaceVisibility.INTERFACE_SHOW or interface.isInAdvancedStart()):
 			y = yResolution - 186
 		else:
 			y = yResolution - 68
-		screen.setPanelSize( "ScoreBackground", xResolution - 21 - totalWidth, y - (height * self.size()) - 4, 
-							 totalWidth + 12, (height * self.size()) + 8 )
+		nPl = len(playersToShow)
+		screen.setPanelSize( "ScoreBackground", xResolution - 21 - totalWidth, y - (height * nPl) - 4,
+							 totalWidth + 12, (height * nPl) + 8 )
 		screen.show( "ScoreBackground" )
 		timer.log()
 
@@ -492,7 +508,8 @@ class TeamScores:
 		self._team = team
 		self._rank = rank
 		self._playerScores = []
-		self._isVassal = team.isAVassal()
+		#self._isVassal = team.isAVassal()
+		self._isVassal = team.isAVassal() and gc.getTeam(gc.getGame().getActiveTeam()).isHasMet(team.getID()) # K-Mod
 		self._master = None
 		self._vassalTeamScores = []
 		
@@ -517,7 +534,8 @@ class TeamScores:
 		self._vassalTeamScores.append(teamScore)
 		
 	def gatherVassals(self):
-		if self._team.isAVassal():
+		#if self._team.isAVassal():
+		if self.isVassal(): # K-Mod
 			for eTeam in range( gc.getMAX_TEAMS() ):
 				teamScores = self._scoreboard.getTeamScores(eTeam)
 				if teamScores and self._team.isVassal(eTeam):
@@ -530,6 +548,10 @@ class TeamScores:
 						else:
 							playerScore.set(MASTER, MASTER_ICON)
 					self._scoreboard._anyHas[MASTER] = True
+			# K-Mod (to fix a problem when a human player becomes the vassal of an unmet team)
+			if self._master == None:
+				self._isVassal = False
+			# K-Mod end
 
 
 class PlayerScore:

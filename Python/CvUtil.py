@@ -392,7 +392,7 @@ def combatMessageBuilder(cdAttacker, cdDefender, iCombatOdds):
 	combatDetailMessageBuilder(cdDefender,cdAttacker.eOwner,1)
 	combatDetailMessageBuilder(cdAttacker,cdDefender.eOwner,-1)
 	combatDetailMessageBuilder(cdDefender,cdDefender.eOwner,1)
-	
+    
 def initDynamicFontIcons():
 	global FontIconMap
 	

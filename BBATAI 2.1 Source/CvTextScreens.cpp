@@ -79,6 +79,8 @@ CvString CvTextScreen::buildLeaderInfoHelp( LeaderTypes eLeader, CivilizationTyp
 			// Loop Variables
 			CvTraitInfo &pTraitInfo = GC.getTraitInfo()[*traitIter];	// Local version of TraitInfo
 			vector<intPair> PromotionInfos;												// intPair Vector for handling Promotion Infos
+			//Charriu Second Free Promotio
+			vector<intPair> SecondPromotionInfos;												// intPair Vector for handling Promotion Infos
 			vector<intPair>::iterator promotionIter;								// its iterator
 			BuildingTypes eLoopBuilding;
 			UnitTypes eLoopUnit;
@@ -117,6 +119,30 @@ CvString CvTextScreen::buildLeaderInfoHelp( LeaderTypes eLeader, CivilizationTyp
 			{
 				sprintf(szTempBuffer, "\n  %c%s%d%% %c Birth Rate", FC_BULLETPOINT, 
 					((pTraitInfo.m_iGreatPersonRateModifier > 0) ? "+" : ""), pTraitInfo.m_iGreatPersonRateModifier, FC_GREAT_PERSON);
+				strcat(szHelpString, szTempBuffer);
+			}
+
+			//Charriu Trade Route Modifier
+			if (pTraitInfo.m_iTradeRouteModifier != 0)
+			{
+				sprintf(szTempBuffer, "\n  %c%s%d%%%c % from Trade", FC_BULLETPOINT, 
+					((pTraitInfo.m_iTradeRouteModifier > 0) ? "+" : ""), pTraitInfo.m_iTradeRouteModifier, FC_GREAT_PERSON);
+				strcat(szHelpString, szTempBuffer);
+			}
+
+			//Charriu Domestic Trade Route Modifier
+			if (pTraitInfo.m_iDomesticTradeRouteModifier != 0)
+			{
+				sprintf(szTempBuffer, "\n  %c%s%d%%%c % from Trade", FC_BULLETPOINT, 
+					((pTraitInfo.m_iDomesticTradeRouteModifier > 0) ? "+" : ""), pTraitInfo.m_iDomesticTradeRouteModifier, FC_GREAT_PERSON);
+				strcat(szHelpString, szTempBuffer);
+			}
+
+			//Charriu Unit Maintenance Modifier
+			if (pTraitInfo.m_iUnitMaintenanceModifier != 0)
+			{
+				sprintf(szTempBuffer, "\n  %c%s%d%%%c % Unit Maintenance", FC_BULLETPOINT, 
+					((pTraitInfo.m_iUnitMaintenanceModifier > 0) ? "+" : ""), pTraitInfo.m_iUnitMaintenanceModifier, FC_GREAT_PERSON);
 				strcat(szHelpString, szTempBuffer);
 			}
 
@@ -190,6 +216,24 @@ CvString CvTextScreen::buildLeaderInfoHelp( LeaderTypes eLeader, CivilizationTyp
 					strcat(szHelpString, szTempBuffer);
 				}
 
+				//Charriu ExtraYieldLandThreshold
+				if (pTraitInfo.m_paiExtraYieldLandThreshold[iI] > 0)
+				{
+					sprintf(szTempBuffer, "\n  %c%s%d%c/Plot with %d%c", FC_BULLETPOINT, 
+						((GC.getEXTRA_YIELD() > 0) ? "+" : ""), GC.getEXTRA_YIELD(), GC.getYieldInfo()[iI].m_iChar, 
+						pTraitInfo.m_paiExtraYieldLandThreshold[iI], GC.getYieldInfo()[iI].m_iChar);
+					strcat(szHelpString, szTempBuffer);
+				}
+
+				//Charriu ExtraYieldWaterThreshold
+				if (pTraitInfo.m_paiExtraYieldWaterThreshold[iI] > 0)
+				{
+					sprintf(szTempBuffer, "\n  %c%s%d%c/Plot with %d%c", FC_BULLETPOINT, 
+						((GC.getEXTRA_YIELD() > 0) ? "+" : ""), GC.getEXTRA_YIELD(), GC.getYieldInfo()[iI].m_iChar, 
+						pTraitInfo.m_paiExtraYieldWaterThreshold[iI], GC.getYieldInfo()[iI].m_iChar);
+					strcat(szHelpString, szTempBuffer);
+				}
+
 				if (pTraitInfo.m_paiTradeYieldModifier[iI] != 0)
 				{
 					sprintf(szTempBuffer, "\n  %c%s%d%%%c from Trade", FC_BULLETPOINT, 
@@ -253,6 +297,47 @@ CvString CvTextScreen::buildLeaderInfoHelp( LeaderTypes eLeader, CivilizationTyp
 					}
 				}
 			}
+
+			//Charriu Second Free Promotion
+			SecondPromotionInfos.reserve(GC.getNumPromotionInfos());
+			for (iI = 0; iI < GC.getNumPromotionInfos(); iI++)
+			{
+				if (pTraitInfo.m_pabFreeSecondPromotion[iI])
+				{
+					for (iJ = 0; iJ < GC.getNumUnitCombatInfos(); iJ++)
+					{
+						if (pTraitInfo.m_pabFreeSecondPromotionUnitCombat[iJ])
+						{
+							SecondPromotionInfos.push_back(intPair(iI,iJ));
+						}
+					}
+				}
+			}
+			// Adding Promotion Text
+			if (!SecondPromotionInfos.empty())
+			{
+				for (promotionIter = SecondPromotionInfos.begin(); promotionIter != SecondPromotionInfos.end(); ++promotionIter)
+				{
+					int iLoopPromotion = promotionIter->first;
+					int iLoopUnitCombat = promotionIter->second;
+					if (iLastPromotion == iLoopPromotion)
+					{
+						sprintf(szTempBuffer, "\n    %c%s", FC_BULLETPOINT, 
+							GC.getUnitCombatInfo()[iLoopUnitCombat].getDescription());
+						strcat(szHelpString, szTempBuffer);
+					}
+					else
+					{
+						sprintf(szTempBuffer, "\n  %cFree Promotion (%s)\n    %c%s", FC_BULLETPOINT, 
+							GC.getPromotionInfo()[iLoopPromotion].getDescription(), 
+							FC_BULLETPOINT,
+							GC.getUnitCombatInfo()[iLoopUnitCombat].getDescription());
+						strcat(szHelpString, szTempBuffer);
+						iLastPromotion = iLoopPromotion;
+					}
+				}
+			}
+
 			// No Civic Maintenance
 			for (iI = 0; iI < GC.getNumCivicOptionInfos(); iI++)
 			{

@@ -1941,13 +1941,25 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity)
 
 	if( bRaze )
 	{
-		//Fuyu fix
-		logBBAI("    Player %d (%S) decides to to raze city %S!!!", getID(), getCivilizationDescription(0), pCity->getName().GetCString() );
-		pCity->doTask(TASK_RAZE);
-		//logBBAI("    Player %d (%S) decides to to raze city %S!!!", getID(), getCivilizationDescription(0), pCity->getName().GetCString() );
+		//Charriu Barbs don't raze cities
+        if (GC.getGameINLINE().getSorenRandNum(100, "AI Raze City") < iRazeValue && (GC.getDefineINT("BARBS_NEVER_RAZE") == 0 || !isBarbarian()))
+        {
+			//Fuyu fix
+			logBBAI("    Player %d (%S) decides to to raze city %S!!!", getID(), getCivilizationDescription(0), pCity->getName().GetCString() );
+			pCity->doTask(TASK_RAZE);
+			//logBBAI("    Player %d (%S) decides to to raze city %S!!!", getID(), getCivilizationDescription(0), pCity->getName().GetCString() );
+		}
 	}
 	else
 	{
+		//Charriu cities captured by barbarians never autoraze
+		if (GC.getDefineINT("BARBS_NEVER_RAZE") == 1 && isBarbarian())
+		{
+			if (pCity->getPopulation() == 1)
+			{
+				pCity->setHighestPopulation(2);
+			}
+		}
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                       06/14/09                       Maniac & jdog5000      */
 /*                                                                                              */
@@ -20455,6 +20467,16 @@ UnitTypes CvPlayerAI::AI_bestAdvancedStartUnitAI(CvPlot* pPlot, UnitAITypes eUni
 									if (GC.getTraitInfo((TraitTypes) iJ).isFreePromotion(iK))
 									{
 										if ((GC.getUnitInfo(eLoopUnit).getUnitCombatType() != NO_UNITCOMBAT) && GC.getTraitInfo((TraitTypes) iJ).isFreePromotionUnitCombat(GC.getUnitInfo(eLoopUnit).getUnitCombatType()))
+										{
+											iPromotionValue += 15;
+											break;
+										}
+									}
+
+									//Charriu Second Free Promotion
+									if (GC.getTraitInfo((TraitTypes) iJ).isFreeSecondPromotion(iK))
+									{
+										if ((GC.getUnitInfo(eLoopUnit).getUnitCombatType() != NO_UNITCOMBAT) && GC.getTraitInfo((TraitTypes) iJ).isFreeSecondPromotionUnitCombat(GC.getUnitInfo(eLoopUnit).getUnitCombatType()))
 										{
 											iPromotionValue += 15;
 											break;

@@ -35,6 +35,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -58,6 +60,7 @@
 			<bGovernmentCenter>1</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -205,6 +208,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -228,6 +233,7 @@
 			<bGovernmentCenter>1</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -389,6 +395,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -412,6 +420,7 @@
 			<bGovernmentCenter>1</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -573,6 +582,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -596,6 +607,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -745,6 +757,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -768,6 +782,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -917,6 +932,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -940,6 +957,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -1115,6 +1133,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -1138,6 +1158,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -1318,6 +1339,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>			
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -1341,6 +1364,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -1490,6 +1514,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -1513,6 +1539,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -1666,6 +1693,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -1689,6 +1718,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -1838,6 +1868,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -1861,6 +1893,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -2009,6 +2042,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -2032,6 +2067,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -2171,6 +2207,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -2194,6 +2232,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -2338,6 +2377,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -2361,6 +2402,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -2518,6 +2560,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -2541,6 +2585,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>1</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -2710,6 +2755,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -2733,6 +2780,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -2882,6 +2930,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -2905,6 +2955,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -3053,6 +3104,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -3076,6 +3129,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -3219,6 +3273,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -3242,6 +3298,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -3381,6 +3438,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -3404,6 +3463,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -3548,6 +3608,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -3571,6 +3633,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -3717,6 +3780,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -3740,6 +3805,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -3886,6 +3952,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -3909,6 +3977,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -4070,6 +4139,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -4093,6 +4164,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -4249,6 +4321,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -4272,6 +4346,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -4416,6 +4491,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -4439,6 +4516,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -4592,6 +4670,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -4615,6 +4695,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -4764,6 +4845,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -4787,6 +4870,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -4936,6 +5020,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -4959,6 +5045,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -5126,6 +5213,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -5149,6 +5238,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -5322,6 +5412,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -5345,6 +5437,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -5513,6 +5606,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -5536,6 +5631,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -5704,6 +5800,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>BONUS_COAL</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -5727,6 +5825,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -5871,6 +5970,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -5894,6 +5995,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -6043,6 +6145,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -6066,6 +6170,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -6210,6 +6315,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>BONUS_URANIUM</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -6233,6 +6340,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -6377,6 +6485,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -6400,6 +6510,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -6565,6 +6676,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -6588,6 +6701,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -6735,6 +6849,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -6758,6 +6874,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -6910,6 +7027,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -6933,6 +7052,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -7084,6 +7204,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -7107,6 +7229,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -7259,6 +7382,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -7282,6 +7407,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -7426,6 +7552,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -7449,6 +7577,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -7604,6 +7733,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -7627,6 +7758,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -7787,6 +7919,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -7810,6 +7944,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -7974,6 +8109,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -7997,6 +8134,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -8157,6 +8295,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -8180,6 +8320,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -8335,6 +8476,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -8358,6 +8501,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -8505,6 +8649,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -8528,6 +8674,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -8675,6 +8822,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -8698,6 +8847,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -8850,6 +9000,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -8873,6 +9025,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -9035,6 +9188,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -9058,6 +9213,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -9224,6 +9380,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -9247,6 +9405,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -9417,6 +9576,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -9440,6 +9601,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -9601,6 +9763,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -9624,6 +9788,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -9767,6 +9932,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -9790,6 +9957,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -9951,6 +10119,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -9974,6 +10144,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -10117,6 +10288,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -10140,6 +10313,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -10281,6 +10455,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -10304,6 +10480,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -10469,6 +10646,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -10492,6 +10671,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -10655,6 +10835,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -10678,6 +10860,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -10850,6 +11033,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -10873,6 +11058,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -11045,6 +11231,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -11068,6 +11256,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -11238,6 +11427,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -11261,6 +11452,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -11402,6 +11594,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -11425,6 +11619,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -11566,6 +11761,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -11589,6 +11786,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -11752,6 +11950,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -11775,6 +11975,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -11958,6 +12159,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -11981,6 +12184,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -12139,6 +12343,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -12162,6 +12368,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -12320,6 +12527,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -12343,6 +12552,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -12501,6 +12711,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -12524,6 +12736,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -12677,6 +12890,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -12700,6 +12915,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -12858,6 +13074,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -12881,6 +13099,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -13039,6 +13258,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -13062,6 +13283,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -13204,6 +13426,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -13227,6 +13451,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -13372,6 +13597,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -13395,6 +13622,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -13549,6 +13777,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -13572,6 +13802,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -13721,6 +13952,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -13744,6 +13977,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -13896,6 +14130,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -13919,6 +14155,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -14082,6 +14319,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -14105,6 +14344,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -14255,6 +14495,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -14278,6 +14520,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -14439,6 +14682,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -14462,6 +14707,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -14614,6 +14860,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -14637,6 +14885,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -14800,6 +15049,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -14823,6 +15074,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -14973,6 +15225,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -14996,6 +15250,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -15157,6 +15412,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -15180,6 +15437,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -15332,6 +15590,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -15355,6 +15615,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -15518,6 +15779,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -15541,6 +15804,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -15691,6 +15955,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -15714,6 +15980,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -15875,6 +16142,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -15898,6 +16167,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -16050,6 +16320,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -16073,6 +16345,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -16236,6 +16509,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -16259,6 +16534,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -16409,6 +16685,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -16432,6 +16710,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -16593,6 +16872,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -16616,6 +16897,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -16768,6 +17050,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -16791,6 +17075,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -16954,6 +17239,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -16977,6 +17264,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -17127,6 +17415,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -17150,6 +17440,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -17311,6 +17602,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -17334,6 +17627,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -17486,6 +17780,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -17509,6 +17805,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -17672,6 +17969,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -17695,6 +17994,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -17845,6 +18145,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -17868,6 +18170,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -18029,6 +18332,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -18052,6 +18357,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -18204,6 +18510,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -18227,6 +18535,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -18390,6 +18699,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -18413,6 +18724,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -18563,6 +18875,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -18586,6 +18900,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -18747,6 +19062,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -18770,6 +19087,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -18927,6 +19245,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -18950,6 +19270,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -19107,6 +19428,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -19130,6 +19453,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>1</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -19292,6 +19616,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>BONUS_COAL</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -19315,6 +19641,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>1</bNoUnhealthyPopulation>
@@ -19467,6 +19794,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -19490,6 +19819,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -19638,6 +19968,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -19661,6 +19993,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -19831,6 +20164,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -19854,6 +20189,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -20010,6 +20346,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -20033,6 +20371,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -20204,6 +20543,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -20227,6 +20568,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -20375,6 +20717,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -20398,6 +20742,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -20550,6 +20895,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -20573,6 +20920,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -20725,6 +21073,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -20748,6 +21098,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -20892,6 +21243,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -20915,6 +21268,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -21066,6 +21420,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -21089,6 +21445,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>1</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -21245,6 +21602,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -21268,6 +21627,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -21436,6 +21796,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -21459,6 +21821,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -21615,6 +21978,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -21638,6 +22003,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -21799,6 +22165,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -21822,6 +22190,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -21987,6 +22356,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -22010,6 +22381,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -22168,6 +22540,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -22191,6 +22565,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -22342,6 +22717,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -22365,6 +22742,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -22535,6 +22913,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -22558,6 +22938,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -22714,6 +23095,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -22737,6 +23120,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -22893,6 +23277,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -22916,6 +23302,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -23080,6 +23467,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -23103,6 +23492,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -23261,6 +23651,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -23284,6 +23676,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -23440,6 +23833,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -23463,6 +23858,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>1</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -23619,6 +24015,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -23642,6 +24040,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -23799,6 +24198,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -23822,6 +24223,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -23983,6 +24385,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -24006,6 +24410,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -24167,6 +24572,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>BONUS_DRAMA</FreeBonus>
@@ -24190,6 +24597,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -24337,6 +24745,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>BONUS_MUSIC</FreeBonus>
@@ -24360,6 +24770,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -24507,6 +24918,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>BONUS_MOVIES</FreeBonus>
@@ -24530,6 +24943,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -24677,6 +25091,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -24700,6 +25116,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -24843,6 +25260,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -24866,6 +25285,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -25013,6 +25433,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -25036,6 +25458,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -25182,6 +25605,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -25205,6 +25630,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -25353,6 +25779,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -25376,6 +25804,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -25523,6 +25952,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -25546,6 +25977,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -25707,6 +26139,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -25730,6 +26164,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -25889,6 +26324,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -25912,6 +26349,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -26068,6 +26506,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -26091,6 +26531,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -26252,6 +26693,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -26275,6 +26718,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -26431,6 +26875,8 @@
 				</ProductionTrait>
 			</ProductionTraits>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -26454,6 +26900,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -26604,6 +27051,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -26627,6 +27076,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -26783,6 +27233,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -26806,6 +27258,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -26969,6 +27422,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -26992,6 +27447,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -27147,6 +27603,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -27170,6 +27628,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -27325,6 +27784,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -27348,6 +27809,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -27503,6 +27965,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -27526,6 +27990,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -27681,6 +28146,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -27704,6 +28171,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -27859,6 +28327,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -27882,6 +28352,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -28037,6 +28508,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -28060,6 +28533,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>
@@ -28211,6 +28685,8 @@
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<HappinessTraits/>
+			<TradeRouteModifierTraits/>
+			<SeaPlotYieldChangesTraits/>
 			<NoBonus>NONE</NoBonus>
 			<PowerBonus>NONE</PowerBonus>
 			<FreeBonus>NONE</FreeBonus>
@@ -28234,6 +28710,7 @@
 			<bGovernmentCenter>0</bGovernmentCenter>
 			<bGoldenAge>0</bGoldenAge>
 			<bAllowsNukes>0</bAllowsNukes>
+			<bAddsFreshWater>0</bAddsFreshWater>
 			<bMapCentering>0</bMapCentering>
 			<bNoUnhappiness>0</bNoUnhappiness>
 			<bNoUnhealthyPopulation>0</bNoUnhealthyPopulation>

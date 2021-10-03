@@ -313,6 +313,8 @@ public:
 	int getFeatureProductionModifier() const;	// Exposed to Python
 	int getWorkerSpeedModifier() const;		// Exposed to Python
 	int getFirstFreeUnitClass() const;		// Exposed to Python
+	//Charriu FreeUnitForEverybody
+	int getFreeUnitEverybodyClass() const;		// Exposed to Python
 	int getHealth() const;								// Exposed to Python
 	int getHappiness() const;							// Exposed to Python
 	int getFirstFreeTechs() const;				// Exposed to Python
@@ -380,6 +382,8 @@ protected:
 	int m_iFeatureProductionModifier;
 	int m_iWorkerSpeedModifier;
 	int m_iFirstFreeUnitClass;
+	//Charriu FreeUnitForEverybody
+	int m_iFreeUnitEverybodyClass;
 	int m_iHealth;
 	int m_iHappiness;
 	int m_iFirstFreeTechs;
@@ -1691,6 +1695,8 @@ public:
 	bool isCenterInCity() const;				// Exposed to Python
 	bool isStateReligion() const;				// Exposed to Python
 	bool isAllowsNukes() const;				// Exposed to Python
+	//Charriu Add Act as fresh water
+	bool isAddsFreshWater() const;		// Exposed to Python
 
 	const TCHAR* getConstructSound() const;				// Exposed to Python
 	void setConstructSound(const TCHAR* szVal);
@@ -1746,6 +1752,10 @@ public:
 	int getProductionTraits(int i) const;				// Exposed to Python
 	int getHappinessTraits(int i) const;				// Exposed to Python
 	int getBuildingHappinessChanges(int i) const;				// Exposed to Python
+	//Charriu TradeRouteModifierTrait
+	int getTradeRouteModifierTraits(int i) const;				// Exposed to Python
+	//Charriu SeaPlotYieldChangesTrait
+	int getSeaPlotYieldChangesTraits(int i) const;				// Exposed to Python
 	int getPrereqNumOfBuildingClass(int i) const;				// Exposed to Python
 	int getFlavorValue(int i) const;				// Exposed to Python
 	int getImprovementFreeSpecialist(int i) const;				// Exposed to Python
@@ -1898,6 +1908,8 @@ protected:
 	bool m_bCenterInCity;
 	bool m_bStateReligion;
 	bool m_bAllowsNukes;
+	//Charriu Add Act as fresh water
+	bool m_bAddsFreshWater;
 
 	CvString m_szConstructSound;
 	CvString m_szArtDefineTag;
@@ -1909,6 +1921,10 @@ protected:
 	int* m_piPrereqOrBonuses;
 	int* m_piProductionTraits;
 	int* m_piHappinessTraits;
+	//Charriu TradeRouteModifierTrait
+	int* m_piTradeRouteModifierTraits;
+	//Charriu SeaPlotYieldChangesTrait
+	int* m_piSeaPlotYieldChangesTraits;
 	int* m_piSeaPlotYieldChange;
 	int* m_piRiverPlotYieldChange;
 	int* m_piGlobalSeaPlotYieldChange;
@@ -2892,6 +2908,8 @@ public:
 	bool isWater() const;				// Exposed to Python
 	DllExport bool isGoody() const;				// Exposed to Python
 	bool isPermanent() const;				// Exposed to Python
+	//Permanent/Pillage split by Charriu for RtR
+	bool isNotPillage() const;				// Exposed to Python
 	bool isOutsideBorders() const;				// Exposed to Python
 
 	const TCHAR* getArtDefineTag() const;
@@ -2970,6 +2988,8 @@ protected:
 	bool m_bWater;							
 	bool m_bGoody;
 	bool m_bPermanent;
+	//Permanent/Pillage split by Charriu for RtR
+	bool m_bNotPillage;
 	bool m_bOutsideBorders;
 
 	CvString m_szArtDefineTag;
@@ -3071,6 +3091,8 @@ public:
 	bool isFlatlands() const;						// Exposed to Python
 	bool isNoRiverSide() const;					// Exposed to Python
 	bool isNormalize() const;						// Exposed to Python
+	//Charriu Nuke immune resources
+	bool isNukeImmune() const;						// Exposed to Python
 
 	const TCHAR* getArtDefineTag() const;
 	void setArtDefineTag(const TCHAR* szVal);
@@ -3129,6 +3151,8 @@ protected:
 	bool m_bFlatlands;
 	bool m_bNoRiverSide;
 	bool m_bNormalize;
+	//Charriu Nuke immune resources
+	bool m_bNukeImmune;
 
 	CvString m_szArtDefineTag;
 
@@ -4235,6 +4259,14 @@ public:
 	int getHappiness() const;				// Exposed to Python
 	int getMaxAnarchy() const;				// Exposed to Python
 	int getUpkeepModifier() const;				// Exposed to Python
+	//T-hawk for RB balance mod
+	int getCityUpkeepModifier() const;				// Exposed to Python
+	//Charriu Trade Route Modifier
+	int getTradeRouteModifier() const;				// Exposed to Python
+	//Charriu Domestic Trade Route Modifier
+	int getDomesticTradeRouteModifier() const;				// Exposed to Python
+	//Charriu Unit Maintenance Modifier
+	int getUnitMaintenanceModifier() const;				// Exposed to Python
 	int getLevelExperienceModifier() const;				// Exposed to Python
 	int getGreatPeopleRateModifier() const;				// Exposed to Python
 	int getGreatGeneralRateModifier() const;				// Exposed to Python
@@ -4249,12 +4281,20 @@ public:
 	// Arrays
 
 	int getExtraYieldThreshold(int i) const;				// Exposed to Python
+	//Charriu ExtraYieldLandThreshold
+	int getExtraYieldLandThreshold(int i) const;				// Exposed to Python
+	//Charriu ExtraYieldWaterThreshold
+	int getExtraYieldWaterThreshold(int i) const;				// Exposed to Python
 	int getTradeYieldModifier(int i) const;				// Exposed to Python
 	int getCommerceChange(int i) const;				// Exposed to Python
 	int getCommerceModifier(int i) const;				// Exposed to Python
 
 	int isFreePromotion(int i) const;				// Exposed to Python
-	int isFreePromotionUnitCombat(int i) const;			
+	int isFreePromotionUnitCombat(int i) const;
+
+	//Charriu Second Free Promotio
+	int isFreeSecondPromotion(int i) const;				// Exposed to Python
+	int isFreeSecondPromotionUnitCombat(int i) const;
 
 	bool read(CvXMLLoadUtility* pXML);
 
@@ -4265,6 +4305,7 @@ protected:
 	int m_iHappiness;
 	int m_iMaxAnarchy;											
 	int m_iUpkeepModifier;									
+	int m_iCityUpkeepModifier;						//T-hawk for RB balance mod
 	int m_iLevelExperienceModifier;									
 	int m_iGreatPeopleRateModifier;						
 	int m_iGreatGeneralRateModifier;						
@@ -4278,13 +4319,26 @@ protected:
 	// Arrays
 
 	int* m_paiExtraYieldThreshold;
+	//Charriu ExtraYieldLandThreshold
+	int* m_paiExtraYieldLandThreshold;
+	//Charriu ExtraYieldWaterThreshold
+	int* m_paiExtraYieldWaterThreshold;
 	int* m_paiTradeYieldModifier;
+	//Charriu Trade Route Modifier
+	int m_iTradeRouteModifier;
+	//Charriu Domestic Trade Route Modifier
+	int m_iDomesticTradeRouteModifier;
+	//Charriu Unit Maintenance Modifier
+	int m_iUnitMaintenanceModifier;
 	int* m_paiCommerceChange;
 	int* m_paiCommerceModifier;
 
 	bool* m_pabFreePromotion;
 	bool* m_pabFreePromotionUnitCombat;
 
+	//Charriu Second Free Promotion
+	bool* m_pabFreeSecondPromotion;
+	bool* m_pabFreeSecondPromotionUnitCombat;
 };
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -435,6 +435,10 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iBuildingBadHappiness = 0;
 	m_iExtraBuildingGoodHappiness = 0;
 	m_iExtraBuildingBadHappiness = 0;
+	//Charriu TradeRouteModifierTrait
+	m_iExtraBuildingTradeRouteModifier = 0;
+	//Charriu SeaPlotYieldChangesTrait
+	m_iExtraBuildingSeaPlotYieldChanges = 0;
 	m_iExtraBuildingGoodHealth = 0;
 	m_iExtraBuildingBadHealth = 0;
 	m_iFeatureGoodHappiness = 0;
@@ -469,6 +473,8 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 	m_iFreeSpecialist = 0;
 	m_iPowerCount = 0;
 	m_iDirtyPowerCount = 0;
+	//Charriu Add Act as Fresh water
+	m_iFreshWaterSourceCount = 0;
 	m_iDefenseDamage = 0;
 	m_iLastDefenseDamage = 0;
 	m_iOccupationTimer = 0;
@@ -635,12 +641,16 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		m_paiMaxSpecialistCount = new int[GC.getNumSpecialistInfos()];
 		m_paiForceSpecialistCount = new int[GC.getNumSpecialistInfos()];
 		m_paiFreeSpecialistCount = new int[GC.getNumSpecialistInfos()];
+		//Charriu Lock specialist
+		m_pabSpecialistLockedForAI = new bool[GC.getNumSpecialistInfos()];
 		for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 		{
 			m_paiSpecialistCount[iI] = 0;
 			m_paiMaxSpecialistCount[iI] = 0;
 			m_paiForceSpecialistCount[iI] = 0;
 			m_paiFreeSpecialistCount[iI] = 0;
+			//Charriu Lock specialist
+			m_pabSpecialistLockedForAI[iI] = false;
 		}
 
 		FAssertMsg((0 < GC.getNumImprovementInfos()),  "GC.getNumImprovementInfos() is not greater than zero but an array is being allocated in CvCity::reset");
@@ -955,9 +965,10 @@ void CvCity::doTurn()
 
 	doPlotCulture(false, getOwnerINLINE(), getCommerceRate(COMMERCE_CULTURE));
 
-	doProduction(bAllowNoProduction);
-
+	//Charriu Fix production decay never happening on element finished. Just swapped Decay and Production
 	doDecay();
+
+	doProduction(bAllowNoProduction);
 
 	doReligion();
 
@@ -1244,6 +1255,11 @@ void CvCity::doTask(TaskTypes eTask, int iData1, int iData2, bool bOption, bool 
 
 	case TASK_CHANGE_SPECIALIST:
 		alterSpecialistCount(((SpecialistTypes)iData1), iData2);
+		break;
+
+	//Charriu Lock Specialist
+	case TASK_LOCK_SPECIALIST:
+		lockSpecialistForAI(((SpecialistTypes)iData1));
 		break;
 
 	case TASK_CHANGE_WORKING_PLOT:
@@ -3914,10 +3930,19 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		changeTradeRouteModifier(GC.getBuildingInfo(eBuilding).getTradeRouteModifier() * iChange);
 		changeForeignTradeRouteModifier(GC.getBuildingInfo(eBuilding).getForeignTradeRouteModifier() * iChange);
 		changePowerCount(((GC.getBuildingInfo(eBuilding).isPower()) ? iChange : 0), GC.getBuildingInfo(eBuilding).isDirtyPower());
+		//Charriu Add Act as fresh water
+		changeFreshWaterSourceCount(((GC.getBuildingInfo(eBuilding).isAddsFreshWater()) ? iChange : 0));
 		changeGovernmentCenterCount((GC.getBuildingInfo(eBuilding).isGovernmentCenter()) ? iChange : 0);
 		changeNoUnhappinessCount((GC.getBuildingInfo(eBuilding).isNoUnhappiness()) ? iChange : 0);
 		changeNoUnhealthyPopulationCount((GC.getBuildingInfo(eBuilding).isNoUnhealthyPopulation()) ? iChange : 0);
 		changeBuildingOnlyHealthyCount((GC.getBuildingInfo(eBuilding).isBuildingOnlyHealthy()) ? iChange : 0);
+
+		//Charriu SeaPlotYieldChangesTrait
+		int extraSeaPlotYield = GET_PLAYER(getOwnerINLINE()).getExtraBuildingSeaPlotYieldChanges(eBuilding);
+		if (extraSeaPlotYield != 0)
+		{
+			changeSeaPlotYield((YIELD_COMMERCE), (extraSeaPlotYield * iChange));
+		}
 
 		for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 		{
@@ -3996,6 +4021,10 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		}
 
 		updateExtraBuildingHappiness();
+		//Charriu TradeRouteModifierTrait
+		updateExtraBuildingTradeRouteModifier();
+		//Charriu SeaPlotYieldChangesTrait
+		updateExtraBuildingSeaPlotYieldChanges();
 		updateExtraBuildingHealth();
 
 		GET_PLAYER(getOwnerINLINE()).changeAssets(GC.getBuildingInfo(eBuilding).getAssetValue() * iChange);
@@ -4869,9 +4898,14 @@ int CvCity::getHurryCost(bool bExtra, int iProductionLeft, int iHurryModifier, i
 		if (iExtraProduction > 0)
 		{
 			int iAdjustedProd = iProduction * iProduction;
-			
+#if 0
 			// round up
 			iProduction = (iAdjustedProd + (iExtraProduction - 1)) / iExtraProduction;
+#else
+			// Ramk - Fix rounding bug for IMP settlers on 55H/100H.
+			int iProductionFactor10000 = getExtraProductionDifference(10000, iModifier); // modifation factor times 10000
+			iProduction = (iProduction * 10000 + (iProductionFactor10000-1)) / iProductionFactor10000; // round up
+#endif
 		}
 	}
 
@@ -5826,6 +5860,11 @@ void CvCity::updateMaintenance()
 	if (!isDisorder() && !isWeLoveTheKingDay() && (getPopulation() > 0))
 	{
 		iNewMaintenance = (calculateBaseMaintenanceTimes100() * std::max(0, (getMaintenanceModifier() + 100))) / 100;
+
+		//T-hawk for RB balance mod.  Added a trait to reduce city maintenance.  Works multiplicatively after discounts from courthouse/etc.
+		int iCityUpkeepModifier = GET_PLAYER(getOwnerINLINE()).getCityUpkeepModifier();
+		if (iCityUpkeepModifier > 0)
+			iNewMaintenance -= iNewMaintenance * iCityUpkeepModifier / 100;
 	}
 
 	if (iOldMaintenance != iNewMaintenance)
@@ -5872,7 +5911,15 @@ int CvCity::calculateDistanceMaintenanceTimes100() const
 		iTempMaintenance *= GC.getHandicapInfo(getHandicapType()).getDistanceMaintenancePercent();
 		iTempMaintenance /= 100;
 
-		iTempMaintenance /= GC.getMapINLINE().maxPlotDistance();
+		//T-hawk for Realms Beyond balance mod
+		//For toroidal maps, calculate distance factor as if cylindrical (see CvMap for the implementation)
+		//novice: Added global define to enable this behaviour
+		if(GC.getDefineINT("ENABLE_TREAT_TOROIDAL_MAINTENANCE_AS_CYLINDRICAL") > 0) {
+			iTempMaintenance /= GC.getMapINLINE().maxPlotDistanceToroidalAsCylindrical();
+		}
+		else {
+			iTempMaintenance /= GC.getMapINLINE().maxPlotDistance();
+		}
 
 		iWorstCityMaintenance = std::max(iWorstCityMaintenance, iTempMaintenance);
 
@@ -7138,6 +7185,63 @@ int CvCity::getAdditionalHealthByPlayerBuildingOnlyHealthy(int iIgnoreBuildingOn
 /* 	New Civic AI												END 			*/
 /********************************************************************************/
 
+
+//Charriu TradeRouteModifierTrait
+int CvCity::getExtraBuildingTradeRouteModifier() const
+{
+	return m_iExtraBuildingTradeRouteModifier;
+}
+
+void CvCity::updateExtraBuildingTradeRouteModifier()
+{
+	int iNewExtraBuildingTradeRouteModifier;
+	int iChange;
+	int iI;
+
+	iNewExtraBuildingTradeRouteModifier = 0;
+
+	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	{
+		iChange = getNumActiveBuilding((BuildingTypes)iI) * GET_PLAYER(getOwnerINLINE()).getExtraBuildingTradeRouteModifier((BuildingTypes)iI);
+
+		iNewExtraBuildingTradeRouteModifier += iChange;
+	}
+
+	if (getExtraBuildingTradeRouteModifier() != iNewExtraBuildingTradeRouteModifier)
+	{
+		m_iExtraBuildingTradeRouteModifier = iNewExtraBuildingTradeRouteModifier;
+		FAssert(getExtraBuildingTradeRouteModifier() >= 0);
+	}
+}
+
+//Charriu SeaPlotYieldChangesTrait
+int CvCity::getExtraBuildingSeaPlotYieldChanges() const
+{
+	return m_iExtraBuildingSeaPlotYieldChanges;
+}
+
+void CvCity::updateExtraBuildingSeaPlotYieldChanges()
+{
+	int iNewExtraBuildingSeaPlotYieldChanges;
+	int iChange;
+	int iI;
+
+	iNewExtraBuildingSeaPlotYieldChanges = 0;
+
+	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	{
+		iChange = getNumActiveBuilding((BuildingTypes)iI) * GET_PLAYER(getOwnerINLINE()).getExtraBuildingSeaPlotYieldChanges((BuildingTypes)iI);
+
+		iNewExtraBuildingSeaPlotYieldChanges += iChange;
+	}
+
+	if (getExtraBuildingSeaPlotYieldChanges() != iNewExtraBuildingSeaPlotYieldChanges)
+	{
+		m_iExtraBuildingSeaPlotYieldChanges = iNewExtraBuildingSeaPlotYieldChanges;
+		FAssert(getExtraBuildingSeaPlotYieldChanges() >= 0);
+	}
+}
+
 // BUG - Building Additional Happiness - start
 /*
  * Returns the total additional happiness that adding one of the given buildings will provide.
@@ -8190,12 +8294,23 @@ void CvCity::changeFreeSpecialist(int iChange)
 	}
 }
 
+//Charriu Add Act as Fresh Water
+int CvCity::getFreshWaterSourceCount() const
+{
+	return m_iFreshWaterSourceCount;
+}
 
 int CvCity::getPowerCount() const
 {
 	return m_iPowerCount;
 }
 
+
+//Charriu Add Act as Fresh Water
+bool CvCity::isAddsFreshWater() const
+{
+	return getFreshWaterSourceCount() > 0;
+}
 
 bool CvCity::isPower() const
 {
@@ -8259,6 +8374,35 @@ void CvCity::changePowerCount(int iChange, bool bDirty)
 		if (bOldDirtyPower != isDirtyPower() || bOldPower != isPower())
 		{
 			updatePowerHealth();
+		}
+	}
+}
+
+
+void CvCity::changeFreshWaterSourceCount(int iChange)
+{
+	int iDX, iDY;
+	CvPlot* pLoopPlot;
+
+	if (iChange != 0)
+	{
+		m_iFreshWaterSourceCount = (m_iFreshWaterSourceCount + iChange);
+		FAssert(getFreshWaterSourceCount() >= 0);
+
+		updateFreshWaterHealth();
+
+		for (iDX = -1; iDX <= 1; iDX++)
+		{
+			for (iDY = -1; iDY <= 1; iDY++)
+			{
+				pLoopPlot	= plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
+
+				if (pLoopPlot != NULL)
+				{
+					pLoopPlot->updateIrrigated();
+					pLoopPlot->updateYield();
+				}
+			}
 		}
 	}
 }
@@ -8544,6 +8688,13 @@ bool CvCity::isCitizensAutomated() const
 	return m_bCitizensAutomated;
 }
 
+//Charriu Lock specialist
+bool CvCity::isSpecialistLockedForAI(SpecialistTypes eIndex) const
+{
+	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	FAssertMsg(eIndex < GC.getNumSpecialistInfos(), "eIndex expected to be < GC.getNumSpecialistInfos()");
+	return m_pabSpecialistLockedForAI[eIndex];
+}
 
 void CvCity::setCitizensAutomated(bool bNewValue)
 {
@@ -8962,6 +9113,19 @@ int CvCity::getAdditionalBaseYieldRateByBuilding(YieldTypes eIndex, BuildingType
 				}
 			}
 		}
+		//Charriu SeaPlotYieldChangesTrait
+		int extraSeaPlotYield = GET_PLAYER(getOwnerINLINE()).getExtraBuildingSeaPlotYieldChanges(eBuilding);
+		if (extraSeaPlotYield != 0 && eIndex == YIELD_COMMERCE)
+		{
+			for (int iI = 0; iI < NUM_CITY_PLOTS; ++iI)
+			{
+				if (isWorkingPlot(iI) && getCityIndexPlot(iI)->isWater() && iExtraRate >= 2)
+				{
+					iExtraRate += extraSeaPlotYield;
+				}
+			}
+		}
+
 		if (kBuilding.getRiverPlotYieldChange(eIndex) != 0)
 		{
 			int iChange = kBuilding.getRiverPlotYieldChange(eIndex);
@@ -8999,6 +9163,9 @@ int CvCity::getAdditionalBaseYieldRateByBuilding(YieldTypes eIndex, BuildingType
 					int iTradeModifier = totalTradeModifier(pCity);
 					int iTradeYield = iTradeProfit * iTradeModifier / iTradeProfitDivisor * iPlayerTradeYieldModifier / 100;
 					iTotalTradeYield += iTradeYield;
+
+					//Charriu TradeRouteModifierTrait
+					iTradeModifier += GET_PLAYER(getOwnerINLINE()).getExtraBuildingTradeRouteModifier(eBuilding);
 
 					iTradeModifier += kBuilding.getTradeRouteModifier();
 					if (pCity->getOwnerINLINE() != getOwnerINLINE())
@@ -9325,6 +9492,12 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 
 	iModifier += getPopulationTradeModifier();
 
+	//Charriu TradeRouteModifierTrait
+	iModifier += getExtraBuildingTradeRouteModifier();
+
+	//Charriu Trade Route Modifier
+	iModifier += getTraitTradeModifier();
+
 	if (isConnectedToCapital())
 	{
 		iModifier += GC.getDefineINT("CAPITAL_TRADE_MODIFIER");
@@ -9343,6 +9516,11 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 
 			iModifier += getPeaceTradeModifier(pOtherCity->getTeam());
 		}
+		else
+		{
+			//Charriu Domestic Trade Route Modifier
+			iModifier += getTraitDomesticTradeModifier();
+		}
 	}
 
 	return iModifier;
@@ -9351,6 +9529,18 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 int CvCity::getPopulationTradeModifier() const
 {
 	return std::max(0, (getPopulation() + GC.getDefineINT("OUR_POPULATION_TRADE_MODIFIER_OFFSET")) * GC.getDefineINT("OUR_POPULATION_TRADE_MODIFIER"));
+}
+
+//Charriu Trade Route Modifier
+int CvCity::getTraitTradeModifier() const
+{
+	return std::max(0, GET_PLAYER(getOwnerINLINE()).getTradeRouteModifier());
+}
+
+//Charriu Domestic Trade Route Modifier
+int CvCity::getTraitDomesticTradeModifier() const
+{
+	return std::max(0, GET_PLAYER(getOwnerINLINE()).getDomesticTradeRouteModifier());
 }
 
 int CvCity::getPeaceTradeModifier(TeamTypes eTeam) const
@@ -9625,13 +9815,29 @@ int CvCity::getCommerceRateTimes100(CommerceTypes eIndex) const
 	int iRate = m_aiCommerceRate[eIndex];
 	if (GC.getGameINLINE().isOption(GAMEOPTION_NO_ESPIONAGE))
 	{
-		if (eIndex == COMMERCE_CULTURE)
-		{
-			iRate += m_aiCommerceRate[COMMERCE_ESPIONAGE];
+		// novice: Added global define for fixing NO ESPIONAGE
+		if(GC.getDefineINT("ENABLE_NO_ESPIONAGE_FIX") > 0) {
+			//T-hawk for Realms Beyond rebalance mod
+			//Lose the espionage-to-culture conversion for No Espionage
+			/*if (eIndex == COMMERCE_CULTURE)
+			{
+				iRate += m_aiCommerceRate[COMMERCE_ESPIONAGE];
+			}
+			else*/ if (eIndex == COMMERCE_ESPIONAGE)
+			{
+				iRate = 0;
+			}
 		}
-		else if (eIndex == COMMERCE_ESPIONAGE)
-		{
-			iRate = 0;
+		else {
+			// BTS implementation:
+			if (eIndex == COMMERCE_CULTURE)
+			{
+				iRate += m_aiCommerceRate[COMMERCE_ESPIONAGE];
+			}
+			else if (eIndex == COMMERCE_ESPIONAGE)
+			{
+				iRate = 0;
+			}
 		}
 	}
 
@@ -9775,7 +9981,7 @@ int CvCity::getBuildingCommerceByBuilding(CommerceTypes eIndex, BuildingTypes eB
 		{
 			iCommerce += kBuilding.getObsoleteSafeCommerceChange(eIndex) * getNumBuilding(eBuilding);
 
-			if (getNumActiveBuilding(eBuilding) > 0)
+			if (eBuilding != NO_BUILDING && getNumActiveBuilding(eBuilding) > 0)
 			{
 				iCommerce += (GC.getBuildingInfo(eBuilding).getCommerceChange(eIndex) + getBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType(), eIndex)) * getNumActiveBuilding(eBuilding);
 
@@ -10616,6 +10822,12 @@ void CvCity::changeCultureTimes100(PlayerTypes eIndex, int iChange, bool bPlots,
 	setCultureTimes100(eIndex, (getCultureTimes100(eIndex) + iChange), bPlots, bUpdatePlotGroups);
 }
 
+bool CvCity::isInRevolt() const
+{
+	if (getNumRevolts(getOwnerINLINE()) >= GC.getDefineINT("NUM_WARNING_REVOLTS"))
+		return true;
+	return false;
+}
 
 int CvCity::getNumRevolts(PlayerTypes eIndex) const
 {
@@ -10820,6 +11032,17 @@ void CvCity::setName(const wchar* szNewValue, bool bFound)
 {
 	CvWString szName(szNewValue);
 	gDLL->stripSpecialCharacters(szName);
+
+	// K-Mod. stripSpecialCharacters apparently doesn't count '%' as a special characater
+    // however, strings with '%' in them will cause the game to crash. So I'm going to strip them out.
+    for (CvWString::iterator it = szName.begin(); it != szName.end(); )
+    {
+        if (*it == '%')
+            it = szName.erase(it);
+        else
+            ++it;
+    }
+    // K-Mod end
 
 	if (!szName.empty())
 	{
@@ -11303,7 +11526,24 @@ void CvCity::setGreatPeopleUnitRate(UnitTypes eIndex, int iNewValue)
 	FAssertMsg(eIndex < GC.getNumUnitInfos(), "eIndex expected to be < GC.getNumUnitInfos()");
 	if (GC.getGameINLINE().isOption(GAMEOPTION_NO_ESPIONAGE) && GC.getUnitInfo(eIndex).getEspionagePoints() > 0)
 	{
-		return;
+		// novice: Added global define for fixing NO ESPIONAGE
+		if(GC.getDefineINT("ENABLE_NO_ESPIONAGE_FIX") > 0) {
+			//T-hawk for Realms Beyond rebalance mod
+			//Great Spy points: don't produce those weird typeless points, instead convert to Merchant points
+			//this is a bit clunky: we have to loop through all unit types looking for the great merchant
+			for (int i = 0; i < (UnitTypes) GC.getNumUnitInfos(); i++)
+			{
+				if(GC.getUnitInfo((UnitTypes)i).getBaseTrade() > 0)
+				{
+					eIndex = (UnitTypes)i;
+					break;
+				}
+			}
+		}
+		else {
+			// BTS implementation:
+			return;
+		}
 	}
 
 	m_paiGreatPeopleUnitRate[eIndex] = iNewValue;
@@ -11466,6 +11706,14 @@ void CvCity::alterSpecialistCount(SpecialistTypes eIndex, int iChange)
 	}
 }
 
+//Charriu Lock Specialist
+void CvCity::lockSpecialistForAI(SpecialistTypes eIndex)
+{
+	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
+	FAssertMsg(eIndex < GC.getNumSpecialistInfos(), "eIndex expected to be < GC.getNumSpecialistInfos()");
+
+	m_pabSpecialistLockedForAI[eIndex] = !m_pabSpecialistLockedForAI[eIndex];
+}
 
 int CvCity::getMaxSpecialistCount(SpecialistTypes eIndex) const
 {
@@ -11485,6 +11733,16 @@ void CvCity::changeMaxSpecialistCount(SpecialistTypes eIndex, int iChange)
 {
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < GC.getNumSpecialistInfos(), "eIndex expected to be < GC.getNumSpecialistInfos()");
+
+
+	// novice: Added global define for fixing NO ESPIONAGE
+	if(GC.getDefineINT("ENABLE_NO_ESPIONAGE_FIX") > 0) {
+		//T-hawk for Realms Beyond rebalance mod
+		//Fix No Espionage: make sure no spy specialist slot ever exists
+		if ((GC.getGameINLINE().isOption(GAMEOPTION_NO_ESPIONAGE))
+			&& GET_PLAYER(getOwnerINLINE()).specialistCommerce(eIndex, COMMERCE_ESPIONAGE) > 0)
+			return;
+	}
 
 	if (iChange != 0)
 	{
@@ -12485,7 +12743,8 @@ void CvCity::updateTradeRoutes()
 
 								for (iJ = 0; iJ < iTradeRoutes; iJ++)
 								{
-									if (iValue > paiBestValue[iJ])
+									// RBMP fix trade route player order bias - always prefer internal routes if values are equal
+									if (iValue > paiBestValue[iJ] || iValue == paiBestValue[iJ] && (getTeam() == GET_PLAYER((PlayerTypes)iI).getTeam()))
 									{
 										for (iK = (iTradeRoutes - 1); iK > iJ; iK--)
 										{
@@ -13456,6 +13715,23 @@ bool CvCity::doCheckProduction()
 
 				if (iProductionGold > 0)
 				{
+					// novice: Added global define for fail gold nerf
+					float fOwnCityFailgoldMultiplier = GC.getDefineFLOAT("OWN_CITY_FAIL_GOLD_MULTIPLIER");
+					//T-hawk for Realms Beyond balance mod
+					//No refund fail gold for wonders if you built the wonder yourself (covers national wonders too)
+					//FIXED version after PBEM20 bug
+					bool isOwnCity = false;
+					int iLoop;
+					CvCity* pLoopCity;
+					for (pLoopCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
+					{
+						if (pLoopCity->getNumBuilding((BuildingTypes) iI) > 0)
+							isOwnCity = true;
+					}
+					if(isOwnCity) {
+						iProductionGold = (int)(iProductionGold*fOwnCityFailgoldMultiplier);
+					}
+
 					GET_PLAYER(getOwnerINLINE()).changeGold(iProductionGold);
 
 					szBuffer = gDLL->getText("TXT_KEY_MISC_LOST_WONDER_PROD_CONVERTED", getNameKey(), GC.getBuildingInfo((BuildingTypes)iI).getTextKeyWide(), iProductionGold);
@@ -13566,6 +13842,9 @@ void CvCity::doProduction(bool bAllowNoProduction)
 		return;
 	}
 
+	// RBMP don't allow double use of production by automation
+	bool bWasProcess = isProductionProcess();
+
 	if (!isHuman() || isProductionAutomated())
 	{
 		if (!isProduction() || isProductionProcess() || AI_isChooseProductionDirty())
@@ -13579,7 +13858,8 @@ void CvCity::doProduction(bool bAllowNoProduction)
 		return;
 	}
 
-	if (isProductionProcess())
+	// RBMP use the recorded value from before instead of looking it up now
+	if (bWasProcess)
 	{
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                       12/07/09                         denev & jdog5000     */
@@ -13643,7 +13923,9 @@ void CvCity::doDecay()
 					}
 				}
 			}
-			else
+			
+			//Charriu fix decaytimer not reseting on 0 hammers invested
+			if (getBuildingProduction(eBuilding) <= 0)
 			{
 				setBuildingProductionTime(eBuilding, 0);
 			}
@@ -13669,7 +13951,9 @@ void CvCity::doDecay()
 					}
 				}
 			}
-			else
+
+			//Charriu fix decaytimer not reseting on 0 hammers invested
+			if (getUnitProduction(eUnit) <= 0)
 			{
 				setUnitProductionTime(eUnit, 0);
 			}
@@ -13779,9 +14063,17 @@ void CvCity::doGreatPeople()
 
 		int iGreatPeopleUnitRand = GC.getGameINLINE().getSorenRandNum(iTotalGreatPeopleUnitProgress, "Great Person");
 
+		//Charriu Fix spawn GreatPeople if unclear which one
+		int iGreatPeopleAmount = 0;
 		UnitTypes eGreatPeopleUnit = NO_UNIT;
 		for (int iI = 0; iI < GC.getNumUnitInfos(); iI++)
 		{
+			//Charriu Fix spawn GreatPeople if unclear which one
+			if(GC.getUnitInfo((UnitTypes)iI).isGoldenAge())
+			{
+				iGreatPeopleAmount++;
+			}
+
 			if (iGreatPeopleUnitRand < getGreatPeopleUnitProgress((UnitTypes)iI))
 			{
 				eGreatPeopleUnit = ((UnitTypes)iI);
@@ -13790,6 +14082,27 @@ void CvCity::doGreatPeople()
 			else
 			{
 				iGreatPeopleUnitRand -= getGreatPeopleUnitProgress((UnitTypes)iI);
+			}
+		}
+
+		//Charriu Fix spawn GreatPeople if unclear which one
+		if (eGreatPeopleUnit == NO_UNIT)
+		{
+			iGreatPeopleUnitRand = GC.getGameINLINE().getSorenRandNum(iGreatPeopleAmount, "Great Person");
+
+			int iGreatPeopleAmountChooser = 0;
+			for (int iI = 0; iI < GC.getNumUnitInfos(); iI++)
+			{
+				if(GC.getUnitInfo((UnitTypes)iI).isGoldenAge())
+				{
+					if (iGreatPeopleUnitRand == iGreatPeopleAmountChooser)
+					{
+						eGreatPeopleUnit = ((UnitTypes)iI);
+						break;
+					}
+
+					iGreatPeopleAmountChooser++;
+				}				
 			}
 		}
 
@@ -13927,6 +14240,10 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iBuildingBadHappiness);
 	pStream->Read(&m_iExtraBuildingGoodHappiness);
 	pStream->Read(&m_iExtraBuildingBadHappiness);
+	//Charriu TradeRouteModifierTrait
+	pStream->Read(&m_iExtraBuildingTradeRouteModifier);
+	//Charriu SeaPlotYieldChangesTrait
+	pStream->Read(&m_iExtraBuildingSeaPlotYieldChanges);
 	pStream->Read(&m_iExtraBuildingGoodHealth);
 	pStream->Read(&m_iExtraBuildingBadHealth);
 	pStream->Read(&m_iFeatureGoodHappiness);
@@ -13961,6 +14278,8 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iFreeSpecialist);
 	pStream->Read(&m_iPowerCount);
 	pStream->Read(&m_iDirtyPowerCount);
+	//Charriu Add Act as Fresh water
+	pStream->Read(&m_iFreshWaterSourceCount);
 	pStream->Read(&m_iDefenseDamage);
 	pStream->Read(&m_iLastDefenseDamage);
 	pStream->Read(&m_iOccupationTimer);
@@ -14033,6 +14352,8 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumSpecialistInfos(), m_paiMaxSpecialistCount);
 	pStream->Read(GC.getNumSpecialistInfos(), m_paiForceSpecialistCount);
 	pStream->Read(GC.getNumSpecialistInfos(), m_paiFreeSpecialistCount);
+	//Charriu Lock Specialist
+	pStream->Read(GC.getNumSpecialistInfos(), m_pabSpecialistLockedForAI);
 	pStream->Read(GC.getNumImprovementInfos(), m_paiImprovementFreeSpecialists);
 	pStream->Read(GC.getNumReligionInfos(), m_paiReligionInfluence);
 	pStream->Read(GC.getNumReligionInfos(), m_paiStateReligionHappiness);
@@ -14165,6 +14486,10 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iBuildingBadHappiness);
 	pStream->Write(m_iExtraBuildingGoodHappiness);
 	pStream->Write(m_iExtraBuildingBadHappiness);
+	//Charriu TradeRouteModifierTrait
+	pStream->Write(m_iExtraBuildingTradeRouteModifier);
+	//Charriu SeaPlotYieldChangesTrait
+	pStream->Write(m_iExtraBuildingSeaPlotYieldChanges);
 	pStream->Write(m_iExtraBuildingGoodHealth);
 	pStream->Write(m_iExtraBuildingBadHealth);
 	pStream->Write(m_iFeatureGoodHappiness);
@@ -14199,6 +14524,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iFreeSpecialist);
 	pStream->Write(m_iPowerCount);
 	pStream->Write(m_iDirtyPowerCount);
+	//Charriu Add Act as Fresh water
+	pStream->Write(m_iFreshWaterSourceCount);
 	pStream->Write(m_iDefenseDamage);
 	pStream->Write(m_iLastDefenseDamage);
 	pStream->Write(m_iOccupationTimer);
@@ -14271,6 +14598,8 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumSpecialistInfos(), m_paiMaxSpecialistCount);
 	pStream->Write(GC.getNumSpecialistInfos(), m_paiForceSpecialistCount);
 	pStream->Write(GC.getNumSpecialistInfos(), m_paiFreeSpecialistCount);
+	//Charriu Lock specialist
+	pStream->Write(GC.getNumSpecialistInfos(), m_pabSpecialistLockedForAI);
 	pStream->Write(GC.getNumImprovementInfos(), m_paiImprovementFreeSpecialists);
 	pStream->Write(GC.getNumReligionInfos(), m_paiReligionInfluence);
 	pStream->Write(GC.getNumReligionInfos(), m_paiStateReligionHappiness);
@@ -14919,7 +15248,8 @@ bool CvCity::canApplyEvent(EventTypes eEvent, const EventTriggeredData& kTrigger
 				CvPlot* pPlot = getCityIndexPlot(i);
 				if (NULL != pPlot && pPlot->getOwnerINLINE() == getOwnerINLINE())
 				{
-					if (NO_IMPROVEMENT != pPlot->getImprovementType() && !GC.getImprovementInfo(pPlot->getImprovementType()).isPermanent())
+					//Permanent/Pillage split by Charriu for RtR
+					if (NO_IMPROVEMENT != pPlot->getImprovementType() && !GC.getImprovementInfo(pPlot->getImprovementType()).isNotPillage())
 					{
 						++iNumImprovements;
 					}
@@ -15007,7 +15337,8 @@ void CvCity::applyEvent(EventTypes eEvent, const EventTriggeredData& kTriggeredD
 						CvPlot* pPlot = getCityIndexPlot(iPlot);
 						if (NULL != pPlot && pPlot->getOwnerINLINE() == getOwnerINLINE())
 						{
-							if (NO_IMPROVEMENT != pPlot->getImprovementType() && !GC.getImprovementInfo(pPlot->getImprovementType()).isPermanent())
+							//Permanent/Pillage split by Charriu for RtR
+							if (NO_IMPROVEMENT != pPlot->getImprovementType() && !GC.getImprovementInfo(pPlot->getImprovementType()).isNotPillage())
 							{
 								CvWString szBuffer = gDLL->getText("TXT_KEY_EVENT_CITY_IMPROVEMENT_DESTROYED", GC.getImprovementInfo(pPlot->getImprovementType()).getTextKeyWide());
 								gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_PILLAGED", MESSAGE_TYPE_INFO, GC.getImprovementInfo(pPlot->getImprovementType()).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), pPlot->getX_INLINE(), pPlot->getY_INLINE(), true, true);

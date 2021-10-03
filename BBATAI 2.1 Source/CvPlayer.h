@@ -139,6 +139,10 @@ public:
 	void updateYield();
 	void updateMaintenance();
 	void updatePowerHealth();
+	//Charriu TradeRouteModifierTrait
+	void updateExtraBuildingTradeRouteModifier();
+	//Charriu SeaPlotYieldChangesTrait
+	void updateExtraBuildingSeaPlotYieldChanges();
 /********************************************************************************/
 /* 	New Civic AI						02.08.2010				Fuyu			*/
 /********************************************************************************/
@@ -276,6 +280,8 @@ public:
 
 	int calculateUnitCost(int& iFreeUnits, int& iFreeMilitaryUnits, int& iPaidUnits, int& iPaidMilitaryUnits, int& iBaseUnitCost, int& iMilitaryCost, int& iExtraCost) const;
 	int calculateUnitCost() const;																																				// Exposed to Python
+	//Charriu Unit Maintenance Modifier
+	int calculateUnitCostTraitReduction(int& cost) const;																																				// Exposed to Python
 	int calculateUnitSupply(int& iPaidUnits, int& iBaseSupplyCost) const;																	// Exposed to Python
 	int calculateUnitSupply() const;																																			// Exposed to Python
 	int calculatePreInflatedCosts() const;																																// Exposed to Python
@@ -576,6 +582,22 @@ public:
 	int getUpkeepModifier() const;																																						// Exposed to Python
 	void changeUpkeepModifier(int iChange);
 
+	//T-hawk for RB balance mod
+	int getCityUpkeepModifier() const;																																						// Exposed to Python
+	void changeCityUpkeepModifier(int iChange);
+
+	//Charriu Trade Route Modifier
+	int getTradeRouteModifier() const;																																						// Exposed to Python
+	void changeTradeRouteModifier(int iChange);
+
+	//Charriu Domestic Trade Route Modifier
+	int getDomesticTradeRouteModifier() const;																																						// Exposed to Python
+	void changeDomesticTradeRouteModifier(int iChange);
+
+	//Charriu Unit Maintenance Modifier
+	int getUnitMaintenanceModifier() const;																																						// Exposed to Python
+	void changeUnitMaintenanceModifier(int iChange);
+
 	int getLevelExperienceModifier() const;																																						// Exposed to Python
 	void changeLevelExperienceModifier(int iChange);
 
@@ -800,6 +822,14 @@ public:
 	int getExtraYieldThreshold(YieldTypes eIndex) const;																							// Exposed to Python
 	void updateExtraYieldThreshold(YieldTypes eIndex);
 
+	//Charriu ExtraYieldLandThreshold
+	int getExtraYieldLandThreshold(YieldTypes eIndex) const;																							// Exposed to Python
+	void updateExtraYieldLandThreshold(YieldTypes eIndex);
+
+	//Charriu ExtraYieldWaterThreshold
+	int getExtraYieldWaterThreshold(YieldTypes eIndex) const;																							// Exposed to Python
+	void updateExtraYieldWaterThreshold(YieldTypes eIndex);
+
 	int getTradeYieldModifier(YieldTypes eIndex) const;																								// Exposed to Python
 	void changeTradeYieldModifier(YieldTypes eIndex, int iChange);
 
@@ -866,6 +896,15 @@ public:
 /********************************************************************************/
 /* 	New Civic AI												END 			*/
 /********************************************************************************/
+	
+	//Charriu TradeRouteModifierTrait
+	int getExtraBuildingTradeRouteModifier(BuildingTypes eIndex) const;																				// Exposed to Python
+	void changeExtraBuildingTradeRouteModifier(BuildingTypes eIndex, int iChange);
+
+	//Charriu SeaPlotYieldChangesTrait
+	int getExtraBuildingSeaPlotYieldChanges(BuildingTypes eIndex) const;																				// Exposed to Python
+	void changeExtraBuildingSeaPlotYieldChanges(BuildingTypes eIndex, int iChange);
+	
 	int getExtraBuildingHealth(BuildingTypes eIndex) const;																				// Exposed to Python
 /********************************************************************************/
 /* 	New Civic AI						02.08.2010				Fuyu			*/
@@ -1124,6 +1163,8 @@ public:
 
 	void verifyUnitStacksValid();
 	UnitTypes getTechFreeUnit(TechTypes eTech) const;
+	//Charriu FreeUnitForEverybody
+	UnitTypes getTechFreeUnitEverybody(TechTypes eTech) const;
 
 // BUG - Trade Totals - start
 	void calculateTradeTotals(YieldTypes eIndex, int& iDomesticYield, int& iDomesticRoutes, int& iForeignYield, int& iForeignRoutes, PlayerTypes eWithPlayer = NO_PLAYER, bool bRound = false, bool bBase = false) const;
@@ -1292,6 +1333,7 @@ protected:
 	int m_iCorporationMaintenanceModifier;
 	int m_iTotalMaintenance;
 	int m_iUpkeepModifier;
+	int m_iCityUpkeepModifier;			//T-hawk for RB balance mod
 	int m_iLevelExperienceModifier;
 	int m_iExtraHealth;
 	int m_iBuildingGoodHealth;
@@ -1374,7 +1416,17 @@ protected:
 	int* m_aiYieldRateModifier;
 	int* m_aiCapitalYieldRateModifier;
 	int* m_aiExtraYieldThreshold;
+	//Charriu ExtraYieldLandThreshold
+	int* m_aiExtraYieldLandThreshold;
+	//Charriu ExtraYieldWaterThreshold
+	int* m_aiExtraYieldWaterThreshold;
 	int* m_aiTradeYieldModifier;
+	//Charriu Trade Route Modifier
+	int m_iTradeRouteModifier;
+	//Charriu Domestic Trade Route Modifier
+	int m_iDomesticTradeRouteModifier;
+	//Charriu Unit Maintenance Modifier
+	int m_iUnitMaintenanceModifier;
 	int* m_aiFreeCityCommerce;
 	int* m_aiCommercePercent;
 	int* m_aiCommerceRate;
@@ -1396,6 +1448,10 @@ protected:
 	int* m_paiImprovementCount;
 	int* m_paiFreeBuildingCount;
 	int* m_paiExtraBuildingHappiness;
+	//Charriu TradeRouteModifierTrait
+	int* m_paiExtraBuildingTradeRouteModifier;
+	//Charriu SeaPlotYieldChangesTrait
+	int* m_paiExtraBuildingSeaPlotYieldChanges;
 	int* m_paiExtraBuildingHealth;
 	int** m_paiExtraBuildingYield;
 	int** m_paiExtraBuildingCommerce;

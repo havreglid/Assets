@@ -62,6 +62,10 @@ CvPlayer::CvPlayer()
 	m_aiYieldRateModifier = new int[NUM_YIELD_TYPES];
 	m_aiCapitalYieldRateModifier = new int[NUM_YIELD_TYPES];
 	m_aiExtraYieldThreshold = new int[NUM_YIELD_TYPES];
+	//Charriu ExtraYieldLandThreshold
+	m_aiExtraYieldLandThreshold = new int[NUM_YIELD_TYPES];
+	//Charriu ExtraYieldWaterThreshold
+	m_aiExtraYieldWaterThreshold = new int[NUM_YIELD_TYPES];
 	m_aiTradeYieldModifier = new int[NUM_YIELD_TYPES];
 	m_aiFreeCityCommerce = new int[NUM_COMMERCE_TYPES];
 	m_aiCommercePercent = new int[NUM_COMMERCE_TYPES];
@@ -82,6 +86,10 @@ CvPlayer::CvPlayer()
 	m_paiImprovementCount = NULL;
 	m_paiFreeBuildingCount = NULL;
 	m_paiExtraBuildingHappiness = NULL;
+	//Charriu TradeRouteModifierTrait
+	m_paiExtraBuildingTradeRouteModifier = NULL;
+	//Charriu SeaPlotYieldChangesTrait
+	m_paiExtraBuildingSeaPlotYieldChanges = NULL;
 	m_paiExtraBuildingHealth = NULL;
 	m_paiFeatureHappiness = NULL;
 	m_paiUnitClassCount = NULL;
@@ -138,6 +146,10 @@ CvPlayer::~CvPlayer()
 	SAFE_DELETE_ARRAY(m_aiYieldRateModifier);
 	SAFE_DELETE_ARRAY(m_aiCapitalYieldRateModifier);
 	SAFE_DELETE_ARRAY(m_aiExtraYieldThreshold);
+	//Charriu ExtraYieldLandThreshold
+	SAFE_DELETE_ARRAY(m_aiExtraYieldLandThreshold);
+	//Charriu ExtraYieldWaterThreshold
+	SAFE_DELETE_ARRAY(m_aiExtraYieldWaterThreshold);
 	SAFE_DELETE_ARRAY(m_aiTradeYieldModifier);
 	SAFE_DELETE_ARRAY(m_aiFreeCityCommerce);
 	SAFE_DELETE_ARRAY(m_aiCommercePercent);
@@ -259,9 +271,21 @@ void CvPlayer::init(PlayerTypes eID)
 				for (iJ = 0; iJ < GC.getNumBuildingInfos(); iJ++)
 				{
 					changeExtraBuildingHappiness((BuildingTypes)iJ, GC.getBuildingInfo((BuildingTypes)iJ).getHappinessTraits(iI));
+					//Charriu TradeRouteModifierTrait
+					changeExtraBuildingTradeRouteModifier((BuildingTypes)iJ, GC.getBuildingInfo((BuildingTypes)iJ).getTradeRouteModifierTraits(iI));
+					//Charriu SeaPlotYieldChangesTrait
+					changeExtraBuildingSeaPlotYieldChanges((BuildingTypes)iJ, GC.getBuildingInfo((BuildingTypes)iJ).getSeaPlotYieldChangesTraits(iI));
 				}
 
 				changeUpkeepModifier(GC.getTraitInfo((TraitTypes)iI).getUpkeepModifier());
+				//T-hawk for RB balance mod
+				changeCityUpkeepModifier(GC.getTraitInfo((TraitTypes)iI).getCityUpkeepModifier());
+				//Charriu Trade Route Modifier
+				changeTradeRouteModifier(GC.getTraitInfo((TraitTypes)iI).getTradeRouteModifier());
+				//Charriu Domestic Trade Route Modifier
+				changeDomesticTradeRouteModifier(GC.getTraitInfo((TraitTypes)iI).getDomesticTradeRouteModifier());
+				//Charriu Unit Maintenance Modifier
+				changeUnitMaintenanceModifier(GC.getTraitInfo((TraitTypes)iI).getUnitMaintenanceModifier());
 				changeLevelExperienceModifier(GC.getTraitInfo((TraitTypes)iI).getLevelExperienceModifier());
 				changeGreatPeopleRateModifier(GC.getTraitInfo((TraitTypes)iI).getGreatPeopleRateModifier());
 				changeGreatGeneralRateModifier(GC.getTraitInfo((TraitTypes)iI).getGreatGeneralRateModifier());
@@ -297,6 +321,10 @@ void CvPlayer::init(PlayerTypes eID)
 		for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
 		{
 			updateExtraYieldThreshold((YieldTypes)iI);
+			//Charriu ExtraYieldLandThreshold
+			updateExtraYieldLandThreshold((YieldTypes)iI);
+			//Charriu ExtraYieldWaterThreshold
+			updateExtraYieldWaterThreshold((YieldTypes)iI);
 		}
 
 		for (iI = 0; iI < GC.getNumCivicOptionInfos(); iI++)
@@ -608,6 +636,10 @@ void CvPlayer::uninit()
 	SAFE_DELETE_ARRAY(m_paiImprovementCount);
 	SAFE_DELETE_ARRAY(m_paiFreeBuildingCount);
 	SAFE_DELETE_ARRAY(m_paiExtraBuildingHappiness);
+	//Charriu TradeRouteModifierTrait
+	SAFE_DELETE_ARRAY(m_paiExtraBuildingTradeRouteModifier);
+	//Charriu SeaPlotYieldChangesTrait
+	SAFE_DELETE_ARRAY(m_paiExtraBuildingSeaPlotYieldChanges);
 	SAFE_DELETE_ARRAY(m_paiExtraBuildingHealth);
 	SAFE_DELETE_ARRAY(m_paiFeatureHappiness);
 	SAFE_DELETE_ARRAY(m_paiUnitClassCount);
@@ -741,6 +773,13 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_iCorporationMaintenanceModifier = 0;
 	m_iTotalMaintenance = 0;
 	m_iUpkeepModifier = 0;
+	m_iCityUpkeepModifier = 0;		//T-hawk for RB balance mod
+	//Charriu Trade Route Modifier
+	m_iTradeRouteModifier = 0;
+	//Charriu Domestic Trade Route Modifier
+	m_iDomesticTradeRouteModifier = 0;
+	//Charriu Unit Maintenance Modifier
+	m_iUnitMaintenanceModifier = 0;
 	m_iLevelExperienceModifier = 0;
 	m_iExtraHealth = 0;
 	m_iBuildingGoodHealth = 0;
@@ -834,6 +873,10 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		m_aiYieldRateModifier[iI] = 0;
 		m_aiCapitalYieldRateModifier[iI] = 0;
 		m_aiExtraYieldThreshold[iI] = 0;
+		//Charriu ExtraYieldLandThreshold
+		m_aiExtraYieldLandThreshold[iI] = 0;
+		//Charriu ExtraYieldWaterThreshold
+		m_aiExtraYieldWaterThreshold[iI] = 0;
 		m_aiTradeYieldModifier[iI] = 0;
 	}
 
@@ -911,12 +954,22 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 		m_paiFreeBuildingCount = new int [GC.getNumBuildingInfos()];
 		FAssertMsg(m_paiExtraBuildingHappiness==NULL, "about to leak memory, CvPlayer::m_paiExtraBuildingHappiness");
 		m_paiExtraBuildingHappiness = new int [GC.getNumBuildingInfos()];
+		//Charriu TradeRouteModifierTrait
+		FAssertMsg(m_paiExtraBuildingTradeRouteModifier==NULL, "about to leak memory, CvPlayer::m_paiExtraBuildingHappiness");
+		m_paiExtraBuildingTradeRouteModifier = new int [GC.getNumBuildingInfos()];
+		//Charriu SeaPlotYieldChangesTrait
+		FAssertMsg(m_paiExtraBuildingSeaPlotYieldChanges==NULL, "about to leak memory, CvPlayer::m_paiExtraBuildingHappiness");
+		m_paiExtraBuildingSeaPlotYieldChanges = new int [GC.getNumBuildingInfos()];
 		FAssertMsg(m_paiExtraBuildingHealth==NULL, "about to leak memory, CvPlayer::m_paiExtraBuildingHealth");
 		m_paiExtraBuildingHealth = new int [GC.getNumBuildingInfos()];
 		for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 		{
 			m_paiFreeBuildingCount[iI] = 0;
 			m_paiExtraBuildingHappiness[iI] = 0;
+			//Charriu TradeRouteModifierTrait
+			m_paiExtraBuildingTradeRouteModifier[iI] = 0;
+			//Charriu SeaPlotYieldChangesTrait
+			m_paiExtraBuildingSeaPlotYieldChanges[iI] = 0;
 			m_paiExtraBuildingHealth[iI] = 0;
 		}
 
@@ -2544,7 +2597,8 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		if (lResult == 1)
 		{
 			//auto raze based on game rules
-			if (pNewCity->isAutoRaze())
+			//Charriu barbs don't raze cities
+			if (pNewCity->isAutoRaze() && (GC.getDefineINT("BARBS_NEVER_RAZE") == 0 || !isBarbarian()))
 			{
 				if (iCaptureGold > 0)
 				{
@@ -2641,16 +2695,30 @@ CvWString CvPlayer::getNewCityName() const
 		}
 	}
 
+	/* OOS-Fix: Role dice regardless if szName is empty or not. The emptyness of the string depends on the language!
+	 */
 	if (szName.empty())
 	{
 		getCivilizationCityName(szName, getCivilizationType());
+	}else{
+		if (isBarbarian() || isMinorCiv())
+		{
+			GC.getGameINLINE().getSorenRandNum(GC.getCivilizationInfo(getCivilizationType()).getNumCityNames(), "getNewCityName 1 (Player)");
+		}
 	}
 
+	/* OOS-Fix: The following code free's the number of getSorenRandNum calls from the emptyness-condition of szName, too.
+	 * Thus, it will be languange independent.
+	 * numCityNameCalls defines the (maximal) number of getCivilizationCityName calls and exact number of getSorenRandNum
+	 * calls (in the isBarbarian() case).
+	 */
+	int numCityNameCalls = std::min(5, GC.getNumCivilizationInfos());
+
+	int iRandOffset = GC.getGameINLINE().getSorenRandNum(GC.getNumCivilizationInfos(), "getNewCityName 2 (Player)");
 	if (szName.empty())
 	{
 		// Pick a name from another random civ
-		int iRandOffset = GC.getGameINLINE().getSorenRandNum(GC.getNumCivilizationInfos(), "Place Units (Player)");
-		for (iI = 0; iI < GC.getNumCivilizationInfos(); iI++)
+		for (iI = 0; iI < numCityNameCalls; iI++)
 		{
 			int iLoopName = ((iI + iRandOffset) % GC.getNumCivilizationInfos());
 
@@ -2658,7 +2726,21 @@ CvWString CvPlayer::getNewCityName() const
 
 			if (!szName.empty())
 			{
+				++iI;
 				break;
+			}
+		}
+		for (iI; iI < numCityNameCalls; iI++){
+			if(isBarbarian() || isMinorCiv()){
+				int iLoopName = ((iI + iRandOffset) % GC.getNumCivilizationInfos());
+				GC.getGameINLINE().getSorenRandNum(GC.getCivilizationInfo(((CivilizationTypes)iLoopName)).getNumCityNames(), "getNewCityName 3A (Player)");
+			}
+		}
+	}else{
+		for (iI = 0; iI < numCityNameCalls; iI++){
+			if(isBarbarian() || isMinorCiv()){
+				int iLoopName = ((iI + iRandOffset) % GC.getNumCivilizationInfos());
+				GC.getGameINLINE().getSorenRandNum(GC.getCivilizationInfo(((CivilizationTypes)iLoopName)).getNumCityNames(), "getNewCityName 3B (Player)");
 			}
 		}
 	}
@@ -3654,6 +3736,32 @@ void CvPlayer::updateExtraBuildingHappiness(bool bLimited)
 }
 
 
+//Charriu TradeRouteModifierTrait
+void CvPlayer::updateExtraBuildingTradeRouteModifier()
+{
+	CvCity* pLoopCity;
+	int iLoop;
+
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		pLoopCity->updateExtraBuildingTradeRouteModifier();
+	}
+}
+
+
+//Charriu SeaPlotYieldChangesTrait
+void CvPlayer::updateExtraBuildingSeaPlotYieldChanges()
+{
+	CvCity* pLoopCity;
+	int iLoop;
+
+	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	{
+		pLoopCity->updateExtraBuildingSeaPlotYieldChanges();
+	}
+}
+
+
 //Fuyu bLimited
 void CvPlayer::updateExtraBuildingHealth(bool bLimited)
 {
@@ -3996,6 +4104,9 @@ int CvPlayer::calculateScore(bool bFinal, bool bVictory)
 	{
 		return 0;
 	}
+
+	if (GC.getGame().isOption(GAMEOPTION_NO_SCORE))
+		return 1;
 
 	long lScore = 0;
 
@@ -4862,9 +4973,21 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 
 	case TRADE_CITIES:
 		{
+			//Charriu for RtR mod 14.04.2019
+			if (GC.getGameINLINE().isOption(GAMEOPTION_NO_CITY_TRADING))
+			{
+				return false;
+			}
+			//end RtR mod
 			CvCity* pCityTraded = getCity(item.m_iData);
+			
+			// RBMP bugfix - cancel trade if city to be traded doesn't exist anymore
+			if (NULL == pCityTraded)
+			{
+				return false;
+			}
 
-			if (NULL != pCityTraded && pCityTraded->getLiberationPlayer(false) == eWhoTo)
+			if (pCityTraded->getLiberationPlayer(false) == eWhoTo)
 			{
 				return true;
 			}
@@ -4907,6 +5030,14 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 		break;
 
 	case TRADE_MAPS:
+
+		//Plako for RtR mod No barbs = no map trading
+		if (GC.getGameINLINE().isOption(GAMEOPTION_NO_MAP_TRADING))
+		{
+			return false;
+		}
+		//end RtR mod
+
 		if (getTeam() != GET_PLAYER(eWhoTo).getTeam())
 		{
 			if (GET_TEAM(getTeam()).isMapTrading() || GET_TEAM(GET_PLAYER(eWhoTo).getTeam()).isMapTrading())
@@ -4965,7 +5096,7 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 		break;
 
 	case TRADE_WAR:
-		if (!(GET_TEAM(getTeam()).isHuman()))
+		if (!(GET_TEAM(getTeam()).isHuman()) || GC.getGame().isOption(GAMEOPTION_TRUE_AI_DIPLO))
 		{
 			if (!(GET_TEAM(getTeam()).isAVassal()))
 			{
@@ -4984,7 +5115,7 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 		break;
 
 	case TRADE_EMBARGO:
-		if (!(GET_TEAM(getTeam()).isHuman()))
+		if (!(GET_TEAM(getTeam()).isHuman()) || GC.getGame().isOption(GAMEOPTION_TRUE_AI_DIPLO))
 		{
 			if (GET_TEAM(getTeam()).isHasMet((TeamTypes)(item.m_iData)) && GET_TEAM(GET_PLAYER(eWhoTo).getTeam()).isHasMet((TeamTypes)(item.m_iData)))
 			{
@@ -5005,7 +5136,7 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 /* original bts code
 		if (!(GET_TEAM(getTeam()).isHuman()))
 */
-		if (!(GET_TEAM(getTeam()).isHuman()) || (getTeam() == GET_PLAYER(eWhoTo).getTeam()))
+        if (!(GET_TEAM(getTeam()).isHuman()) || (getTeam() == GET_PLAYER(eWhoTo).getTeam()) || GC.getGame().isOption(GAMEOPTION_TRUE_AI_DIPLO))
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
@@ -5032,7 +5163,7 @@ bool CvPlayer::canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial
 /* original bts code
 		if (!(GET_TEAM(getTeam()).isHuman()))
 */
-		if (!(GET_TEAM(getTeam()).isHuman()) || (getTeam() == GET_PLAYER(eWhoTo).getTeam()))
+        if (!(GET_TEAM(getTeam()).isHuman()) || (getTeam() == GET_PLAYER(eWhoTo).getTeam()) || GC.getGame().isOption(GAMEOPTION_TRUE_AI_DIPLO))
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
@@ -6237,7 +6368,7 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 		}
 	}
 
-	if (GC.getGameINLINE().isOption(GAMEOPTION_NO_ESPIONAGE))
+	if (GC.getGameINLINE().isOption(GAMEOPTION_NO_ESPIONAGE) || GC.getGameINLINE().isOption(GAMEOPTION_NO_SPIES))
 	{
 		if (GC.getUnitInfo(eUnit).isSpy() || GC.getUnitInfo(eUnit).getEspionagePoints() > 0)
 		{
@@ -7151,7 +7282,10 @@ int CvPlayer::calculateTotalYield(YieldTypes eYield) const
 
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
-		iTotalCommerce += pLoopCity->getYieldRate(eYield);
+		if (pLoopCity->isOccupation() || pLoopCity->isInRevolt())
+			iTotalCommerce += 0;
+		else
+			iTotalCommerce += pLoopCity->getYieldRate(eYield);
 	}
 
 	return iTotalCommerce;
@@ -7382,6 +7516,12 @@ int CvPlayer::calculateUnitCost() const
 	return calculateUnitCost(iFreeUnits, iFreeMilitaryUnits, iPaidUnits, iPaidMilitaryUnits, iBaseUnitCost, iMilitaryCost, iExtraCost);
 }
 
+//Charriu Unit Maintenance Modifier
+int CvPlayer::calculateUnitCostTraitReduction(int& cost) const
+{
+	return (int)ceilf(cost * getUnitMaintenanceModifier() / 100.0f);
+}
+
 int CvPlayer::calculateUnitSupply() const
 {
 	int iPaidUnits;
@@ -7428,7 +7568,9 @@ int CvPlayer::calculatePreInflatedCosts() const
 	long lResult;
 	gDLL->getPythonIFace()->callFunction(PYGameModule, "getExtraCost", argsList.makeFunctionArgs(), &lResult);
 
-	return (calculateUnitCost() + calculateUnitSupply() + getTotalMaintenance() + getCivicUpkeep() + (int)lResult);
+	//Charriu Unit Maintenance Modifier
+	int baseUnitCost = calculateUnitCost();
+	return (baseUnitCost - calculateUnitCostTraitReduction(baseUnitCost) + calculateUnitSupply() + getTotalMaintenance() + getCivicUpkeep() + (int)lResult);
 }
 
 
@@ -9916,6 +10058,53 @@ void CvPlayer::changeUpkeepModifier(int iChange)
 	m_iUpkeepModifier = (m_iUpkeepModifier + iChange);
 }
 
+//T-hawk for RB balance mod
+int CvPlayer::getCityUpkeepModifier() const
+{
+	return m_iCityUpkeepModifier;
+}
+
+//T-hawk for RB balance mod
+void CvPlayer::changeCityUpkeepModifier(int iChange)
+{
+	m_iCityUpkeepModifier = (m_iCityUpkeepModifier + iChange);
+}
+
+//Charriu Trade Route Modifier
+int CvPlayer::getTradeRouteModifier() const
+{
+	return m_iTradeRouteModifier;
+}
+
+//Charriu Trade Route Modifier
+void CvPlayer::changeTradeRouteModifier(int iChange)
+{
+	m_iTradeRouteModifier = (m_iTradeRouteModifier + iChange);
+}
+
+//Charriu Domestic Trade Route Modifier
+int CvPlayer::getDomesticTradeRouteModifier() const
+{
+	return m_iDomesticTradeRouteModifier;
+}
+
+//Charriu Domestic Trade Route Modifier
+void CvPlayer::changeDomesticTradeRouteModifier(int iChange)
+{
+	m_iDomesticTradeRouteModifier = (m_iDomesticTradeRouteModifier + iChange);
+}
+
+//Charriu Unit Maintenance Modifier
+int CvPlayer::getUnitMaintenanceModifier() const
+{
+	return m_iUnitMaintenanceModifier;
+}
+
+//Charriu Unit Maintenance Modifier
+void CvPlayer::changeUnitMaintenanceModifier(int iChange)
+{
+	m_iUnitMaintenanceModifier = (m_iUnitMaintenanceModifier + iChange);
+}
 
 int CvPlayer::getLevelExperienceModifier() const
 {
@@ -10537,6 +10726,9 @@ void CvPlayer::setCapitalCity(CvCity* pNewCapitalCity)
 
 	pOldCapitalCity = getCapitalCity();
 
+	if (pOldCapitalCity != NULL) pOldCapitalCity->plot()->updateYield(); // AGDM addition
+	if (pNewCapitalCity != NULL) pNewCapitalCity->plot()->updateYield(); // AGDM addition
+
 	if (pOldCapitalCity != pNewCapitalCity)
 	{
 		bUpdatePlotGroups = ((pOldCapitalCity == NULL) || (pNewCapitalCity == NULL) || (pOldCapitalCity->plot()->getOwnerPlotGroup() != pNewCapitalCity->plot()->getOwnerPlotGroup()));
@@ -10770,6 +10962,11 @@ void CvPlayer::setCombatExperience(int iExperience)
 	if (iExperience != getCombatExperience())
 	{
 		m_iCombatExperience = iExperience;
+
+		// Trigger redrawing of GG Bar
+        if (getID() == GC.getGameINLINE().getActivePlayer()){
+            gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
+        }
 
 		if (!isBarbarian())
 		{
@@ -11963,6 +12160,21 @@ int CvPlayer::getExtraYieldThreshold(YieldTypes eIndex) const
 	return m_aiExtraYieldThreshold[eIndex];
 }
 
+//Charriu ExtraYieldLandThreshold
+int CvPlayer::getExtraYieldLandThreshold(YieldTypes eIndex) const	
+{
+	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	FAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
+	return m_aiExtraYieldLandThreshold[eIndex];
+}
+
+//Charriu ExtraYieldWaterThreshold
+int CvPlayer::getExtraYieldWaterThreshold(YieldTypes eIndex) const	
+{
+	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	FAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
+	return m_aiExtraYieldWaterThreshold[eIndex];
+}
 
 void CvPlayer::updateExtraYieldThreshold(YieldTypes eIndex)
 {
@@ -11993,6 +12205,76 @@ void CvPlayer::updateExtraYieldThreshold(YieldTypes eIndex)
 	{
 		m_aiExtraYieldThreshold[eIndex] = iBestValue;
 		FAssert(getExtraYieldThreshold(eIndex) >= 0);
+
+		updateYield();
+	}
+}
+
+//Charriu ExtraYieldLandThreshold
+void CvPlayer::updateExtraYieldLandThreshold(YieldTypes eIndex)
+{
+	int iBestValue;
+	int iI;
+
+	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	FAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
+
+	iBestValue = 0;
+
+	FAssertMsg((GC.getNumTraitInfos() > 0), "GC.getNumTraitInfos() is less than or equal to zero but is expected to be larger than zero in CvPlayer::updateExtraYieldLandThreshold");
+	for (iI = 0; iI < GC.getNumTraitInfos(); iI++)
+	{
+		if (hasTrait((TraitTypes)iI))
+		{
+			if (GC.getTraitInfo((TraitTypes) iI).getExtraYieldLandThreshold(eIndex) > 0)
+			{
+				if ((iBestValue == 0) || (GC.getTraitInfo((TraitTypes) iI).getExtraYieldLandThreshold(eIndex) < iBestValue))
+				{
+					iBestValue = GC.getTraitInfo((TraitTypes) iI).getExtraYieldLandThreshold(eIndex);
+				}
+			}
+		}
+	}
+
+	if (getExtraYieldLandThreshold(eIndex) != iBestValue)
+	{
+		m_aiExtraYieldLandThreshold[eIndex] = iBestValue;
+		FAssert(getExtraYieldLandThreshold(eIndex) >= 0);
+
+		updateYield();
+	}
+}
+
+//Charriu ExtraYieldWaterThreshold
+void CvPlayer::updateExtraYieldWaterThreshold(YieldTypes eIndex)
+{
+	int iBestValue;
+	int iI;
+
+	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	FAssertMsg(eIndex < NUM_YIELD_TYPES, "eIndex is expected to be within maximum bounds (invalid Index)");
+
+	iBestValue = 0;
+
+	FAssertMsg((GC.getNumTraitInfos() > 0), "GC.getNumTraitInfos() is less than or equal to zero but is expected to be larger than zero in CvPlayer::updateExtraYieldWaterThreshold");
+	for (iI = 0; iI < GC.getNumTraitInfos(); iI++)
+	{
+		if (hasTrait((TraitTypes)iI))
+		{
+			if (GC.getTraitInfo((TraitTypes) iI).getExtraYieldWaterThreshold(eIndex) > 0)
+			{
+				if ((iBestValue == 0) || (GC.getTraitInfo((TraitTypes) iI).getExtraYieldWaterThreshold(eIndex) < iBestValue))
+				{
+					iBestValue = GC.getTraitInfo((TraitTypes) iI).getExtraYieldWaterThreshold(eIndex);
+				}
+			}
+		}
+	}
+
+	if (getExtraYieldWaterThreshold(eIndex) != iBestValue)
+	{
+		m_aiExtraYieldWaterThreshold[eIndex] = iBestValue;
+		FAssert(getExtraYieldWaterThreshold(eIndex) >= 0);
 
 		updateYield();
 	}
@@ -12538,6 +12820,49 @@ void CvPlayer::changeExtraBuildingHappiness(BuildingTypes eIndex, int iChange, b
 		m_paiExtraBuildingHappiness[eIndex] += iChange;
 
 		updateExtraBuildingHappiness(bLimited);
+	}
+}
+
+//Charriu TradeRouteModifierTrait
+int CvPlayer::getExtraBuildingTradeRouteModifier(BuildingTypes eIndex) const 
+{
+	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	FAssertMsg(eIndex < GC.getNumBuildingInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+	return m_paiExtraBuildingTradeRouteModifier[eIndex];
+}
+
+void CvPlayer::changeExtraBuildingTradeRouteModifier(BuildingTypes eIndex, int iChange)
+{
+	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	FAssertMsg(eIndex < GC.getNumBuildingInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+
+	if (iChange != 0)
+	{
+		m_paiExtraBuildingTradeRouteModifier[eIndex] += iChange;
+
+		updateExtraBuildingTradeRouteModifier();
+	}
+}
+
+
+//Charriu SeaPlotYieldChangesTrait
+int CvPlayer::getExtraBuildingSeaPlotYieldChanges(BuildingTypes eIndex) const 
+{
+	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	FAssertMsg(eIndex < GC.getNumBuildingInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+	return m_paiExtraBuildingSeaPlotYieldChanges[eIndex];
+}
+
+void CvPlayer::changeExtraBuildingSeaPlotYieldChanges(BuildingTypes eIndex, int iChange)
+{
+	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
+	FAssertMsg(eIndex < GC.getNumBuildingInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
+
+	if (iChange != 0)
+	{
+		m_paiExtraBuildingSeaPlotYieldChanges[eIndex] += iChange;
+
+		updateExtraBuildingSeaPlotYieldChanges();
 	}
 }
 
@@ -14924,7 +15249,7 @@ int CvPlayer::getEspionageMissionBaseCost(EspionageMissionTypes eMission, Player
 	}
 	else if (kMission.getCounterespionageMod() > 0)
 	{
-		if (GET_TEAM(getTeam()).getCounterespionageTurnsLeftAgainstTeam(GET_PLAYER(eTargetPlayer).getTeam()) <= 0)
+		if (GET_TEAM(getTeam()).getCounterespionageTurnsLeftAgainstTeam(GET_PLAYER(eTargetPlayer).getTeam()) <= 1 /*0 */) // PB Mod: Allow Counterespionage in last running round
 		{
 			iMissionCost = (iBaseMissionCost * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getResearchPercent()) / 100;
 		}
@@ -17158,29 +17483,11 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange, bool bLimited)
 	if (bLimited)
 	{
 		CvCivicInfo& kCivic = GC.getCivicInfo(eCivic);
-
-		//+: doesn't change values of other civics but maybe should
-		//changeGreatPeopleRateModifier(kCivic.getGreatPeopleRateModifier() * iChange);
-		//changeGreatGeneralRateModifier(kCivic.getGreatGeneralRateModifier() * iChange);
-		//changeDomesticGreatGeneralRateModifier(kCivic.getDomesticGreatGeneralRateModifier() * iChange);
-		//changeStateReligionGreatPeopleRateModifier(kCivic.getStateReligionGreatPeopleRateModifier() * iChange);
-		//changeDistanceMaintenanceModifier(kCivic.getDistanceMaintenanceModifier() * iChange);
-		//changeNumCitiesMaintenanceModifier(kCivic.getNumCitiesMaintenanceModifier() * iChange);
+		
 		changeCorporationMaintenanceModifier(kCivic.getCorporationMaintenanceModifier() * iChange, bLimited);
 		changeExtraHealth(kCivic.getExtraHealth() * iChange, bLimited);
-		//changeFreeExperience(kCivic.getFreeExperience() * iChange);
-		//changeWorkerSpeedModifier(kCivic.getWorkerSpeedModifier() * iChange);
-		//changeImprovementUpgradeRateModifier(kCivic.getImprovementUpgradeRateModifier() * iChange);
-		//changeMilitaryProductionModifier(kCivic.getMilitaryProductionModifier() * iChange);
-		//changeBaseFreeUnits(kCivic.getBaseFreeUnits() * iChange);
-		//changeBaseFreeMilitaryUnits(kCivic.getBaseFreeMilitaryUnits() * iChange);
-		//changeFreeUnitsPopulationPercent(kCivic.getFreeUnitsPopulationPercent() * iChange);
-		//changeFreeMilitaryUnitsPopulationPercent(kCivic.getFreeMilitaryUnitsPopulationPercent() * iChange);
-		//changeGoldPerUnit(kCivic.getGoldPerUnit() * iChange);
-		//changeGoldPerMilitaryUnit(kCivic.getGoldPerMilitaryUnit() * iChange);
 		changeHappyPerMilitaryUnit(kCivic.getHappyPerMilitaryUnit() * iChange,  bLimited);
 		changeMilitaryFoodProductionCount(((kCivic.isMilitaryFoodProduction()) ? iChange : 0), bLimited);
-		//changeMaxConscript(getWorldSizeMaxConscript(eCivic) * iChange);
 		changeNoUnhealthyPopulationCount(((kCivic.isNoUnhealthyPopulation()) ? iChange : 0), bLimited);
 		changeBuildingOnlyHealthyCount(((kCivic.isBuildingOnlyHealthy()) ? iChange : 0), bLimited);
 		changeLargestCityHappiness((kCivic.getLargestCityHappiness() * iChange), bLimited);
@@ -17188,8 +17495,6 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange, bool bLimited)
 		{
 			changeWarWearinessModifier((kCivic.getWarWearinessModifier() * iChange), bLimited);
 		}
-		//changeFreeSpecialist(kCivic.getFreeSpecialist() * iChange);
-		//changeTradeRoutes(kCivic.getTradeRoutes() * iChange);
 		changeNoForeignTradeCount(kCivic.isNoForeignTrade() * iChange, bLimited);
 		changeNoCorporationsCount(kCivic.isNoCorporations() * iChange, bLimited);
 		changeNoForeignCorporationsCount(kCivic.isNoForeignCorporations() * iChange, bLimited);
@@ -17197,25 +17502,6 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange, bool bLimited)
 		changeNoNonStateReligionSpreadCount((kCivic.isNoNonStateReligionSpread()) ? iChange : 0);
 		changeStateReligionHappiness(kCivic.getStateReligionHappiness() * iChange, bLimited);
 		changeNonStateReligionHappiness(kCivic.getNonStateReligionHappiness() * iChange, bLimited);
-		//changeStateReligionUnitProductionModifier(kCivic.getStateReligionUnitProductionModifier() * iChange);
-		//changeStateReligionBuildingProductionModifier(kCivic.getStateReligionBuildingProductionModifier() * iChange);
-		//changeStateReligionFreeExperience(kCivic.getStateReligionFreeExperience() * iChange);
-		//changeExpInBorderModifier(kCivic.getExpInBorderModifier() * iChange);
-
-		//for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
-		//{
-		//	changeYieldRateModifier(((YieldTypes)iI), (kCivic.getYieldModifier(iI) * iChange));
-		//	changeCapitalYieldRateModifier(((YieldTypes)iI), (kCivic.getCapitalYieldModifier(iI) * iChange));
-		//	changeTradeYieldModifier(((YieldTypes)iI), (kCivic.getTradeYieldModifier(iI) * iChange));
-		//}
-
-		//for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
-		//{
-		//	changeCommerceRateModifier(((CommerceTypes)iI), (kCivic.getCommerceModifier(iI) * iChange));
-		//	changeCapitalCommerceRateModifier(((CommerceTypes)iI), (kCivic.getCapitalCommerceModifier(iI) * iChange));
-		//	changeSpecialistExtraCommerce(((CommerceTypes)iI), (kCivic.getSpecialistExtraCommerce(iI) * iChange));
-		//}
-
 		if (kCivic.isAnyBuildingHappinessChange() || kCivic.isAnyBuildingHealthChange())
 		{
 			for (iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
@@ -17460,6 +17746,13 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCorporationMaintenanceModifier);
 	pStream->Read(&m_iTotalMaintenance);
 	pStream->Read(&m_iUpkeepModifier);
+	pStream->Read(&m_iCityUpkeepModifier);			//T-hawk for RB balance mod
+	//Charriu Trade Route Modifier
+	pStream->Read(&m_iTradeRouteModifier);
+	//Charriu Domestic Trade Route Modifier
+	pStream->Read(&m_iDomesticTradeRouteModifier);
+	//Charriu Unit Maintenance Modifier
+	pStream->Read(&m_iUnitMaintenanceModifier);
 	pStream->Read(&m_iLevelExperienceModifier);
 	pStream->Read(&m_iExtraHealth);
 	pStream->Read(&m_iBuildingGoodHealth);
@@ -17517,6 +17810,10 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_YIELD_TYPES, m_aiYieldRateModifier);
 	pStream->Read(NUM_YIELD_TYPES, m_aiCapitalYieldRateModifier);
 	pStream->Read(NUM_YIELD_TYPES, m_aiExtraYieldThreshold);
+	//Charriu ExtraYieldLandThreshold
+	pStream->Read(NUM_YIELD_TYPES, m_aiExtraYieldLandThreshold);
+	//Charriu ExtraYieldWaterThreshold
+	pStream->Read(NUM_YIELD_TYPES, m_aiExtraYieldWaterThreshold);
 	pStream->Read(NUM_YIELD_TYPES, m_aiTradeYieldModifier);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiFreeCityCommerce);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommercePercent);
@@ -17540,6 +17837,10 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumImprovementInfos(), m_paiImprovementCount);
 	pStream->Read(GC.getNumBuildingInfos(), m_paiFreeBuildingCount);
 	pStream->Read(GC.getNumBuildingInfos(), m_paiExtraBuildingHappiness);
+	//Charriu TradeRouteModifierTrait
+	pStream->Read(GC.getNumBuildingInfos(), m_paiExtraBuildingTradeRouteModifier);
+	//Charriu SeaPlotYieldChangesTrait
+	pStream->Read(GC.getNumBuildingInfos(), m_paiExtraBuildingSeaPlotYieldChanges);
 	pStream->Read(GC.getNumBuildingInfos(), m_paiExtraBuildingHealth);
 	pStream->Read(GC.getNumFeatureInfos(), m_paiFeatureHappiness);
 	pStream->Read(GC.getNumUnitClassInfos(), m_paiUnitClassCount);
@@ -17923,6 +18224,13 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_iCorporationMaintenanceModifier);
 	pStream->Write(m_iTotalMaintenance);
 	pStream->Write(m_iUpkeepModifier);
+	pStream->Write(m_iCityUpkeepModifier);			//T-hawk for RB balance mod
+	//Charriu Trade Route Modifier
+	pStream->Write(m_iTradeRouteModifier);
+	//Charriu Domestic Trade Route Modifier
+	pStream->Write(m_iDomesticTradeRouteModifier);
+	//Charriu Unit Maintenance Modifier
+	pStream->Write(m_iUnitMaintenanceModifier);
 	pStream->Write(m_iLevelExperienceModifier);
 	pStream->Write(m_iExtraHealth);
 	pStream->Write(m_iBuildingGoodHealth);
@@ -17979,6 +18287,10 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_YIELD_TYPES, m_aiYieldRateModifier);
 	pStream->Write(NUM_YIELD_TYPES, m_aiCapitalYieldRateModifier);
 	pStream->Write(NUM_YIELD_TYPES, m_aiExtraYieldThreshold);
+	//Charriu ExtraYieldLandThreshold
+	pStream->Write(NUM_YIELD_TYPES, m_aiExtraYieldLandThreshold);
+	//Charriu ExtraYieldWaterThreshold
+	pStream->Write(NUM_YIELD_TYPES, m_aiExtraYieldWaterThreshold);
 	pStream->Write(NUM_YIELD_TYPES, m_aiTradeYieldModifier);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiFreeCityCommerce);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommercePercent);
@@ -18002,6 +18314,10 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumImprovementInfos(), m_paiImprovementCount);
 	pStream->Write(GC.getNumBuildingInfos(), m_paiFreeBuildingCount);
 	pStream->Write(GC.getNumBuildingInfos(), m_paiExtraBuildingHappiness);
+	//Charriu TradeRouteModifierTrait
+	pStream->Write(GC.getNumBuildingInfos(), m_paiExtraBuildingTradeRouteModifier);
+	//Charriu SeaPlotYieldChangesTrait
+	pStream->Write(GC.getNumBuildingInfos(), m_paiExtraBuildingSeaPlotYieldChanges);
 	pStream->Write(GC.getNumBuildingInfos(), m_paiExtraBuildingHealth);
 	pStream->Write(GC.getNumFeatureInfos(), m_paiFeatureHappiness);
 	pStream->Write(GC.getNumUnitClassInfos(), m_paiUnitClassCount);
@@ -19720,7 +20036,8 @@ void CvPlayer::applyEvent(EventTypes eEvent, int iEventTriggeredId, bool bUpdate
 					CvPlot* pPlot = GC.getMapINLINE().plotByIndexINLINE(iPlot);
 					if (NULL != pPlot && pPlot->getOwnerINLINE() == getID() && pPlot->isCity())
 					{
-						if (NO_IMPROVEMENT != pPlot->getImprovementType() && !GC.getImprovementInfo(pPlot->getImprovementType()).isPermanent())
+						//Permanent/Pillage split by Charriu for RtR
+						if (NO_IMPROVEMENT != pPlot->getImprovementType() && !GC.getImprovementInfo(pPlot->getImprovementType()).isNotPillage())
 						{
 							CvWString szBuffer = gDLL->getText("TXT_KEY_EVENT_CITY_IMPROVEMENT_DESTROYED", GC.getImprovementInfo(pPlot->getImprovementType()).getTextKeyWide());
 							gDLL->getInterfaceIFace()->addMessage(getID(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_PILLAGED", MESSAGE_TYPE_INFO, GC.getImprovementInfo(pPlot->getImprovementType()).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), pPlot->getX_INLINE(), pPlot->getY_INLINE(), true, true);
@@ -21465,7 +21782,9 @@ void CvPlayer::launch(VictoryTypes eVictory)
 	kTeam.finalizeProjectArtTypes();
 	kTeam.setVictoryCountdown(eVictory, kTeam.getVictoryDelay(eVictory));
 
-	gDLL->getEngineIFace()->AddLaunch(getID());
+  if ( GC.IsGraphicsInitialized()){
+    gDLL->getEngineIFace()->AddLaunch(getID());
+  }
 
 	kTeam.setCanLaunch(eVictory, false);
 
@@ -22373,6 +22692,31 @@ UnitTypes CvPlayer::getTechFreeUnit(TechTypes eTech) const
 }
 
 
+//Charriu FreeUnitForEverybody Start
+UnitTypes CvPlayer::getTechFreeUnitEverybody(TechTypes eTech) const
+{
+	UnitClassTypes eUnitClass = (UnitClassTypes) GC.getTechInfo(eTech).getFreeUnitEverybodyClass();
+	if (eUnitClass == NO_UNITCLASS)
+	{
+		return NO_UNIT;
+	}
+
+	UnitTypes eUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass)));
+	if (eUnit == NO_UNIT)
+	{
+		return NO_UNIT;
+	}
+
+	if (GC.getUnitInfo(eUnit).getEspionagePoints() > 0 && GC.getGameINLINE().isOption(GAMEOPTION_NO_ESPIONAGE))
+	{
+		return NO_UNIT;
+	}
+
+	return eUnit;
+}
+//Charriu FreeUnitForEverybody End
+
+
 // BUG - Trade Totals - start
 /*
  * Adds the yield and count for each trade route with eWithPlayer.
@@ -22523,7 +22867,7 @@ void CvPlayer::buildTradeTable(PlayerTypes eOtherPlayer, CLinkList<TradeData>& o
 			break;
 
 		case TRADE_PEACE:
-			if (!isHuman())
+			if (!isHuman() || GC.getGame().isOption(GAMEOPTION_TRUE_AI_DIPLO))
 			{
 				for (int j = 0; j < MAX_CIV_TEAMS; j++)
 				{
@@ -22544,7 +22888,7 @@ void CvPlayer::buildTradeTable(PlayerTypes eOtherPlayer, CLinkList<TradeData>& o
 			break;
 
 		case TRADE_WAR:
-			if (!isHuman())
+			if (!isHuman() || GC.getGame().isOption(GAMEOPTION_TRUE_AI_DIPLO))
 			{
 				for (int j = 0; j < MAX_CIV_TEAMS; j++)
 				{
@@ -22565,7 +22909,7 @@ void CvPlayer::buildTradeTable(PlayerTypes eOtherPlayer, CLinkList<TradeData>& o
 			break;
 
 		case TRADE_EMBARGO:
-			if (!isHuman())
+			if (!isHuman() || GC.getGame().isOption(GAMEOPTION_TRUE_AI_DIPLO))
 			{
 				for (int j = 0; j < MAX_CIV_TEAMS; j++)
 				{

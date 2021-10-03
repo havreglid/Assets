@@ -132,6 +132,8 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("calculateTotalCityUnhealthiness", &CyPlayer::calculateTotalCityUnhealthiness, "int () - Returns the total sum of all city Unhealthiness values")
 
 		.def("calculateUnitCost", &CyPlayer::calculateUnitCost, "int ()")
+		//Charriu Unit Maintenance Modifier
+		.def("calculateUnitCostTraitReduction", &CyPlayer::calculateUnitCostTraitReduction, "int ()")
 		.def("calculateUnitSupply", &CyPlayer::calculateUnitSupply, "int ()")
 		.def("calculatePreInflatedCosts", &CyPlayer::calculatePreInflatedCosts, "int ()")
 		.def("calculateInflationRate", &CyPlayer::calculateInflationRate, "int ()")
@@ -356,6 +358,10 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("getYieldRateModifier", &CyPlayer::getYieldRateModifier, "int (YieldTypes eIndex)")
 		.def("getCapitalYieldRateModifier", &CyPlayer::getCapitalYieldRateModifier, "int (YieldTypes eIndex)")
 		.def("getExtraYieldThreshold", &CyPlayer::getExtraYieldThreshold, "int (YieldTypes eIndex)")
+		//Charriu ExtraYieldLandThreshold
+		.def("getExtraYieldLandThreshold", &CyPlayer::getExtraYieldLandThreshold, "int (YieldTypes eIndex)")
+		//Charriu ExtraYieldWaterThreshold
+		.def("getExtraYieldWaterThreshold", &CyPlayer::getExtraYieldWaterThreshold, "int (YieldTypes eIndex)")
 		.def("getTradeYieldModifier", &CyPlayer::getTradeYieldModifier, "int (YieldTypes eIndex)")
 		.def("getFreeCityCommerce", &CyPlayer::getFreeCityCommerce, "int (CommerceTypes eIndex)")
 		.def("getCommercePercent", &CyPlayer::getCommercePercent, "int (CommerceTypes eIndex)")
@@ -387,6 +393,10 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 
 		.def("isBuildingFree", &CyPlayer::isBuildingFree, "bool (int /*BuildingTypes*/ eIndex)")
 		.def("getExtraBuildingHappiness", &CyPlayer::getExtraBuildingHappiness, "int (int /*BuildingTypes*/ eIndex)")
+		//Charriu TradeRouteModifierTrait
+		.def("getExtraBuildingTradeRouteModifier", &CyPlayer::getExtraBuildingTradeRouteModifier, "int (int /*BuildingTypes*/ eIndex)")
+		//Charriu SeaPlotYieldChangesTrait
+		.def("getExtraBuildingSeaPlotYieldChanges", &CyPlayer::getExtraBuildingSeaPlotYieldChanges, "int (int /*BuildingTypes*/ eIndex)")
 		.def("getExtraBuildingHealth", &CyPlayer::getExtraBuildingHealth, "int (int /*BuildingTypes*/ eIndex)")
 		.def("getFeatureHappiness", &CyPlayer::getFeatureHappiness, "int (int /*FeatureTypes*/ eIndex)")
 		.def("getUnitClassCount", &CyPlayer::getUnitClassCount, "int (int (UnitClassTypes) eIndex)")

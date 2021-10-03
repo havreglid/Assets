@@ -144,6 +144,8 @@ public:
 	int calculateTotalCityUnhealthiness();
 
 	int calculateUnitCost();
+	//Charriu Unit Maintenance Modifier
+	int calculateUnitCostTraitReduction();
 	int calculateUnitSupply();
 	int calculatePreInflatedCosts();
 	int calculateInflationRate();
@@ -370,6 +372,10 @@ public:
 	int getYieldRateModifier(YieldTypes eIndex);
 	int getCapitalYieldRateModifier(YieldTypes eIndex);
 	int getExtraYieldThreshold(YieldTypes eIndex);
+	//Charriu ExtraYieldLandThreshold
+	int getExtraYieldLandThreshold(YieldTypes eIndex);
+	//Charriu ExtraYieldWaterThreshold
+	int getExtraYieldWaterThreshold(YieldTypes eIndex);
 	int getTradeYieldModifier(YieldTypes eIndex);
 	int getFreeCityCommerce(CommerceTypes eIndex);
 	int getCommercePercent(int /*CommerceTypes*/ eIndex);
@@ -403,6 +409,10 @@ public:
 
 	bool isBuildingFree(int /*BuildingTypes*/ iIndex);
 	int getExtraBuildingHappiness(int /*BuildingTypes*/ iIndex);
+	//Charriu TradeRouteModifierTrait
+	int getExtraBuildingTradeRouteModifier(int /*BuildingTypes*/ iIndex);
+	//Charriu SeaPlotYieldChangesTrait
+	int getExtraBuildingSeaPlotYieldChanges(int /*BuildingTypes*/ iIndex);
 	int getExtraBuildingHealth(int /*BuildingTypes*/ iIndex);
 	int getFeatureHappiness(int /*FeatureTypes*/ iIndex);
 	int getUnitClassCount(int /*UnitClassTypes*/ eIndex);

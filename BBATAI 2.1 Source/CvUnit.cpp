@@ -195,6 +195,15 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 						setHasPromotion(((PromotionTypes)iJ), true);
 					}
 				}
+
+				//Charriu Second Free Promotion
+				if (GC.getTraitInfo((TraitTypes) iI).isFreeSecondPromotion(iJ))
+				{
+					if ((getUnitCombatType() != NO_UNITCOMBAT) && GC.getTraitInfo((TraitTypes) iI).isFreeSecondPromotionUnitCombat(getUnitCombatType()))
+					{
+						setHasPromotion(((PromotionTypes)iJ), true);
+					}
+				}
 			}
 		}
 	}
@@ -3241,6 +3250,11 @@ bool CvUnit::canGift(bool bTestVisible, bool bTestTransport)
 		return false;
 	}
 
+	if (GC.getGame().isOption(GAMEOPTION_NO_UNIT_GIFTING))
+	{
+		return false;
+	}
+
 	for (int iCorp = 0; iCorp < GC.getNumCorporationInfos(); ++iCorp)
 	{
 		if (m_pUnitInfo->getCorporationSpreads(iCorp) > 0)
@@ -4551,7 +4565,8 @@ bool CvUnit::canAirBombAt(const CvPlot* pPlot, int iX, int iY) const
 			return false;
 		}
 
-		if (GC.getImprovementInfo(pTargetPlot->getImprovementType()).isPermanent())
+		//Permanent/Pillage split by Charriu for RtR
+		if (GC.getImprovementInfo(pTargetPlot->getImprovementType()).isNotPillage())
 		{
 			return false;
 		}
@@ -4817,7 +4832,8 @@ bool CvUnit::canPillage(const CvPlot* pPlot) const
 	}
 	else
 	{
-		if (GC.getImprovementInfo(pPlot->getImprovementType()).isPermanent())
+		//Permanent/Pillage split by Charriu for RtR
+		if (GC.getImprovementInfo(pPlot->getImprovementType()).isNotPillage())
 		{
 			return false;
 		}
@@ -5766,7 +5782,8 @@ bool CvUnit::spread(ReligionTypes eReligion)
 
 		iSpreadProb += (((GC.getNumReligionInfos() - pCity->getReligionCount()) * (100 - iSpreadProb)) / GC.getNumReligionInfos());
 
-		if (GC.getGameINLINE().getSorenRandNum(100, "Unit Spread Religion") < iSpreadProb)
+		//Charriu Reliable domestic spread
+		if ((GC.getDefineINT("ENABLE_ALWAYS_SUCCESSFUL_DOMESTIC_RELIGION_SPREAD") > 0 && pCity->getTeam() == getTeam()) || GC.getGameINLINE().getSorenRandNum(100, "Unit Spread Religion") < iSpreadProb)
 		{
 			pCity->setHasReligion(eReligion, true, true, false);
 			bSuccess = true;
@@ -5796,6 +5813,11 @@ bool CvUnit::spread(ReligionTypes eReligion)
 bool CvUnit::canSpreadCorporation(const CvPlot* pPlot, CorporationTypes eCorporation, bool bTestVisible) const
 {
 	if (NO_CORPORATION == eCorporation)
+	{
+		return false;
+	}
+
+	if (!GC.getGameINLINE().isCorporationFounded(eCorporation))
 	{
 		return false;
 	}

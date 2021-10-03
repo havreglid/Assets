@@ -918,10 +918,14 @@ void CvPlot::nukeExplosion(int iRange, CvUnit* pNukeUnit)
 					{
 						if (NO_FEATURE == pLoopPlot->getFeatureType() || !GC.getFeatureInfo(pLoopPlot->getFeatureType()).isNukeImmune())
 						{
-							if (GC.getGameINLINE().getSorenRandNum(100, "Nuke Fallout") < GC.getDefineINT("NUKE_FALLOUT_PROB"))
+							//Charriu Nuke immune resources
+							if (NO_BONUS == pLoopPlot->getBonusType() || !GC.getBonusInfo(pLoopPlot->getBonusType()).isNukeImmune())
 							{
-								pLoopPlot->setImprovementType(NO_IMPROVEMENT);
-								pLoopPlot->setFeatureType((FeatureTypes)(GC.getDefineINT("NUKE_FEATURE")));
+								if (GC.getGameINLINE().getSorenRandNum(100, "Nuke Fallout") < GC.getDefineINT("NUKE_FALLOUT_PROB"))
+								{
+									pLoopPlot->setImprovementType(NO_IMPROVEMENT);
+									pLoopPlot->setFeatureType((FeatureTypes)(GC.getDefineINT("NUKE_FEATURE")));
+								}
 							}
 						}
 					}
@@ -1351,6 +1355,16 @@ bool CvPlot::isFreshWater() const
 				if (pLoopPlot->getFeatureType() != NO_FEATURE)
 				{
 					if (GC.getFeatureInfo(pLoopPlot->getFeatureType()).isAddsFreshWater())
+					{
+						return true;
+					}
+				}
+
+				if (pLoopPlot->isCity())
+				{
+					CvCity* pCity = pLoopPlot->getPlotCity();
+
+					if (pCity->isAddsFreshWater())
 					{
 						return true;
 					}
@@ -6216,9 +6230,19 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 
 	iYield = GC.getImprovementInfo(eImprovement).getYieldChange(eYield);
 
-	if (isRiverSide())
+	if (GC.getDefineINT("ENABLE_RIVER_SIDE_YIELD_ALSO_ON_CORNER") > 0)
 	{
-		iYield += GC.getImprovementInfo(eImprovement).getRiverSideYieldChange(eYield);
+		if (isRiver())
+		{
+			iYield += GC.getImprovementInfo(eImprovement).getRiverSideYieldChange(eYield);
+		}
+	}
+	else
+	{
+		if (isRiverSide())
+		{
+			iYield += GC.getImprovementInfo(eImprovement).getRiverSideYieldChange(eYield);
+		}
 	}
 
 	if (isHills())
@@ -6426,6 +6450,36 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 		if (GET_PLAYER(ePlayer).getExtraYieldThreshold(eYield) > 0)
 		{
 			if (iYield >= GET_PLAYER(ePlayer).getExtraYieldThreshold(eYield))
+			{
+				// novice: Added global define enabling financial nerf
+				if(GC.getDefineINT("ENABLE_FINANCIAL_RIVERSIDE_PENALTY") > 0) {
+					//T-hawk for Realms Beyond rebalance mod
+					//Change Financial trait: apply commerce bonus only for non river tiles
+					//This change is a bit hacky - it doesn't actually look at the traits held by the player - but only Financial's bonus yield even gets here
+					if (!isRiver() || eYield != YIELD_COMMERCE)
+					{
+						iYield += GC.getDefineINT("EXTRA_YIELD");
+					}
+				}
+				else {
+					iYield += GC.getDefineINT("EXTRA_YIELD");
+				}
+			}
+		}
+
+		//Charriu ExtraYieldLandThreshold
+		if (!isWater() && GET_PLAYER(ePlayer).getExtraYieldLandThreshold(eYield) > 0)
+		{
+			if (iYield >= GET_PLAYER(ePlayer).getExtraYieldLandThreshold(eYield))
+			{
+				iYield += GC.getDefineINT("EXTRA_YIELD");
+			}
+		}
+
+		//Charriu ExtraYieldWaterThreshold
+		if (isWater() && GET_PLAYER(ePlayer).getExtraYieldWaterThreshold(eYield) > 0)
+		{
+			if (iYield >= GET_PLAYER(ePlayer).getExtraYieldWaterThreshold(eYield))
 			{
 				iYield += GC.getDefineINT("EXTRA_YIELD");
 			}
@@ -9590,6 +9644,10 @@ int CvPlot::calculateMaxYield(YieldTypes eYield) const
 	{
 		CvTraitInfo& trait = GC.getTraitInfo((TraitTypes)iTrait);
 		iExtraYieldThreshold  = std::max(trait.getExtraYieldThreshold(eYield), iExtraYieldThreshold);
+		//Charriu ExtraYieldLandThreshold
+		iExtraYieldThreshold  = std::max(trait.getExtraYieldLandThreshold(eYield), iExtraYieldThreshold);
+		//Charriu ExtraYieldWaterThreshold
+		iExtraYieldThreshold  = std::max(trait.getExtraYieldWaterThreshold(eYield), iExtraYieldThreshold);
 	}
 	if (iExtraYieldThreshold > 0 && iMaxYield > iExtraYieldThreshold)
 	{

@@ -298,6 +298,7 @@
 	<ElementType name="iHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iMaxAnarchy" content="textOnly" dt:type="int"/>
 	<ElementType name="iUpkeepModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="iCityUpkeepModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iLevelExperienceModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iGreatPeopleRateModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iGreatGeneralRateModifier" content="textOnly" dt:type="int"/>
@@ -309,10 +310,23 @@
 	<ElementType name="ExtraYieldThresholds" content="eltOnly">
 		<element type="iExtraYieldThreshold" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="ExtraYieldLandThresholds" content="eltOnly">
+		<element type="iExtraYieldThreshold" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="ExtraYieldWaterThresholds" content="eltOnly">
+		<element type="iExtraYieldThreshold" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="iExtraLandYieldThreshold" content="textOnly" dt:type="int"/>
+	<ElementType name="ExtraLandYieldThresholds" content="eltOnly">
+		<element type="iExtraYieldThreshold" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
 	<ElementType name="iYield" content="textOnly" dt:type="int"/>
 	<ElementType name="TradeYieldModifiers" content="eltOnly">
 		<element type="iYield" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="iTradeRouteModifiers" content="textOnly" dt:type="int"/>
+	<ElementType name="iDomesticTradeRouteModifiers" content="textOnly" dt:type="int"/>
+    <ElementType name="iUnitMaintenanceModifiers" content="textOnly" dt:type="int"/>
 	<ElementType name="iCommerce" content="textOnly" dt:type="int"/>
 	<ElementType name="CommerceChanges" content="eltOnly">
 		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
@@ -337,6 +351,12 @@
 	</ElementType>
 	<ElementType name="FreePromotionUnitCombats" content="eltOnly">
 		<element type="FreePromotionUnitCombat" minOccurs="0" maxOccurs="*"/>
+	</ElementType>	
+	<ElementType name="FreeSecondPromotions" content="eltOnly">
+		<element type="FreePromotion" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="FreeSecondPromotionUnitCombats" content="eltOnly">
+		<element type="FreePromotionUnitCombat" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="TraitInfo" content="eltOnly">
 		<element type="Type"/>
@@ -347,6 +367,7 @@
 		<element type="iHappiness"/>
 		<element type="iMaxAnarchy"/>
 		<element type="iUpkeepModifier"/>
+		<element type="iCityUpkeepModifier"/>
 		<element type="iLevelExperienceModifier"/>
 		<element type="iGreatPeopleRateModifier"/>
 		<element type="iGreatGeneralRateModifier"/>
@@ -355,11 +376,18 @@
 		<element type="iMaxTeamBuildingProductionModifier"/>
 		<element type="iMaxPlayerBuildingProductionModifier"/>
 		<element type="ExtraYieldThresholds"/>
+		<element type="ExtraYieldLandThresholds"/>
+		<element type="ExtraYieldWaterThresholds"/>
 		<element type="TradeYieldModifiers"/>
+		<element type="iTradeRouteModifiers"/>
+		<element type="iDomesticTradeRouteModifiers"/>
+        <element type="iUnitMaintenanceModifiers"/>
 		<element type="CommerceChanges"/>
 		<element type="CommerceModifiers"/>
 		<element type="FreePromotions"/>
 		<element type="FreePromotionUnitCombats"/>
+		<element type="FreeSecondPromotions"/>
+		<element type="FreeSecondPromotionUnitCombats"/>
 	</ElementType>
 	<ElementType name="TraitInfos" content="eltOnly">
 		<element type="TraitInfo" maxOccurs="*"/>

@@ -17,6 +17,7 @@
 #include "CvDLLInterfaceIFaceBase.h"
 #include "CvDLLSymbolIFaceBase.h"
 #include "CvInfos.h"
+#include "CvGlobals.h"
 #include "CvXMLLoadUtility.h"
 #include "CvCity.h"
 #include "CvPlayerAI.h"
@@ -4547,6 +4548,8 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 
 				CvPlayerAI& kPlayer = GET_PLAYER(pCity->getOwnerINLINE());
 				int iUnitCost = kPlayer.calculateUnitCost();
+				//Charriu Unit Maintenance Modifier
+				iUnitCost -= kPlayer.calculateUnitCostTraitReduction(iUnitCost);
 				int iTotalCosts = kPlayer.calculatePreInflatedCosts();
 				int iUnitCostPercentage = (iUnitCost * 100) / std::max(1, iTotalCosts);
 				szString.append(CvWString::format(L"\nUnit cost percentage: %d (%d / %d)", iUnitCostPercentage, iUnitCost, iTotalCosts));
@@ -6214,6 +6217,12 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 			szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_CIVIC_UPKEEP_MODIFIER", GC.getTraitInfo(eTrait).getUpkeepModifier()));
 		}
 
+		// AGDM addition: Describe effect of iCityUpkeepModifier tag introduced by T-Hawk for RB Mod
+		if (GC.getTraitInfo(eTrait).getCityUpkeepModifier() != 0)
+		{
+			szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_CITY_UPKEEP_MODIFIER", 0 - GC.getTraitInfo(eTrait).getCityUpkeepModifier()));
+		}
+
 		// iLevelExperienceModifier
 		if (GC.getTraitInfo(eTrait).getLevelExperienceModifier() != 0)
 		{
@@ -6273,6 +6282,16 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 			{
 				szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_EXTRA_YIELD_THRESHOLDS", GC.getYieldInfo((YieldTypes) iI).getChar(), GC.getTraitInfo(eTrait).getExtraYieldThreshold(iI), GC.getYieldInfo((YieldTypes) iI).getChar()));
 			}
+			//Charriu ExtraYieldLandThreshold
+			if (GC.getTraitInfo(eTrait).getExtraYieldLandThreshold(iI) > 0)
+			{
+				szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_EXTRA_YIELD_LAND_THRESHOLDS", GC.getYieldInfo((YieldTypes) iI).getChar(), GC.getTraitInfo(eTrait).getExtraYieldLandThreshold(iI), GC.getYieldInfo((YieldTypes) iI).getChar()));
+			}
+			//Charriu ExtraYieldWaterThreshold
+			if (GC.getTraitInfo(eTrait).getExtraYieldWaterThreshold(iI) > 0)
+			{
+				szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_EXTRA_YIELD_WATER_THRESHOLDS", GC.getYieldInfo((YieldTypes) iI).getChar(), GC.getTraitInfo(eTrait).getExtraYieldWaterThreshold(iI), GC.getYieldInfo((YieldTypes) iI).getChar()));
+			}
 			// Trade Yield Modifiers
 			if (GC.getTraitInfo(eTrait).getTradeYieldModifier(iI) != 0)
 			{
@@ -6292,6 +6311,24 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 			{
 				szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_COMMERCE_MODIFIERS", GC.getTraitInfo(eTrait).getCommerceModifier(iI), GC.getCommerceInfo((CommerceTypes) iI).getChar(), "COMMERCE"));
 			}
+		}
+
+		//Charriu Trade Route Modifier
+		if (GC.getTraitInfo(eTrait).getTradeRouteModifier() != 0)
+		{
+			szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_TRADE_ROUTE_MODIFIER", GC.getTraitInfo(eTrait).getTradeRouteModifier()));
+		}
+
+		//Charriu Domestic Trade Route Modifier
+		if (GC.getTraitInfo(eTrait).getDomesticTradeRouteModifier() != 0)
+		{
+			szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_DOMESTIC_TRADE_ROUTE_MODIFIER", GC.getTraitInfo(eTrait).getDomesticTradeRouteModifier()));
+		}
+
+		//Charriu Unit Maintenance Modifier
+		if (GC.getTraitInfo(eTrait).getUnitMaintenanceModifier() != 0)
+		{
+			szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_UNIT_MAINTENANCE_MODIFIER", -GC.getTraitInfo(eTrait).getUnitMaintenanceModifier()));
 		}
 
 		// Free Promotions
@@ -6318,6 +6355,38 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 			for (iJ = 0; iJ < GC.getNumUnitCombatInfos(); iJ++)
 			{
 				if (GC.getTraitInfo(eTrait).isFreePromotionUnitCombat(iJ))
+				{
+					szTempBuffer.Format(L"\n        %c<link=literal>%s</link>", gDLL->getSymbolID(BULLET_CHAR), GC.getUnitCombatInfo((UnitCombatTypes)iJ).getDescription());
+					szHelpString.append(szTempBuffer);
+				}
+			}
+		}
+
+		//Charriu Second Free Promotion
+		bool bFoundSecondPromotion = false;
+
+		szTempBuffer.clear();
+		for (iI = 0; iI < GC.getNumPromotionInfos(); ++iI)
+		{
+			if (GC.getTraitInfo(eTrait).isFreeSecondPromotion(iI))
+			{
+				if (bFoundSecondPromotion)
+				{
+					szTempBuffer += L", ";
+				}
+
+				szTempBuffer += CvWString::format(L"<link=literal>%s</link>", GC.getPromotionInfo((PromotionTypes) iI).getDescription());
+				bFoundSecondPromotion = true;
+			}
+		}
+
+		if (bFoundSecondPromotion)
+		{
+			szHelpString.append(gDLL->getText("TXT_KEY_TRAIT_FREE_PROMOTIONS", szTempBuffer.GetCString()));
+
+			for (iJ = 0; iJ < GC.getNumUnitCombatInfos(); iJ++)
+			{
+				if (GC.getTraitInfo(eTrait).isFreeSecondPromotionUnitCombat(iJ))
 				{
 					szTempBuffer.Format(L"\n        %c<link=literal>%s</link>", gDLL->getSymbolID(BULLET_CHAR), GC.getUnitCombatInfo((UnitCombatTypes)iJ).getDescription());
 					szHelpString.append(szTempBuffer);
@@ -6470,6 +6539,30 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 					szBuilding.Format(L"<link=literal>%s</link>", GC.getBuildingInfo(eLoopBuilding).getDescription());
 					setListHelp(szHelpString, szText.GetCString(), szBuilding, L", ", (iHappiness != iLast));
 					iLast = iHappiness;
+				}
+
+				//Charriu TradeRouteModifierTrait
+				int iTradeRouteModifier = GC.getBuildingInfo(eLoopBuilding).getTradeRouteModifierTraits(eTrait);
+				if (iTradeRouteModifier != 0)
+				{
+					szText = gDLL->getText("TXT_KEY_TRAIT_BUILDING_TRADEROUTEMODIFIER", iTradeRouteModifier);
+
+					CvWString szBuilding;
+					szBuilding.Format(L"<link=literal>%s</link>", GC.getBuildingInfo(eLoopBuilding).getDescription());
+					setListHelp(szHelpString, szText.GetCString(), " " + szBuilding, L", ", (iTradeRouteModifier != iLast));
+					iLast = iTradeRouteModifier;
+				}
+
+				//Charriu SeaPlotYieldChangesTrait
+				int iSeaPlotYieldChanges = GC.getBuildingInfo(eLoopBuilding).getSeaPlotYieldChangesTraits(eTrait);
+				if (iSeaPlotYieldChanges != 0)
+				{
+					szText = gDLL->getText("TXT_KEY_TRAIT_BUILDING_SEAPLOTYIELDCHANGES", iSeaPlotYieldChanges);
+
+					CvWString szBuilding;
+					szBuilding.Format(L"<link=literal>%s</link>", GC.getBuildingInfo(eLoopBuilding).getDescription());
+					setListHelp(szHelpString, szText.GetCString(), szBuilding, L", ", (iSeaPlotYieldChanges != iLast));
+					iLast = iSeaPlotYieldChanges;
 				}
 			}
 		}
@@ -7992,6 +8085,10 @@ void CvGameTextMgr::setTechTradeHelp(CvWStringBuffer &szBuffer, TechTypes eTech,
 	//	Creates a free unit...
 	buildFreeUnitString(szBuffer, eTech, true, bPlayerContext);
 
+	//Charriu FreeUnitForEverybody
+	//	Creates a free unit...
+	buildFreeUnitEverybodyString(szBuffer, eTech, true, bPlayerContext);
+
 	//	Increases feature production...
 	buildFeatureProductionString(szBuffer, eTech, true, bPlayerContext);
 
@@ -8275,6 +8372,26 @@ void CvGameTextMgr::setTechTradeHelp(CvWStringBuffer &szBuffer, TechTypes eTech,
 
 			szTempBuffer.Format(L" (%d/%d %c)", GET_TEAM(GC.getGameINLINE().getActiveTeam()).getResearchProgress(eTech), GET_TEAM(GC.getGameINLINE().getActiveTeam()).getResearchCost(eTech), GC.getCommerceInfo(COMMERCE_RESEARCH).getChar());
 			szBuffer.append(szTempBuffer);
+
+			if (getBugOptionBOOL("MiscHover__LastTurnTechs", true, "BUG_LAST_TURN_TECH_HOVER"))
+			{
+				//Show Last Turn Beakers
+				int researchOverflow = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getOverflowResearch();
+				int researchProgress = GET_TEAM(GC.getGameINLINE().getActiveTeam()).getResearchProgress(eTech);
+				int researchCost = GET_TEAM(GC.getGameINLINE().getActiveTeam()).getResearchCost(eTech);
+				int researchRate = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).calculateResearchRate(eTech);
+				int lastTurnRate = 0;
+
+				int tempProgress = researchProgress + researchOverflow;
+				while (tempProgress < researchCost) 
+				{
+					lastTurnRate = researchCost - tempProgress;
+					tempProgress += researchRate;
+				}
+				szBuffer.append(" ");
+				szBuffer.append(gDLL->getText("TXT_KEY_TECH_LAST_TURN", lastTurnRate));
+			}
+			//Show Last Turn Beakers
 		}
 	}
 
@@ -9841,6 +9958,13 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 		szBuffer.append(gDLL->getText("TXT_KEY_REPLACES_UNIT", GC.getBuildingInfo(eDefaultBuilding).getTextKeyWide()));
 	}
 
+	
+	//Charriu Add Act as fresh water
+	if (kBuilding.isAddsFreshWater())
+	{
+		szBuffer.append(gDLL->getText("TXT_KEY_FEATURE_ADDS_FRESH_WATER"));
+	}
+
 	if (bCivilopediaText)
 	{
 		setYieldChangeHelp(szBuffer, L"", L"", L"", kBuilding.getYieldModifierArray(), true, bCivilopediaText);
@@ -10746,6 +10870,43 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 			{
 				szBuffer.append(NEWLINE);
 				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_HAPPINESS_TRAIT", kBuilding.getHappinessTraits((TraitTypes)i), GC.getTraitInfo((TraitTypes)i).getTextKeyWide()));
+			}
+
+			//Charriu TradeRouteModifierTrait
+			if (kBuilding.getTradeRouteModifierTraits((TraitTypes)i) != 0)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_TRADEROUTEMODIFIER_TRAIT", kBuilding.getTradeRouteModifierTraits((TraitTypes)i), kBuilding.getTextKeyWide(), GC.getTraitInfo((TraitTypes)i).getTextKeyWide()));
+			}
+
+			//Charriu SeaPlotYieldChangesTrait
+			if (kBuilding.getSeaPlotYieldChangesTraits((TraitTypes)i) != 0)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_SEAPLOTYIELDCHANGE_TRAIT", kBuilding.getSeaPlotYieldChangesTraits((TraitTypes)i), kBuilding.getTextKeyWide(), GC.getTraitInfo((TraitTypes)i).getTextKeyWide()));
+			}
+		}
+	}
+	//Charriu TradeRouteModifierTrait
+	else if (ePlayer != NO_PLAYER)
+	{
+		for (int i = 0; i < GC.getNumTraitInfos(); ++i)
+		{
+			CvLeaderHeadInfo& kLeaderInfo = GC.getLeaderHeadInfo(GET_PLAYER(ePlayer).getLeaderType());
+			if (kLeaderInfo.hasTrait(i))
+			{
+				if (kBuilding.getTradeRouteModifierTraits((TraitTypes)i) != 0)
+				{
+					szBuffer.append(NEWLINE);
+					szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_TRADEROUTEMODIFIER_TRAIT", kBuilding.getTradeRouteModifierTraits((TraitTypes)i), kBuilding.getTextKeyWide(), GC.getTraitInfo((TraitTypes)i).getTextKeyWide()));
+				}
+
+				//Charriu SeaPlotYieldChangesTrait
+				if (kBuilding.getSeaPlotYieldChangesTraits((TraitTypes)i) != 0)
+				{
+					szBuffer.append(NEWLINE);
+					szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_SEAPLOTYIELDCHANGE_TRAIT", kBuilding.getSeaPlotYieldChangesTraits((TraitTypes)i), kBuilding.getTextKeyWide(), GC.getTraitInfo((TraitTypes)i).getTextKeyWide()));
+				}
 			}
 		}
 	}
@@ -13434,6 +13595,36 @@ void CvGameTextMgr::buildFreeUnitString(CvWStringBuffer &szBuffer, TechTypes eTe
 	}
 }
 
+//Charriu FreeUnitForEverybody Start
+void CvGameTextMgr::buildFreeUnitEverybodyString(CvWStringBuffer &szBuffer, TechTypes eTech, bool bList, bool bPlayerContext)
+{
+	UnitTypes eFreeUnit = NO_UNIT;
+	if (GC.getGameINLINE().getActivePlayer() != NO_PLAYER)
+	{
+		eFreeUnit = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getTechFreeUnitEverybody(eTech);
+	}
+	else
+	{
+		if (GC.getTechInfo(eTech).getFreeUnitEverybodyClass() != NO_UNITCLASS)
+		{
+			eFreeUnit = (UnitTypes)GC.getUnitClassInfo((UnitClassTypes)GC.getTechInfo(eTech).getFreeUnitEverybodyClass()).getDefaultUnitIndex();
+		}
+	}
+
+	if (eFreeUnit != NO_UNIT)
+	{
+		if (!bPlayerContext || (GC.getGameINLINE().countKnownTechNumTeams(eTech) == 0))
+		{
+			if (bList)
+			{
+				szBuffer.append(NEWLINE);
+			}
+			szBuffer.append(gDLL->getText("TXT_KEY_TECH_EVERYBODY_RECEIVES", GC.getUnitInfo(eFreeUnit).getTextKeyWide()));
+		}
+	}
+}
+//Charriu FreeUnitForEverybody End
+
 void CvGameTextMgr::buildFeatureProductionString(CvWStringBuffer &szBuffer, TechTypes eTech, bool bList, bool bPlayerContext)
 {
 	if (GC.getTechInfo(eTech).getFeatureProductionModifier() != 0)
@@ -15005,6 +15196,9 @@ void CvGameTextMgr::buildFinanceUnitCostString(CvWStringBuffer& szBuffer, Player
 	int iExtraCost = 0;
 	int iCost = player.calculateUnitCost(iFreeUnits, iFreeMilitaryUnits, iPaidUnits, iPaidMilitaryUnits, iBaseUnitCost, iMilitaryCost, iExtraCost);
 	int iHandicap = iCost-iBaseUnitCost-iMilitaryCost-iExtraCost;
+	//Charriu Unit Maintenance Modifier
+	int iUnitMaintenance = -player.calculateUnitCostTraitReduction(iCost);
+	iCost = iCost + iUnitMaintenance;
 
 	szBuffer.append(NEWLINE);
 	szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_UNIT_COST", iPaidUnits, iFreeUnits, iBaseUnitCost));
@@ -15020,6 +15214,11 @@ void CvGameTextMgr::buildFinanceUnitCostString(CvWStringBuffer& szBuffer, Player
 	if (iHandicap != 0)
 	{
 		szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_HANDICAP_COST", iHandicap));
+	}
+	//Charriu Unit Maintenance Modifier
+	if (iUnitMaintenance != 0)
+	{
+		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_MAINTENANCE_MODIFIER", iUnitMaintenance));
 	}
 	szBuffer.append(gDLL->getText("TXT_KEY_FINANCE_ADVISOR_UNIT_COST_4", iCost));
 }
@@ -17940,6 +18139,15 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 				}
 			}
 
+			//Charriu TradeRouteModifierTrait
+			iNewMod = pCity->getExtraBuildingTradeRouteModifier();
+			if (0 != iNewMod)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_BUILDING_TRAIT", iNewMod));
+				iModifier += iNewMod;
+			}
+
 			iNewMod = pCity->getPopulationTradeModifier();
 			if (0 != iNewMod)
 			{
@@ -17957,6 +18165,15 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 					szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_CAPITAL", iNewMod));
 					iModifier += iNewMod;
 				}
+			}
+
+			//Charriu Trade Route Modifier
+			iNewMod = pCity->getTraitTradeModifier();
+			if (0 != iNewMod)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_TRAIT_MODIFIER", iNewMod));
+				iModifier += iNewMod;
 			}
 
 			if (NULL != pOtherCity)
@@ -17987,6 +18204,17 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 					{
 						szBuffer.append(NEWLINE);
 						szBuffer.append(gDLL->getText("TXT_KEY_TRADE_ROUTE_MOD_PEACE", iNewMod));
+						iModifier += iNewMod;
+					}
+				}
+				else
+				{
+					//Charriu Domestic Trade Route Modifier
+					iNewMod = pCity->getTraitDomesticTradeModifier();
+					if (0 != iNewMod)
+					{
+						szBuffer.append(NEWLINE);
+						szBuffer.append(gDLL->getText("TXT_KEY_DOMESTIC_TRADE_ROUTE_TRAIT_MODIFIER", iNewMod));
 						iModifier += iNewMod;
 					}
 				}

@@ -2764,7 +2764,9 @@ void CvTeamAI::AI_getWarThresholds( int &iTotalWarThreshold, int &iLimitedWarThr
 		{
 			if (GET_PLAYER((PlayerTypes)iI).isAlive())
 			{
-				int iUnitSpendingPercent = (GET_PLAYER((PlayerTypes)iI).calculateUnitCost() * 100) / std::max(1, GET_PLAYER((PlayerTypes)iI).calculatePreInflatedCosts());
+                //Charriu Unit Maintenance Modifier
+                int iBaseUnitCost = GET_PLAYER((PlayerTypes)iI).calculateUnitCost();
+                int iUnitSpendingPercent = ((iBaseUnitCost - GET_PLAYER((PlayerTypes)iI).calculateUnitCostTraitReduction(iBaseUnitCost)) * 100) / std::max(1, GET_PLAYER((PlayerTypes)iI).calculatePreInflatedCosts());
 				iHighUnitSpendingPercent += (std::max(0, iUnitSpendingPercent - 7) / 2);
 
 				if( GET_PLAYER((PlayerTypes)iI).AI_isDoStrategy(AI_STRATEGY_DAGGER))
@@ -4518,7 +4520,9 @@ void CvTeamAI::AI_doWar()
 		{
 			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
 			{
-				int iUnitSpendingPercent = (GET_PLAYER((PlayerTypes)iI).calculateUnitCost() * 100) / std::max(1, GET_PLAYER((PlayerTypes)iI).calculatePreInflatedCosts());
+                //Charriu Unit Maintenance Modifier
+                int iBaseUnitCost = GET_PLAYER((PlayerTypes)iI).calculateUnitCost();
+                int iUnitSpendingPercent = ((iBaseUnitCost - GET_PLAYER((PlayerTypes)iI).calculateUnitCostTraitReduction(iBaseUnitCost)) * 100) / std::max(1, GET_PLAYER((PlayerTypes)iI).calculatePreInflatedCosts());
 				iHighUnitSpendingPercent += (std::max(0, iUnitSpendingPercent - 7) / 2);
 				iLowUnitSpendingPercent += iUnitSpendingPercent;
 			}			

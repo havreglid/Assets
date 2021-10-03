@@ -43,7 +43,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SIGN_EVENT_HORTICULTURE_1</Tag>
-		<English>Medicine</English>
+		<English>medicine</English>
 		<French>médicament</French>
 		<German>Medizin</German>
 		<Italian>medicina</Italian>
@@ -51,7 +51,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SIGN_EVENT_HORTICULTURE_2</Tag>
-		<English>Medicine</English>
+		<English>medicine</English>
 		<French>médicament</French>
 		<German>Medizin</German>
 		<Italian>medicina</Italian>
@@ -59,7 +59,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SIGN_EVENT_PARROTS_1</Tag>
-		<English>Parrots</English>
+		<English>parrots</English>
 		<French>perroquets</French>
 		<German>Papageien</German>
 		<Italian>pappagalli</Italian>
@@ -67,7 +67,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SIGN_EVENT_JADE_1</Tag>
-		<English>Jade</English>
+		<English>jade</English>
 		<French>jade</French>
 		<German>Jade</German>
 		<Italian>giada</Italian>
@@ -75,7 +75,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SIGN_EVENT_BLACK_PEARLS_1</Tag>
-		<English>Black Pearls</English>
+		<English>black pearls</English>
 		<French>perles noires</French>
 		<German>schwarze Perlen</German>
 		<Italian>perle nere</Italian>
@@ -83,7 +83,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SIGN_EVENT_SALTPETER_1</Tag>
-		<English>Saltpeter</English>
+		<English>saltpeter</English>
 		<French>salp&#234;tre</French>
 		<German>Salpeter</German>
 		<Italian>salnitro</Italian>
@@ -91,7 +91,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SIGN_EVENT_CLUNKER_COAL_1</Tag>
-		<English>Impurities</English>
+		<English>impurities</English>
 		<French>impuret&#233;s</French>
 		<German>Verunreinigungen</German>
 		<Italian>impurezze</Italian>
@@ -99,7 +99,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SIGN_EVENT_SOUR_CRUDE_1</Tag>
-		<English>Impurities</English>
+		<English>impurities</English>
 		<French>impuret&#233;s</French>
 		<German>Verunreinigungen</German>
 		<Italian>impurezze</Italian>
@@ -107,17 +107,17 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SIGN_EVENT_TRUFFLES_1</Tag>
-		<English>Truffles</English>
+		<English>truffles</English>
 		<French>truffes</French>
-		<German>Trüffel</German>
+		<German>Tr&#252;ffel</German>
 		<Italian>tartufi</Italian>
 		<Spanish>Trufas</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SIGN_EVENT_SEA_TURTLES_1</Tag>
-		<English>Sea Turtles</English>
+		<English>sea turtles</English>
 		<French>tortues de mer</French>
-		<German>Meeresschildkröten</German>
+		<German>Meeresschildkr&#246;ten</German>
 		<Italian>testuggini</Italian>
 		<Spanish>Tortugas marinas</Spanish>
 	</TEXT>
@@ -131,25 +131,25 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SIGN_EVENT_PRAIRIE_DOGS_1</Tag>
-		<English>Prairie Dogs</English>
+		<English>prairie dogs</English>
 		<French>chiens de prairie</French>
-		<German>Präriehunde</German>
+		<German>Pr&#228;riehunde</German>
 		<Italian>cani della prateria</Italian>
 		<Spanish>perros de las praderas</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SIGN_EVENT_APPLESEED_1</Tag>
-		<English>Apple Trees</English>
+		<English>apple trees</English>
 		<French>pommiers</French>
-		<German>Apfelbäume</German>
+		<German>Apfelb&#228;ume</German>
 		<Italian>meli</Italian>
 		<Spanish>manzanos</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SIGN_EVENT_FORTY_THIEVES_1</Tag>
-		<English>Local Legend</English>
+		<English>local legend</English>
 		<French>l&#233;gende locale</French>
-		<German>örtliche Legende</German>
+		<German>&#246;rtliche Legende</German>
 		<Italian>leggenda locale</Italian>
 		<Spanish>leyenda local</Spanish>
 	</TEXT>
@@ -163,7 +163,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SIGN_EVENT_GREAT_BEAST_1</Tag>
-		<English>Great Beast</English>
+		<English>great beast</English>
 		<French>enorme animal</French>
 		<German>riesiges Tier</German>
 		<Italian>grande animale</Italian>

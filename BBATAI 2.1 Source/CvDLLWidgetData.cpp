@@ -134,6 +134,11 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 		parseChangeSpecialistHelp(widgetDataStruct, szBuffer);
 		break;
 
+	//Charriu Lock Specialsit
+	case WIDGET_LOCK_SPECIALIST:
+		parseLockSpecialistHelp(widgetDataStruct, szBuffer);
+		break;
+
 	case WIDGET_RESEARCH:
 		parseResearchHelp(widgetDataStruct, szBuffer);
 		break;
@@ -310,6 +315,11 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, CvWidgetDataStruct &w
 
 	case WIDGET_HELP_FREE_UNIT:
 		parseFreeUnitHelp(widgetDataStruct, szBuffer);
+		break;
+
+	//Charriu FreeUnitForEverybody
+	case WIDGET_HELP_FREE_UNIT_EVERYBODY:
+		parseFreeUnitEverybodyHelp(widgetDataStruct, szBuffer);
 		break;
 
 	case WIDGET_HELP_FEATURE_PRODUCTION:
@@ -745,6 +755,11 @@ bool CvDLLWidgetData::executeAction( CvWidgetDataStruct &widgetDataStruct )
 		doChangeSpecialist(widgetDataStruct);
 		break;
 
+	//Charriu Lock Specialist
+	case WIDGET_LOCK_SPECIALIST:
+		doLockSpecialist(widgetDataStruct);
+		break;
+
 	case WIDGET_RESEARCH:
 	case WIDGET_TECH_TREE:
 		doResearch(widgetDataStruct);
@@ -926,6 +941,8 @@ bool CvDLLWidgetData::executeAction( CvWidgetDataStruct &widgetDataStruct )
 	case WIDGET_HELP_OBSOLETE_SPECIAL:
 	case WIDGET_HELP_MOVE_BONUS:
 	case WIDGET_HELP_FREE_UNIT:
+	//Charriu FreeUnitForEverybody
+	case WIDGET_HELP_FREE_UNIT_EVERYBODY:
 	case WIDGET_HELP_FEATURE_PRODUCTION:
 	case WIDGET_HELP_WORKER_RATE:
 	case WIDGET_HELP_TRADE_ROUTES:
@@ -1004,6 +1021,8 @@ bool CvDLLWidgetData::executeAltAction( CvWidgetDataStruct &widgetDataStruct )
 		break;
 	case WIDGET_PEDIA_JUMP_TO_UNIT:
 	case WIDGET_HELP_FREE_UNIT:
+		//Charriu FreeUnitForEverybody
+	case WIDGET_HELP_FREE_UNIT_EVERYBODY:
 		doPediaUnitJump(widgetDataStruct);
 		break;
 	case WIDGET_HELP_FOUND_RELIGION:
@@ -1310,6 +1329,11 @@ void CvDLLWidgetData::doChangeSpecialist(CvWidgetDataStruct &widgetDataStruct)
 	GC.getGameINLINE().selectedCitiesGameNetMessage(GAMEMESSAGE_DO_TASK, TASK_CHANGE_SPECIALIST, widgetDataStruct.m_iData1, widgetDataStruct.m_iData2);
 }
 
+//Charriu Lock Specialsit
+void CvDLLWidgetData::doLockSpecialist(CvWidgetDataStruct &widgetDataStruct)
+{
+	GC.getGameINLINE().selectedCitiesGameNetMessage(GAMEMESSAGE_DO_TASK, TASK_LOCK_SPECIALIST, widgetDataStruct.m_iData1, widgetDataStruct.m_iData2);
+}
 
 void CvDLLWidgetData::doResearch(CvWidgetDataStruct &widgetDataStruct)
 {
@@ -3517,6 +3541,11 @@ void CvDLLWidgetData::parseChangeSpecialistHelp(CvWidgetDataStruct &widgetDataSt
 	}
 }
 
+//Charriu Lock Specialist
+void CvDLLWidgetData::parseLockSpecialistHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
+{
+	szBuffer.append(gDLL->getText("TXT_KEY_MISC_LOCK_SPECIALIST"));
+}
 
 void CvDLLWidgetData::parseResearchHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
 {
@@ -5013,6 +5042,15 @@ void CvDLLWidgetData::parseMaintenanceHelp(CvWidgetDataStruct &widgetDataStruct,
 				szBuffer.append(gDLL->getText("TXT_KEY_MISC_CORPORATION_MAINT_FLOAT", szMaint.GetCString()));
 			}
 
+			// AGDM addition: Inform about reduced mainenance due to trait introduced by T-hawk for RB balance mod. Works multiplicatively after discounts from courthouse/etc.
+			int iCityUpkeepModifier = GET_PLAYER(pHeadSelectedCity->getOwnerINLINE()).getCityUpkeepModifier();
+			if (iCityUpkeepModifier != 0)
+			{
+				CvWString szMaint = CvWString::format(L"%d%%", 0-iCityUpkeepModifier);
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_MISC_TRAITS_MAINT", szMaint.GetCString()));
+			}
+
 			szBuffer.append(SEPARATOR);
 
 			//		swprintf(szTempBuffer, "\n%d%c Total Maintenance", pHeadSelectedCity->getMaintenance(), GC.getCommerceInfo(COMMERCE_GOLD).getChar());
@@ -5378,6 +5416,12 @@ void CvDLLWidgetData::parseMoveHelp(CvWidgetDataStruct &widgetDataStruct, CvWStr
 void CvDLLWidgetData::parseFreeUnitHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
 {
 	GAMETEXT.buildFreeUnitString(szBuffer, ((TechTypes)(widgetDataStruct.m_iData2)));
+}
+
+//Charriu FreeUnitForEverybody
+void CvDLLWidgetData::parseFreeUnitEverybodyHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
+{
+	GAMETEXT.buildFreeUnitEverybodyString(szBuffer, ((TechTypes)(widgetDataStruct.m_iData2)));
 }
 
 void CvDLLWidgetData::parseFeatureProductionHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)

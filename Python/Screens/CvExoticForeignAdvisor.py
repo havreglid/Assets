@@ -1375,7 +1375,7 @@ class CvExoticForeignAdvisor (CvForeignAdvisor.CvForeignAdvisor):
 #				iTable_Y = self.RES_TOP_BOTTOM_SPACE + 36
 #				iTable_H = self.RES_SURPLUS_HEIGHT - 48
 			screen.addTableControlGFC(self.availableTable, iMaxColumn, self.RES_LEFT_RIGHT_SPACE + iWidthSpace, iTable_Y, iMaxColumn * (iColumnWidth), iTable_H
-				    , False, True, 24, 24, TableStyles.TABLE_STYLE_EMPTY )
+					, False, True, 24, 24, TableStyles.TABLE_STYLE_EMPTY )
 
 			for i in xrange(iMaxColumn):
 				screen.setTableColumnHeader(self.availableTable, i, "", iColumnWidth)

@@ -70,6 +70,8 @@ public:
 	bool isTeamWondersMaxed() const;																							// Exposed to Python
 	bool isNationalWondersMaxed() const;																					// Exposed to Python
 	bool isBuildingsMaxed() const;																								// Exposed to Python
+	//Charriu Add Act as fresh water
+	bool isAddsFreshWater() const;																			// Exposed to Python				
 
 	bool canTrain(UnitTypes eUnit, bool bContinue = false, bool bTestVisible = false, bool bIgnoreCost = false, bool bIgnoreUpgrades = false) const;					// Exposed to Python 
 	bool canTrain(UnitCombatTypes eUnitCombat) const;
@@ -427,6 +429,14 @@ public:
 
 	int getExtraBuildingGoodHappiness() const;														// Exposed to Python
 	int getExtraBuildingBadHappiness() const;															// Exposed to Python
+
+	//Charriu TradeRouteModifierTrait
+	int getExtraBuildingTradeRouteModifier() const;															// Exposed to Python
+	void updateExtraBuildingTradeRouteModifier();
+
+	//Charriu SeaPlotYieldChangesTrait
+	int getExtraBuildingSeaPlotYieldChanges() const;															// Exposed to Python
+	void updateExtraBuildingSeaPlotYieldChanges();
 /********************************************************************************/
 /* 	New Civic AI						19.08.2010				Fuyu			*/
 /********************************************************************************/
@@ -572,7 +582,11 @@ public:
 	int getFreeSpecialist() const;																				// Exposed to Python  
 	void changeFreeSpecialist(int iChange);
 
-	int getPowerCount() const;
+	//Charriu Add Act as Fresh Water
+	int getFreshWaterSourceCount() const;
+	void changeFreshWaterSourceCount(int iChange);
+
+	int getPowerCount() const;	
 	bool isPower() const;																									// Exposed to Python
 	bool isAreaCleanPower() const;																				// Exposed to Python
 	int getDirtyPowerCount() const;
@@ -695,6 +709,10 @@ public:
 	int getTradeYield(YieldTypes eIndex) const;																	// Exposed to Python
 	int totalTradeModifier(CvCity* pOtherCity = NULL) const;																							// Exposed to Python
 	int getPopulationTradeModifier() const;
+	//Charriu Trade Route Modifier
+	int getTraitTradeModifier() const;
+	//Charriu Domestic Trade Route Modifier
+	int getTraitDomesticTradeModifier() const;
 	int getPeaceTradeModifier(TeamTypes eTeam) const;
 	int getBaseTradeProfit(CvCity* pCity) const;
 // BUG - Fractional Trade Routes - start
@@ -789,6 +807,7 @@ public:
 	void changeCulture(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups);		// Exposed to Python
 	void changeCultureTimes100(PlayerTypes eIndex, int iChange, bool bPlots, bool bUpdatePlotGroups);		// Exposed to Python
 
+	bool isInRevolt() const;
 	int getNumRevolts(PlayerTypes eIndex) const;
 	void changeNumRevolts(PlayerTypes eIndex, int iChange);
 	int getRevoltTestProbability() const;
@@ -871,6 +890,9 @@ public:
 	void setSpecialistCount(SpecialistTypes eIndex, int iNewValue);
 	void changeSpecialistCount(SpecialistTypes eIndex, int iChange);
 	void alterSpecialistCount(SpecialistTypes eIndex, int iChange);					// Exposed to Python
+	//Charriu Lock Specialist
+	void lockSpecialistForAI(SpecialistTypes eIndex);					// Exposed to Python
+	bool isSpecialistLockedForAI(SpecialistTypes eIndex) const;					// Exposed to Python
 
 	int getMaxSpecialistCount(SpecialistTypes eIndex) const;						// Exposed to Python
 	bool isSpecialistValid(SpecialistTypes eIndex, int iExtra = 0) const;					// Exposed to Python
@@ -1146,6 +1168,10 @@ protected:
 	int m_iBuildingBadHappiness;
 	int m_iExtraBuildingGoodHappiness;
 	int m_iExtraBuildingBadHappiness;
+	//Charriu TradeRouteModifierTrait
+	int m_iExtraBuildingTradeRouteModifier;
+	//Charriu SeaPlotYieldChangesTrait
+	int m_iExtraBuildingSeaPlotYieldChanges;
 	int m_iExtraBuildingGoodHealth;
 	int m_iExtraBuildingBadHealth;
 	int m_iFeatureGoodHappiness;
@@ -1180,6 +1206,8 @@ protected:
 	int m_iFreeSpecialist;
 	int m_iPowerCount;
 	int m_iDirtyPowerCount;
+	//Charriu Add Act as Fresh water
+	int m_iFreshWaterSourceCount;
 	int m_iDefenseDamage;
 	int m_iLastDefenseDamage;
 	int m_iOccupationTimer;
@@ -1273,6 +1301,8 @@ protected:
 	bool* m_pabWorkingPlot;
 	bool* m_pabHasReligion;
 	bool* m_pabHasCorporation;
+	//Charriu Lock specialist
+	bool* m_pabSpecialistLockedForAI;
 
 	IDInfo* m_paTradeCities;
 
